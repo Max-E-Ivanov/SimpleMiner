@@ -1,0 +1,202 @@
+﻿namespace SimpleMiner
+{
+    partial class ucBaseMiner
+    {
+        /// <summary> 
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary> 
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Component Designer generated code
+
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            this.textBoxPath = new System.Windows.Forms.TextBox();
+            this.buttonOpenFile = new System.Windows.Forms.Button();
+            this.toolTipManager = new System.Windows.Forms.ToolTip(this.components);
+            this.buttonRun = new System.Windows.Forms.Button();
+            this.buttonStop = new System.Windows.Forms.Button();
+            this.labelPath = new System.Windows.Forms.Label();
+            this.labelParams = new System.Windows.Forms.Label();
+            this.textBoxParams = new System.Windows.Forms.TextBox();
+            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // textBoxPath
+            // 
+            this.textBoxPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPath.Location = new System.Drawing.Point(43, 3);
+            this.textBoxPath.Name = "textBoxPath";
+            this.textBoxPath.Size = new System.Drawing.Size(603, 20);
+            this.textBoxPath.TabIndex = 0;
+            this.textBoxPath.TextChanged += new System.EventHandler(this.textBoxPath_TextChanged);
+            // 
+            // buttonOpenFile
+            // 
+            this.buttonOpenFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOpenFile.Location = new System.Drawing.Point(652, 1);
+            this.buttonOpenFile.Name = "buttonOpenFile";
+            this.buttonOpenFile.Size = new System.Drawing.Size(33, 23);
+            this.buttonOpenFile.TabIndex = 1;
+            this.buttonOpenFile.Text = "...";
+            this.toolTipManager.SetToolTip(this.buttonOpenFile, "OpenFile");
+            this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
+            // 
+            // buttonRun
+            // 
+            this.buttonRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonRun.Location = new System.Drawing.Point(691, 1);
+            this.buttonRun.Name = "buttonRun";
+            this.buttonRun.Size = new System.Drawing.Size(74, 23);
+            this.buttonRun.TabIndex = 2;
+            this.buttonRun.Text = "Run!";
+            this.toolTipManager.SetToolTip(this.buttonRun, "OpenFile");
+            this.buttonRun.UseVisualStyleBackColor = true;
+            this.buttonRun.Click += new System.EventHandler(this.buttonRun_Click);
+            // 
+            // buttonStop
+            // 
+            this.buttonStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonStop.Location = new System.Drawing.Point(771, 1);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(74, 23);
+            this.buttonStop.TabIndex = 3;
+            this.buttonStop.Text = "Stop";
+            this.toolTipManager.SetToolTip(this.buttonStop, "OpenFile");
+            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.buttonStop_Click);
+            // 
+            // labelPath
+            // 
+            this.labelPath.AutoSize = true;
+            this.labelPath.Location = new System.Drawing.Point(0, 6);
+            this.labelPath.Name = "labelPath";
+            this.labelPath.Size = new System.Drawing.Size(29, 13);
+            this.labelPath.TabIndex = 4;
+            this.labelPath.Text = "Path";
+            // 
+            // labelParams
+            // 
+            this.labelParams.AutoSize = true;
+            this.labelParams.Location = new System.Drawing.Point(0, 32);
+            this.labelParams.Name = "labelParams";
+            this.labelParams.Size = new System.Drawing.Size(42, 13);
+            this.labelParams.TabIndex = 6;
+            this.labelParams.Text = "Params";
+            // 
+            // textBoxParams
+            // 
+            this.textBoxParams.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxParams.Location = new System.Drawing.Point(43, 29);
+            this.textBoxParams.Name = "textBoxParams";
+            this.textBoxParams.Size = new System.Drawing.Size(802, 20);
+            this.textBoxParams.TabIndex = 5;
+            // 
+            // textBoxOutput
+            // 
+            this.textBoxOutput.Location = new System.Drawing.Point(0, 55);
+            this.textBoxOutput.Multiline = true;
+            this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.ReadOnly = true;
+            this.textBoxOutput.Size = new System.Drawing.Size(845, 343);
+            this.textBoxOutput.TabIndex = 7;
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2,
+            this.toolStripStatusLabel3});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 404);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(852, 22);
+            this.statusStrip1.TabIndex = 8;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // toolStripStatusLabel2
+            // 
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
+            // 
+            // ucBaseMiner
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.textBoxOutput);
+            this.Controls.Add(this.labelParams);
+            this.Controls.Add(this.textBoxParams);
+            this.Controls.Add(this.labelPath);
+            this.Controls.Add(this.buttonStop);
+            this.Controls.Add(this.buttonRun);
+            this.Controls.Add(this.buttonOpenFile);
+            this.Controls.Add(this.textBoxPath);
+            this.Name = "ucBaseMiner";
+            this.Size = new System.Drawing.Size(852, 426);
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TextBox textBoxPath;
+        private System.Windows.Forms.Button buttonOpenFile;
+        private System.Windows.Forms.ToolTip toolTipManager;
+        private System.Windows.Forms.Button buttonRun;
+        private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Label labelPath;
+        private System.Windows.Forms.Label labelParams;
+        private System.Windows.Forms.TextBox textBoxParams;
+        private System.Windows.Forms.TextBox textBoxOutput;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+    }
+}
