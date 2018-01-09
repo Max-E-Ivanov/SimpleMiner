@@ -26,6 +26,7 @@ namespace SimpleMiner
         }
 
 
+
         void StartProcess()
         {
             try
@@ -37,9 +38,7 @@ namespace SimpleMiner
 
                 _processHelper.Launch();
 
-                textBoxOutput.Clear();
-
-                EnableButtons();
+                StartProcessUIActions();
             }
             catch (Exception ex)
             {
@@ -47,13 +46,35 @@ namespace SimpleMiner
             }
         }
 
+        void StartProcessUIActions()
+        {
+            textBoxOutput.Invoke(new Action(() =>
+            {
+                textBoxOutput.Clear();
+                EnableButtons();
+            }
+            ));
+         
+        }
+
+        void KillProcessUIActions()
+        {
+            textBoxOutput.Invoke(new Action(() =>
+            {                
+                EnableButtons();
+            }
+            ));
+
+        }
+
+
         void KillProcess()
         {
             try
             {
                 _processHelper.Kill();
 
-                EnableButtons();
+                KillProcessUIActions();
             }              
             catch (Exception ex)
             {
@@ -65,6 +86,9 @@ namespace SimpleMiner
         {
             // Info from process
             UpdateTextControl(e);
+
+            if ((e.eStatus == eProcessStatus.eClose) && checkBoxRestart.Checked)
+                StartProcess();
         }
 
         void EnableButtons()
@@ -95,10 +119,14 @@ namespace SimpleMiner
 
         void UpdateTextControl(ProcessEventArgs info)
         {
-            textBoxOutput.Invoke(new Action(() => textBoxOutput.Text = textBoxOutput.Text + info.Message +
-            @"
-"));
-            toolStripStatusLabel1.Text = info.Status;
+            textBoxOutput.Invoke(new Action(() =>
+            {
+                textBoxOutput.Text = textBoxOutput.Text + info.Message +
+                @"
+";
+                toolStripStatusLabel1.Text = info.Status;
+            }
+            ));
         }
 
         

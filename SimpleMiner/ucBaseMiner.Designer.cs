@@ -40,9 +40,10 @@
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBoxRestart = new System.Windows.Forms.CheckBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,7 +117,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxParams.Location = new System.Drawing.Point(43, 29);
             this.textBoxParams.Name = "textBoxParams";
-            this.textBoxParams.Size = new System.Drawing.Size(802, 20);
+            this.textBoxParams.Size = new System.Drawing.Size(722, 20);
             this.textBoxParams.TabIndex = 5;
             // 
             // textBoxOutput
@@ -146,10 +147,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
             // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
@@ -160,10 +157,26 @@
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // checkBoxRestart
+            // 
+            this.checkBoxRestart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBoxRestart.AutoSize = true;
+            this.checkBoxRestart.Location = new System.Drawing.Point(771, 31);
+            this.checkBoxRestart.Name = "checkBoxRestart";
+            this.checkBoxRestart.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxRestart.TabIndex = 9;
+            this.checkBoxRestart.Text = "Restart";
+            this.checkBoxRestart.UseVisualStyleBackColor = true;
+            // 
             // ucBaseMiner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.checkBoxRestart);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.textBoxOutput);
             this.Controls.Add(this.labelParams);
@@ -198,5 +211,6 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.CheckBox checkBoxRestart;
     }
 }

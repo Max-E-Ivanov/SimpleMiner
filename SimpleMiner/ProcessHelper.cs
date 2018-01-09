@@ -8,6 +8,7 @@ using System.IO;
 
 namespace SimpleMiner
 {
+    public enum eProcessStatus { eWorking, eClose, eError }
 
     public class ProcessParams
     {
@@ -58,10 +59,13 @@ namespace SimpleMiner
 
         public string Message{ get; private set; }
 
-        public ProcessEventArgs(string status, string message)
+        public eProcessStatus eStatus { get; private set; }
+
+        public ProcessEventArgs(string status, string message, eProcessStatus eStatus)
         {
             Status = status;
             Message = message;
+            this.eStatus = eStatus;
         }
     }
 
@@ -72,11 +76,11 @@ namespace SimpleMiner
 
         public event ProcessUpdateHandler OnUpdateProcess;
 
-        public virtual void NotifyPropertyChanged(string status, string message)
+        public virtual void NotifyPropertyChanged(string status, string message, eProcessStatus eStatus)
         {
             if (OnUpdateProcess != null)
             {
-                OnUpdateProcess(this, new ProcessEventArgs(status, message));
+                OnUpdateProcess(this, new ProcessEventArgs(status, message, eStatus));
             }
 
            
@@ -150,18 +154,18 @@ namespace SimpleMiner
 
         void process_Exited(object sender, EventArgs e)
         {
-            NotifyPropertyChanged("Exited", string.Format("process exited with code {0}\n", process.ExitCode.ToString()));
+            NotifyPropertyChanged("Exited", string.Format("process exited with code {0}\n", process.ExitCode.ToString()), eProcessStatus.eClose);
         }
 
         void process_ErrorDataReceived(object sender, DataReceivedEventArgs e)
         {
-            NotifyPropertyChanged("Error", e.Data);
+            NotifyPropertyChanged("Error", e.Data, eProcessStatus.eError);
             //Console.WriteLine(e.Data + "\n");
         }
 
         void process_OutputDataReceived(object sender, DataReceivedEventArgs e)
         {
-            NotifyPropertyChanged("Working...", e.Data);
+            NotifyPropertyChanged("Working...", e.Data, eProcessStatus.eWorking);
             //Console.WriteLine(e.Data + "\n");
         }
 
