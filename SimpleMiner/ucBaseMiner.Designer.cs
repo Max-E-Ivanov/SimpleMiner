@@ -150,7 +150,8 @@
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(48, 17);
+            this.toolStripStatusLabel2.Text = "Restarts";
             // 
             // toolStripStatusLabel3
             // 

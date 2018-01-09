@@ -13,6 +13,8 @@ namespace SimpleMiner
     public partial class ucBaseMiner : UserControl
     {
         ProcessHelper _processHelper;
+        int iRestartCnt;
+
         public ucBaseMiner()
         {
             InitializeComponent();
@@ -22,6 +24,7 @@ namespace SimpleMiner
             // Init
 
             _processHelper = null;
+            iRestartCnt = 0;
             EnableButtons();
         }
 
@@ -52,6 +55,7 @@ namespace SimpleMiner
             {
                 textBoxOutput.Clear();
                 EnableButtons();
+                toolStripStatusLabel3.Text = iRestartCnt.ToString();
             }
             ));
          
@@ -88,7 +92,10 @@ namespace SimpleMiner
             UpdateTextControl(e);
 
             if ((e.eStatus == eProcessStatus.eClose) && checkBoxRestart.Checked)
+            {
+                iRestartCnt++;
                 StartProcess();
+            }
         }
 
         void EnableButtons()
