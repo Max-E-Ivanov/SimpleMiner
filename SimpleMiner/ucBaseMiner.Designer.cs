@@ -39,11 +39,15 @@
             this.textBoxParams = new System.Windows.Forms.TextBox();
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripRestartLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripRestartCnt = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.checkBoxRestart = new System.Windows.Forms.CheckBox();
+            this.toolStripClientTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMeTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripClientTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMeTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,30 +137,36 @@
             // 
             this.statusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripStatusLabel2,
-            this.toolStripStatusLabel3});
+            this.toolStripStatus,
+            this.toolStripRestartLabel,
+            this.toolStripRestartCnt,
+            this.toolStripClientTimeLabel,
+            this.toolStripClientTime,
+            this.toolStripMeTimeLabel,
+            this.toolStripMeTime});
             this.statusStrip1.Location = new System.Drawing.Point(0, 404);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(852, 22);
             this.statusStrip1.TabIndex = 8;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // toolStripStatusLabel1
+            // toolStripStatus
             // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(0, 17);
+            this.toolStripStatus.Name = "toolStripStatus";
+            this.toolStripStatus.Size = new System.Drawing.Size(30, 17);
+            this.toolStripStatus.Text = "IDLE";
             // 
-            // toolStripStatusLabel2
+            // toolStripRestartLabel
             // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(48, 17);
-            this.toolStripStatusLabel2.Text = "Restarts";
+            this.toolStripRestartLabel.Name = "toolStripRestartLabel";
+            this.toolStripRestartLabel.Size = new System.Drawing.Size(48, 17);
+            this.toolStripRestartLabel.Text = "Restarts";
             // 
-            // toolStripStatusLabel3
+            // toolStripRestartCnt
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(0, 17);
+            this.toolStripRestartCnt.Name = "toolStripRestartCnt";
+            this.toolStripRestartCnt.Size = new System.Drawing.Size(13, 17);
+            this.toolStripRestartCnt.Text = "0";
             // 
             // openFileDialog1
             // 
@@ -172,6 +182,30 @@
             this.checkBoxRestart.TabIndex = 9;
             this.checkBoxRestart.Text = "Restart";
             this.checkBoxRestart.UseVisualStyleBackColor = true;
+            // 
+            // toolStripClientTimeLabel
+            // 
+            this.toolStripClientTimeLabel.Name = "toolStripClientTimeLabel";
+            this.toolStripClientTimeLabel.Size = new System.Drawing.Size(55, 17);
+            this.toolStripClientTimeLabel.Text = "ForClient";
+            // 
+            // toolStripMeTimeLabel
+            // 
+            this.toolStripMeTimeLabel.Name = "toolStripMeTimeLabel";
+            this.toolStripMeTimeLabel.Size = new System.Drawing.Size(41, 17);
+            this.toolStripMeTimeLabel.Text = "ForMe";
+            // 
+            // toolStripClientTime
+            // 
+            this.toolStripClientTime.Name = "toolStripClientTime";
+            this.toolStripClientTime.Size = new System.Drawing.Size(34, 17);
+            this.toolStripClientTime.Text = "00:00";
+            // 
+            // toolStripMeTime
+            // 
+            this.toolStripMeTime.Name = "toolStripMeTime";
+            this.toolStripMeTime.Size = new System.Drawing.Size(34, 17);
+            this.toolStripMeTime.Text = "00:00";
             // 
             // ucBaseMiner
             // 
@@ -208,10 +242,14 @@
         private System.Windows.Forms.TextBox textBoxParams;
         private System.Windows.Forms.TextBox textBoxOutput;
         private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripRestartLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripRestartCnt;
         private System.Windows.Forms.CheckBox checkBoxRestart;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripClientTimeLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripClientTime;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripMeTimeLabel;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripMeTime;
     }
 }
