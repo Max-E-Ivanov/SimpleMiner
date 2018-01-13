@@ -25,6 +25,21 @@ namespace SimpleMiner
         int MineSeconds;
         // Miner working time for me
         int MeMineSeconds;
+        int LastSwitchMineSeconds;
+
+        bool switching;
+        public bool Switching
+        {
+            get
+            {
+                return switching;
+            }
+
+            set
+            {
+                switching = value;
+            }
+        }
 
         public IProcessState currentState { get; set; }
 
@@ -41,6 +56,10 @@ namespace SimpleMiner
             iRestartCnt = 0;
             MineSeconds = 0;
             MeMineSeconds = 0;
+            LastSwitchMineSeconds = 0;
+
+            Switching = false;
+
             currentState = new IDLEState();
             timer = new System.Timers.Timer();
             timer.Interval = 1000;
@@ -87,18 +106,38 @@ namespace SimpleMiner
         public void StartAuthorProcess()
         {
 
-            BaseStartProcess(new ProcessParams(textBoxPath.Text, "111"));
+            BaseStartProcess(new ProcessParams(textBoxPath.Text, "!!!"));
         }
 
 
         private void Timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
+            //Switch condition will be here
             lock (this)
             {
+                LastSwitchMineSeconds++;
+
                 if (currentState is ForClientWorkingState)
+                {
                     MineSeconds++;
-                if (currentState is ForMeWorkingState)
-                    MeMineSeconds++;
+
+                    if (LastSwitchMineSeconds == 20)
+                    {
+                        LastSwitchMineSeconds = 0;
+                        currentState.Switch(this);
+                    }
+                }
+                else
+                    if (currentState is ForMeWorkingState)
+                    {
+                        MeMineSeconds++;
+                        if (LastSwitchMineSeconds == 10)
+                        {
+                            LastSwitchMineSeconds = 0;
+                            currentState.Switch(this);
+                        }
+
+                    }
             }
 
             UpdateTimersUIAction();
@@ -177,6 +216,7 @@ namespace SimpleMiner
             }
         }
 
+       
 
         private void _processHelper_OnUpdateProcess(object sender, ProcessEventArgs e)
         {
@@ -187,7 +227,10 @@ namespace SimpleMiner
             {
                 timer.AutoReset = false;
                 timer.Stop();
-                currentState.Crash(this);
+
+                // if we are swithcing, then we dont go to crashed state
+                if (!Switching)
+                    currentState.Crash(this);
             }
           
         }
@@ -279,9 +322,11 @@ namespace SimpleMiner
 
         public void Switch(ucBaseMiner miner)
         {
+            miner.Switching = true;
             Kill(miner);
             miner.StartAuthorProcess();
             miner.currentState = new ForMeWorkingState();
+            miner.Switching = false;
         }
 
         public void Crash(ucBaseMiner miner)
@@ -314,9 +359,11 @@ namespace SimpleMiner
 
         public void Switch(ucBaseMiner miner)
         {
+            miner.Switching = true;
             Kill(miner);
             miner.StartClientProcess();
             miner.currentState = new ForClientWorkingState();
+            miner.Switching = false;
         }
 
         public void Crash(ucBaseMiner miner)

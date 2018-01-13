@@ -80,6 +80,8 @@ namespace SimpleMiner
         {
             if (OnUpdateProcess != null)
             {
+
+                // we should convert message                
                 OnUpdateProcess(this, new ProcessEventArgs(status, message, eStatus));
             }
 
@@ -114,7 +116,7 @@ namespace SimpleMiner
                 process.StartInfo.UseShellExecute = false;
                 process.StartInfo.RedirectStandardError = true;
                 process.StartInfo.RedirectStandardOutput = true;
-                process.StartInfo.CreateNoWindow = false;
+                process.StartInfo.CreateNoWindow = true;
 
                 process.Start();
                 process.BeginErrorReadLine();
