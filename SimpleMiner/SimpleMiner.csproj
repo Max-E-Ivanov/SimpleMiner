@@ -66,6 +66,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseMiner\BaseMinerModel.cs" />
+    <Compile Include="BaseMiner\BaseMinerPresenter.cs" />
+    <Compile Include="BaseMiner\IBaseMinerView.cs" />
+    <Compile Include="MVP\BaseMVP.cs" />
     <Compile Include="ProcessHelper.cs" />
     <Compile Include="SimpleMinerForm.cs">
       <SubType>Form</SubType>
@@ -75,10 +79,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ucBaseMiner.cs">
+    <Compile Include="BaseMiner\ucBaseMiner.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ucBaseMiner.Designer.cs">
+    <Compile Include="BaseMiner\ucBaseMiner.Designer.cs">
       <DependentUpon>ucBaseMiner.cs</DependentUpon>
     </Compile>
     <Compile Include="ucMiner1.cs">
@@ -102,7 +106,7 @@
     <EmbeddedResource Include="SimpleMinerForm.resx">
       <DependentUpon>SimpleMinerForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ucBaseMiner.resx">
+    <EmbeddedResource Include="BaseMiner\ucBaseMiner.resx">
       <DependentUpon>ucBaseMiner.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="MaxCodeSigning.pfx" />
@@ -131,5 +135,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

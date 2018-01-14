@@ -30,9 +30,14 @@ namespace SimpleMiner
             {
                 ucMiner1 ucMiner1 = new ucMiner1();
 
+                ucBaseMiner ucBaseMiner1 = new ucBaseMiner();
+
+                BaseMinerPresenter _presenter = new BaseMinerPresenter(ucBaseMiner1, new BaseMinerModel());
+
+
                 TabPage tabMiner1 = new TabPage("Miner1");
-                tabMiner1.Controls.Add(ucMiner1);
-                ucMiner1.Dock = DockStyle.Fill;
+                tabMiner1.Controls.Add(ucBaseMiner1);
+                ucBaseMiner1.Dock = DockStyle.Fill;
 
                 tabControlMiners.Controls.Add(tabMiner1);
             }

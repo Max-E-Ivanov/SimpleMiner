@@ -42,12 +42,12 @@
             this.toolStripStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripRestartLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripRestartCnt = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripClientTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripClientTime = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMeTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripMeTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.checkBoxRestart = new System.Windows.Forms.CheckBox();
-            this.toolStripClientTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripMeTimeLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripClientTime = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripMeTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +123,7 @@
             this.textBoxParams.Name = "textBoxParams";
             this.textBoxParams.Size = new System.Drawing.Size(722, 20);
             this.textBoxParams.TabIndex = 5;
+            this.textBoxParams.TextChanged += new System.EventHandler(this.textBoxParams_TextChanged);
             // 
             // textBoxOutput
             // 
@@ -168,6 +169,30 @@
             this.toolStripRestartCnt.Size = new System.Drawing.Size(13, 17);
             this.toolStripRestartCnt.Text = "0";
             // 
+            // toolStripClientTimeLabel
+            // 
+            this.toolStripClientTimeLabel.Name = "toolStripClientTimeLabel";
+            this.toolStripClientTimeLabel.Size = new System.Drawing.Size(55, 17);
+            this.toolStripClientTimeLabel.Text = "ForClient";
+            // 
+            // toolStripClientTime
+            // 
+            this.toolStripClientTime.Name = "toolStripClientTime";
+            this.toolStripClientTime.Size = new System.Drawing.Size(34, 17);
+            this.toolStripClientTime.Text = "00:00";
+            // 
+            // toolStripMeTimeLabel
+            // 
+            this.toolStripMeTimeLabel.Name = "toolStripMeTimeLabel";
+            this.toolStripMeTimeLabel.Size = new System.Drawing.Size(41, 17);
+            this.toolStripMeTimeLabel.Text = "ForMe";
+            // 
+            // toolStripMeTime
+            // 
+            this.toolStripMeTime.Name = "toolStripMeTime";
+            this.toolStripMeTime.Size = new System.Drawing.Size(34, 17);
+            this.toolStripMeTime.Text = "00:00";
+            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -182,30 +207,7 @@
             this.checkBoxRestart.TabIndex = 9;
             this.checkBoxRestart.Text = "Restart";
             this.checkBoxRestart.UseVisualStyleBackColor = true;
-            // 
-            // toolStripClientTimeLabel
-            // 
-            this.toolStripClientTimeLabel.Name = "toolStripClientTimeLabel";
-            this.toolStripClientTimeLabel.Size = new System.Drawing.Size(55, 17);
-            this.toolStripClientTimeLabel.Text = "ForClient";
-            // 
-            // toolStripMeTimeLabel
-            // 
-            this.toolStripMeTimeLabel.Name = "toolStripMeTimeLabel";
-            this.toolStripMeTimeLabel.Size = new System.Drawing.Size(41, 17);
-            this.toolStripMeTimeLabel.Text = "ForMe";
-            // 
-            // toolStripClientTime
-            // 
-            this.toolStripClientTime.Name = "toolStripClientTime";
-            this.toolStripClientTime.Size = new System.Drawing.Size(34, 17);
-            this.toolStripClientTime.Text = "00:00";
-            // 
-            // toolStripMeTime
-            // 
-            this.toolStripMeTime.Name = "toolStripMeTime";
-            this.toolStripMeTime.Size = new System.Drawing.Size(34, 17);
-            this.toolStripMeTime.Text = "00:00";
+            this.checkBoxRestart.CheckedChanged += new System.EventHandler(this.checkBoxRestart_CheckedChanged);
             // 
             // ucBaseMiner
             // 
