@@ -119,6 +119,8 @@
     <EmbeddedResource Include="BaseMiner\ucBaseMiner.resx">
       <DependentUpon>ucBaseMiner.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="confuserEx\confuser.crproj" />
+    <None Include="confuserEx\confuserps.ps1" />
     <None Include="MaxCodeSigning.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
