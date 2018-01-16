@@ -8,7 +8,7 @@ using SimpleMiner.MVP;
 
 namespace SimpleMiner
 {
-    public class BaseMinerPresenter
+    public class BaseMinerPresenter : IPresenter
     {
         IBaseMinerView _view;
         BaseMinerModel _model;
