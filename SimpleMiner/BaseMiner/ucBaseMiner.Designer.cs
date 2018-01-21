@@ -48,7 +48,6 @@
             this.toolStripMeTime = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.checkBoxRestart = new System.Windows.Forms.CheckBox();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxPath
@@ -127,24 +126,20 @@
             // 
             // textBoxOutput
             // 
+            this.textBoxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxOutput.Location = new System.Drawing.Point(0, 55);
             this.textBoxOutput.Multiline = true;
             this.textBoxOutput.Name = "textBoxOutput";
             this.textBoxOutput.ReadOnly = true;
+            this.textBoxOutput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textBoxOutput.Size = new System.Drawing.Size(845, 343);
             this.textBoxOutput.TabIndex = 7;
             // 
             // statusStrip1
             // 
             this.statusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatus,
-            this.toolStripRestartLabel,
-            this.toolStripRestartCnt,
-            this.toolStripClientTimeLabel,
-            this.toolStripClientTime,
-            this.toolStripMeTimeLabel,
-            this.toolStripMeTime});
             this.statusStrip1.Location = new System.Drawing.Point(0, 404);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(852, 22);
@@ -225,33 +220,31 @@
             this.Controls.Add(this.textBoxPath);
             this.Name = "ucBaseMiner";
             this.Size = new System.Drawing.Size(852, 426);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.ucBaseMiner_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxPath;
-        private System.Windows.Forms.Button buttonOpenFile;
-        private System.Windows.Forms.ToolTip toolTipManager;
-        private System.Windows.Forms.Button buttonRun;
-        private System.Windows.Forms.Button buttonStop;
-        private System.Windows.Forms.Label labelPath;
-        private System.Windows.Forms.Label labelParams;
-        private System.Windows.Forms.TextBox textBoxParams;
-        private System.Windows.Forms.TextBox textBoxOutput;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatus;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripRestartLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripRestartCnt;
-        private System.Windows.Forms.CheckBox checkBoxRestart;
         private System.Windows.Forms.ToolStripStatusLabel toolStripClientTimeLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripClientTime;
         private System.Windows.Forms.ToolStripStatusLabel toolStripMeTimeLabel;
         private System.Windows.Forms.ToolStripStatusLabel toolStripMeTime;
+        protected System.Windows.Forms.TextBox textBoxPath;
+        protected System.Windows.Forms.Button buttonOpenFile;
+        protected System.Windows.Forms.Button buttonRun;
+        protected System.Windows.Forms.Button buttonStop;
+        protected System.Windows.Forms.Label labelPath;
+        protected System.Windows.Forms.Label labelParams;
+        protected System.Windows.Forms.TextBox textBoxParams;
+        protected System.Windows.Forms.TextBox textBoxOutput;
+        protected System.Windows.Forms.StatusStrip statusStrip1;
+        protected System.Windows.Forms.CheckBox checkBoxRestart;
+        protected System.Windows.Forms.ToolTip toolTipManager;
     }
 }

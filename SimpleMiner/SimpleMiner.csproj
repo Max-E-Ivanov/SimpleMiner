@@ -76,9 +76,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForm\ucBaseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BaseForm\ucBaseUserControl.Designer.cs">
+      <DependentUpon>ucBaseUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseMiner\BaseMinerModel.cs" />
     <Compile Include="BaseMiner\BaseMinerPresenter.cs" />
     <Compile Include="BaseMiner\IBaseMinerView.cs" />
+    <Compile Include="BaseMining\BaseMinerModel.cs" />
+    <Compile Include="BaseMining\BaseProcessHelper.cs" />
+    <Compile Include="Claymor\ClaymorMinerModel.cs" />
+    <Compile Include="Claymor\ClaymorMinerPresenter.cs" />
+    <Compile Include="Claymor\ClaymorProcessHelper.cs" />
+    <Compile Include="Claymor\IClaymorMinerView.cs" />
+    <Compile Include="Claymor\ucClaymorMiner.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Claymor\ucClaymorMiner.Designer.cs">
+      <DependentUpon>ucClaymorMiner.cs</DependentUpon>
+    </Compile>
     <Compile Include="MVP\BaseMVP.cs" />
     <Compile Include="ProcessHelper.cs" />
     <Compile Include="SimpleMinerForm.cs">
@@ -103,6 +121,12 @@
     </Compile>
     <Compile Include="UIHelper.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="BaseForm\ucBaseUserControl.resx">
+      <DependentUpon>ucBaseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Claymor\ucClaymorMiner.resx">
+      <DependentUpon>ucClaymorMiner.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -148,6 +172,15 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\s_settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\s_stop.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterCompile">
     <Exec Command="if &quot;$(PlatformName)&quot; == &quot;AnyCPU&quot; (if &quot;$(ConfigurationName)&quot; == &quot;ObfuscatedRelease&quot; (powershell.exe  -ExecutionPolicy Bypass -File  &quot;$(ProjectDir)confuserEx\confuserps.ps1&quot; &quot;'E:\VSProjects\ConfuserEx\Confuser.CLI.exe'&quot; &quot;'$(ProjectDir)confuserEx\confuser.crproj'&quot; &quot;'$(ProjectDir)obj\$(ConfigurationName)\'&quot; &quot;'$(ProjectDir)obj\$(ConfigurationName)\$(TargetFileName)'&quot; &quot;$(ProjectDir)bin\$(ConfigurationName)&quot;)&#xD;&#xA;) else (if &quot;$(ConfigurationName)&quot; == &quot;ObfuscatedRelease&quot; (powershell.exe  -ExecutionPolicy Bypass -File  &quot;$(ProjectDir)confuserEx\confuserps.ps1&quot; &quot;'E:\VSProjects\ConfuserEx\Confuser.CLI.exe'&quot; &quot;'$(ProjectDir)confuserEx\confuser.crproj'&quot; &quot;'$(ProjectDir)obj\$(PlatformName)\$(ConfigurationName)\'&quot; &quot;'$(ProjectDir)obj\$(PlatformName)\$(ConfigurationName)\$(TargetFileName)'&quot; &quot;$(ProjectDir)bin\$(PlatformName)\$(ConfigurationName)&quot;)&#xD;&#xA;)" />

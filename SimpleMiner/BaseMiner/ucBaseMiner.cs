@@ -22,14 +22,18 @@ namespace SimpleMiner
             }
         }
 
+        protected bool isInitialized;
 
 
         public ucBaseMiner()
         {
+            isInitialized = false;
+
             InitializeComponent();
 
+           
             // Localization
-                    
+
         }
 
 
@@ -73,6 +77,8 @@ namespace SimpleMiner
         {
             get
             {
+                if (!isInitialized)
+                    return "";
 
                 return (string)textBoxOutput.Invoke(new Func<string>(() =>
                {
@@ -83,9 +89,14 @@ namespace SimpleMiner
             }
             set
             {
+                if (!isInitialized)
+                    return ;
+
                 textBoxOutput.Invoke(new Action(() =>
                 {
-                    textBoxOutput.Text = value;
+                    textBoxOutput.Text = "";
+                    textBoxOutput.AppendText(value);
+
                 }));
             }
 
@@ -99,6 +110,9 @@ namespace SimpleMiner
             }
             set
             {
+                if (!isInitialized)
+                    return;
+
                 statusStrip1.Invoke(new Action(() =>
                 {
                     toolStripRestartCnt.Text = value;
@@ -115,6 +129,9 @@ namespace SimpleMiner
             }
             set
             {
+                if (!isInitialized)
+                    return;
+
                 statusStrip1.Invoke(new Action(() =>
                 {
                     toolStripStatus.Text = value;
@@ -131,6 +148,9 @@ namespace SimpleMiner
             }
             set
             {
+                if (!isInitialized)
+                    return;
+
                 statusStrip1.Invoke(new Action(() =>
                 {
                     toolStripClientTime.Text = value;
@@ -147,6 +167,9 @@ namespace SimpleMiner
             }
             set
             {
+                if (!isInitialized)
+                    return;
+
                 statusStrip1.Invoke(new Action(() =>
                 {
                     toolStripMeTime.Text = value;
@@ -196,8 +219,10 @@ namespace SimpleMiner
                 Stop();
         }
 
-       
-
+        private void ucBaseMiner_Load(object sender, EventArgs e)
+        {
+            isInitialized = true;
+        }
     }
 
   

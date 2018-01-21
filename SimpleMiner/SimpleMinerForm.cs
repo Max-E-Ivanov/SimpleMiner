@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace SimpleMiner
 {
     public partial class SimpleMinerForm : Form
@@ -31,8 +32,7 @@ namespace SimpleMiner
                 ucMiner1 ucMiner1 = new ucMiner1();
 
                 ucBaseMiner ucBaseMiner1 = new ucBaseMiner();
-
-                BaseMinerPresenter _presenter = new BaseMinerPresenter(ucBaseMiner1, new BaseMinerModel());
+                BaseMinerPresenter _presenter = new BaseMinerPresenter(ucBaseMiner1, new BaseMinerModelEx());
 
 
                 TabPage tabMiner1 = new TabPage("Miner1");
@@ -40,6 +40,19 @@ namespace SimpleMiner
                 ucBaseMiner1.Dock = DockStyle.Fill;
 
                 tabControlMiners.Controls.Add(tabMiner1);
+
+                // Claymore
+
+                SimpleMiner.Claymor.ucClaymorMiner ucClaymore = new SimpleMiner.Claymor.ucClaymorMiner();
+                ClaymorMinerPresenter _claymore_presenter = new ClaymorMinerPresenter(ucClaymore, new ClaymorMinerModel());
+
+
+                TabPage tabClaymoreMiner = new TabPage("Claymore");                
+                tabClaymoreMiner.Controls.Add(ucClaymore);
+                ucClaymore.Dock = DockStyle.Fill;
+
+                tabControlMiners.Controls.Add(tabClaymoreMiner);
+
             }
             catch (Exception ex)
             {

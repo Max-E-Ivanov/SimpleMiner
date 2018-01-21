@@ -3,57 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SimpleMiner.BaseMining;
+using SimpleMiner.BaseProcessHelper;
 
 namespace SimpleMiner
 {
-    public class BaseMinerModel
+    public class BaseMinerModelEx : BaseMining.BaseMinerModel
     {
-        #region Events
-        public delegate void TimeUpdateHandler(object sender);
-        public event TimeUpdateHandler OnTimeUpdate;
-        public virtual void NotifyTimeUpdate()
-        {
-            if (OnTimeUpdate != null)
-            {                               
-                OnTimeUpdate(this);
-            }
-        }
-
-        public delegate void OutputUpdateHandler(object sender, ProcessEventArgs e);
-        public event OutputUpdateHandler OnOutputUpdate;
-        public virtual void NotifyOutputUpdate(ProcessEventArgs e)
-        {
-            if (OnOutputUpdate != null)
-            {
-                OnOutputUpdate(this, e);
-            }
-        }
-
-        public delegate void ActionProcessHandler(object sender);
-        public event ActionProcessHandler OnStartProcess;
-        public virtual void NotifyStartProcess()
-        {
-            if (OnStartProcess != null)
-            {
-                OnStartProcess(this);
-            }
-        }
-
-        public event ActionProcessHandler OnKillProcess;
-        public virtual void NotifyKillProcess()
-        {
-            if (OnKillProcess != null)
-            {
-                OnKillProcess(this);
-            }
-        }
-        #endregion
+     
 
         ProcessHelper _processHelper;
         System.Timers.Timer timer;
 
         // Miner process restarts count
-        public int RestartCnt { get; private set; }
+        public int RestartCnt { get; protected set; }
 
         // Miner working time for client
         public int ForClientMineSeconds { get; private set; }
@@ -74,7 +37,7 @@ namespace SimpleMiner
 
        
 
-        public BaseMinerModel()
+        public BaseMinerModelEx()
         {
             _processHelper = null;
             RestartCnt = 0;
@@ -123,7 +86,7 @@ namespace SimpleMiner
             NotifyTimeUpdate();
         }
 
-        void BaseStartProcess(ProcessParams _params)
+        protected virtual void BaseStartProcess(ProcessParams _params)
         {
             try
             {
@@ -137,7 +100,7 @@ namespace SimpleMiner
                 NotifyStartProcess();
 
                 timer.AutoReset = true;
-                timer.Start();
+               // timer.Start();
             }
             catch (Exception ex)
             {
@@ -164,7 +127,7 @@ namespace SimpleMiner
             BaseStartProcess(Author_params);
         }
 
-        public void KillProcess()
+        public virtual void KillProcess()
         {
            
                 _processHelper.Kill();
@@ -195,10 +158,10 @@ namespace SimpleMiner
 
     public interface IProcessState
     {
-        void Kill(BaseMinerModel minerModel);
-        void Switch(BaseMinerModel minerModel);
-        void Run(BaseMinerModel minerModel);
-        void Crash(BaseMinerModel minerModel);
+        void Kill(BaseMinerModelEx minerModel);
+        void Switch(BaseMinerModelEx minerModel);
+        void Run(BaseMinerModelEx minerModel);
+        void Crash(BaseMinerModelEx minerModel);
     }
 
 
@@ -208,24 +171,24 @@ namespace SimpleMiner
     /// </summary>
     public class IDLEState : IProcessState
     {
-        public void Run(BaseMinerModel miner)
+        public void Run(BaseMinerModelEx miner)
         {
             miner.StartClientProcess();
 
             miner.currentState = new ForClientWorkingState();
         }
 
-        public void Kill(BaseMinerModel miner)
+        public void Kill(BaseMinerModelEx miner)
         {
 
         }
 
-        public void Switch(BaseMinerModel miner)
+        public void Switch(BaseMinerModelEx miner)
         {
 
         }
 
-        public void Crash(BaseMinerModel miner)
+        public void Crash(BaseMinerModelEx miner)
         {
 
         }
@@ -236,18 +199,18 @@ namespace SimpleMiner
     /// </summary>
     public class ForClientWorkingState : IProcessState
     {
-        public void Run(BaseMinerModel miner)
+        public void Run(BaseMinerModelEx miner)
         {
 
         }
 
-        public void Kill(BaseMinerModel miner)
+        public void Kill(BaseMinerModelEx miner)
         {
             miner.KillProcess();
             miner.currentState = new IDLEState();
         }
 
-        public void Switch(BaseMinerModel miner)
+        public void Switch(BaseMinerModelEx miner)
         {
             
             miner.UnSubscribeOnProcessEvent();
@@ -257,7 +220,7 @@ namespace SimpleMiner
           
         }
 
-        public void Crash(BaseMinerModel miner)
+        public void Crash(BaseMinerModelEx miner)
         {
             if (miner.AutoRestart)
             {
@@ -274,18 +237,18 @@ namespace SimpleMiner
     /// </summary>
     public class ForAuthorWorkingState : IProcessState
     {
-        public void Run(BaseMinerModel miner)
+        public void Run(BaseMinerModelEx miner)
         {
 
         }
 
-        public void Kill(BaseMinerModel miner)
+        public void Kill(BaseMinerModelEx miner)
         {
             miner.KillProcess();
             miner.currentState = new IDLEState();
         }
 
-        public void Switch(BaseMinerModel miner)
+        public void Switch(BaseMinerModelEx miner)
         {
            
             miner.UnSubscribeOnProcessEvent();
@@ -295,7 +258,7 @@ namespace SimpleMiner
           
         }
 
-        public void Crash(BaseMinerModel miner)
+        public void Crash(BaseMinerModelEx miner)
         {
             if (miner.AutoRestart)
             {

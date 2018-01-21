@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SimpleMiner.MVP;
-
+using SimpleMiner.BaseProcessHelper;
 
 namespace SimpleMiner
 {
     public class BaseMinerPresenter : IPresenter
     {
-        IBaseMinerView _view;
-        BaseMinerModel _model;
+        protected IBaseMinerView _view;
+        protected BaseMinerModelEx _model;
 
 
-        public BaseMinerPresenter(IBaseMinerView _view, BaseMinerModel _model)
+
+        public BaseMinerPresenter(IBaseMinerView _view, BaseMinerModelEx _model)
         {
             this._view = _view;
             this._model = _model;
@@ -57,7 +58,7 @@ namespace SimpleMiner
             _model.currentState.Kill(_model);
         }
 
-        private void _view_Run()
+        protected virtual void _view_Run()
         {
             //Button Run pressed
             _model.currentState.Run(_model);
@@ -75,7 +76,7 @@ namespace SimpleMiner
             _view.ClentTimeLabel = _model.ForClientMineSeconds.ToString();
         }
 
-        private void _model_OnOutputUpdate(object sender, ProcessEventArgs e)
+        protected virtual  void _model_OnOutputUpdate(object sender, ProcessEventArgs e)
         {
             _view.OutputTextBox = _view.OutputTextBox + @"
 "+               e.Message;
