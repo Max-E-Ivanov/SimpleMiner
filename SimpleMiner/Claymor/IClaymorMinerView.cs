@@ -11,6 +11,8 @@ namespace SimpleMiner
     {
         ClaymorParams clParams { get; set; }
 
+        void PopulateEthPools(List<string> lsPools);
+
         string OutputTextBox { get; set; }
 
         bool buttonStartEnabled { get; set; }

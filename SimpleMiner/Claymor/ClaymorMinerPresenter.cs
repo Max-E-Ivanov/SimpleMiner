@@ -32,6 +32,8 @@ namespace SimpleMiner
 
             _view.clParams = _params;
 
+            PopulateETHPools();
+
            // this._model.OnStartProcess += _model_OnStartProcess;
            // this._model.OnKillProcess += _model_OnKillProcess;
             this._model.OnOutputUpdate += _model_OnOutputUpdate;
@@ -42,6 +44,14 @@ namespace SimpleMiner
             this._view.PropertyChanged += _view_PropertyChanged;
 
             _view_PropertyChanged(null, new System.ComponentModel.PropertyChangedEventArgs("params"));
+        }
+
+        void PopulateETHPools()
+        {
+            List<string> lsPopls = new List<string> { "us1.ethpool.org:3333", "us1.ethermine.org:4444", "eth-eu.dwarfpool.com:8008", "eu1.nanopool.org:9999",
+            "stratum+tcp://daggerhashimoto.eu.nicehash.com:3353", "us-east1.ethereum.miningpoolhub.com:20536", "us-east1.ethereum.miningpoolhub.com:20536"};
+
+            _view.PopulateEthPools(lsPopls);
         }
 
 

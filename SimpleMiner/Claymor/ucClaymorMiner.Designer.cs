@@ -31,7 +31,7 @@
             this.textBoxEthWallet = new System.Windows.Forms.TextBox();
             this.labelEthWallet = new System.Windows.Forms.Label();
             this.linkLabelCreateEthWallet = new System.Windows.Forms.LinkLabel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelEthPool = new System.Windows.Forms.Label();
             this.comboBoxEthPools = new System.Windows.Forms.ComboBox();
             this.labelEthWorker = new System.Windows.Forms.Label();
             this.textBoxEthWorker = new System.Windows.Forms.TextBox();
@@ -71,14 +71,14 @@
             this.linkLabelCreateEthWallet.Text = "Create new wallet";
             this.linkLabelCreateEthWallet.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelCreateEthWallet_LinkClicked);
             // 
-            // label1
+            // labelEthPool
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ethPool";
+            this.labelEthPool.AutoSize = true;
+            this.labelEthPool.Location = new System.Drawing.Point(3, 36);
+            this.labelEthPool.Name = "labelEthPool";
+            this.labelEthPool.Size = new System.Drawing.Size(43, 13);
+            this.labelEthPool.TabIndex = 3;
+            this.labelEthPool.Text = "ethPool";
             // 
             // comboBoxEthPools
             // 
@@ -152,7 +152,7 @@
             this.Controls.Add(this.textBoxEthWorker);
             this.Controls.Add(this.labelEthWorker);
             this.Controls.Add(this.comboBoxEthPools);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelEthPool);
             this.Controls.Add(this.linkLabelCreateEthWallet);
             this.Controls.Add(this.labelEthWallet);
             this.Controls.Add(this.textBoxEthWallet);
@@ -168,7 +168,7 @@
         private System.Windows.Forms.TextBox textBoxEthWallet;
         private System.Windows.Forms.Label labelEthWallet;
         private System.Windows.Forms.LinkLabel linkLabelCreateEthWallet;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelEthPool;
         private System.Windows.Forms.ComboBox comboBoxEthPools;
         private System.Windows.Forms.Label labelEthWorker;
         private System.Windows.Forms.TextBox textBoxEthWorker;

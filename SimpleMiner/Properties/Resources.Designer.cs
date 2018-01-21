@@ -70,6 +70,42 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Create ethWallet.
+        /// </summary>
+        internal static string EthCreateWalletLink {
+            get {
+                return ResourceManager.GetString("EthCreateWalletLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EthPool.
+        /// </summary>
+        internal static string EthPool {
+            get {
+                return ResourceManager.GetString("EthPool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EthWallet.
+        /// </summary>
+        internal static string EthWallet {
+            get {
+                return ResourceManager.GetString("EthWallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Worker.
+        /// </summary>
+        internal static string EthWorker {
+            get {
+                return ResourceManager.GetString("EthWorker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap s_settings {
@@ -96,6 +132,60 @@ namespace SimpleMiner.Properties {
             get {
                 object obj = ResourceManager.GetObject("s_stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Extended parameters.
+        /// </summary>
+        internal static string ttConfigButton {
+            get {
+                return ResourceManager.GetString("ttConfigButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pool address for Etherium mining.
+        /// </summary>
+        internal static string ttEthPool {
+            get {
+                return ResourceManager.GetString("ttEthPool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Address of your Etherium wallet.
+        /// </summary>
+        internal static string ttEthWallet {
+            get {
+                return ResourceManager.GetString("ttEthWallet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Worker name.
+        /// </summary>
+        internal static string ttEthWorker {
+            get {
+                return ResourceManager.GetString("ttEthWorker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press for start mining.
+        /// </summary>
+        internal static string ttStartButton {
+            get {
+                return ResourceManager.GetString("ttStartButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press fro stop mining.
+        /// </summary>
+        internal static string ttStopButton {
+            get {
+                return ResourceManager.GetString("ttStopButton", resourceCulture);
             }
         }
     }

@@ -19,6 +19,17 @@ namespace SimpleMiner.Claymor
             InitializeComponent();
 
             // Localize
+            toolTipManager.SetToolTip(this.textBoxEthWallet, SimpleMiner.Properties.Resources.ttEthWallet);
+            toolTipManager.SetToolTip(this.comboBoxEthPools, SimpleMiner.Properties.Resources.ttEthPool);
+            toolTipManager.SetToolTip(this.textBoxEthWorker, SimpleMiner.Properties.Resources.ttEthWorker);
+            toolTipManager.SetToolTip(this.buttonConfig, SimpleMiner.Properties.Resources.ttConfigButton);
+            toolTipManager.SetToolTip(this.buttonStartStop, SimpleMiner.Properties.Resources.ttStartButton);
+
+            labelEthWallet.Text = SimpleMiner.Properties.Resources.EthWallet;
+            linkLabelCreateEthWallet.Text = SimpleMiner.Properties.Resources.EthCreateWalletLink;
+            labelEthWorker.Text = SimpleMiner.Properties.Resources.EthWorker;
+            labelEthPool.Text = SimpleMiner.Properties.Resources.EthPool;
+
 
             bStart = false;
             bSettingParams = false;
@@ -45,6 +56,14 @@ namespace SimpleMiner.Claymor
                 textBoxEthWorker.Text = clParams.EthWorker;
                 bSettingParams = false;
             }
+        }
+
+        public void PopulateEthPools(List<string> lsPools)
+        {
+            comboBoxEthPools.Items.Clear();
+
+            foreach (string sPool in lsPools)
+                comboBoxEthPools.Items.Add(sPool);
         }
 
         public string OutputTextBox

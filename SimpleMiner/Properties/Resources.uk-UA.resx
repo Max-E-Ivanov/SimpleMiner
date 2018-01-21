@@ -121,43 +121,33 @@
     <value>SimpleMiner</value>
   </data>
   <data name="EthCreateWalletLink" xml:space="preserve">
-    <value>Create ethWallet</value>
+    <value>Створити гаманець</value>
   </data>
   <data name="EthPool" xml:space="preserve">
-    <value>EthPool</value>
+    <value>Пул</value>
   </data>
   <data name="EthWallet" xml:space="preserve">
-    <value>EthWallet</value>
+    <value>Гаманець</value>
   </data>
   <data name="EthWorker" xml:space="preserve">
-    <value>Worker</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="s_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s_settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="s_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s_start.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="s_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\s_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>Робітник</value>
   </data>
   <data name="ttConfigButton" xml:space="preserve">
-    <value>Extended parameters</value>
+    <value>Розширені параметри</value>
   </data>
   <data name="ttEthPool" xml:space="preserve">
-    <value>Pool address for Etherium mining</value>
+    <value>Адреси пулів для майнінгу Ефіру</value>
   </data>
   <data name="ttEthWallet" xml:space="preserve">
-    <value>Address of your Etherium wallet</value>
+    <value>Адреса гаманця для Ефіру</value>
   </data>
   <data name="ttEthWorker" xml:space="preserve">
-    <value>Worker name</value>
+    <value>Ім'я робітника (вимагається для деяких пулів)</value>
   </data>
   <data name="ttStartButton" xml:space="preserve">
-    <value>Press for start mining</value>
+    <value>Натисніть для початку манінгу</value>
   </data>
   <data name="ttStopButton" xml:space="preserve">
-    <value>Press fro stop mining</value>
+    <value>Натисніть щоб зупинити манінг</value>
   </data>
 </root>
