@@ -86,5 +86,15 @@ namespace SimpleMiner
             _view.OutputTextBox =  e.Message;
            
         }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ShowDialog()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

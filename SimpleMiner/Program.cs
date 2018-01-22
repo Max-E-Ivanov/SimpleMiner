@@ -16,7 +16,13 @@ namespace SimpleMiner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            Application.ThreadException += Application_ThreadException;   
             Application.Run(new SimpleMinerForm());
+        }
+
+        private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
+        {
+            UIHelper.ShowError(e.Exception);
         }
     }
 }

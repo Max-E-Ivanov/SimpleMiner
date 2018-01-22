@@ -223,6 +223,16 @@ namespace SimpleMiner
         {
             isInitialized = true;
         }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ShowDialog()
+        {
+            throw new NotImplementedException();
+        }
     }
 
   

@@ -70,6 +70,33 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Close.
+        /// </summary>
+        internal static string CloseButton {
+            get {
+                return ResourceManager.GetString("CloseButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ShowDetails.
+        /// </summary>
+        internal static string DetailsButton {
+            get {
+                return ResourceManager.GetString("DetailsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string ErrorCaption {
+            get {
+                return ResourceManager.GetString("ErrorCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Create ethWallet.
         /// </summary>
         internal static string EthCreateWalletLink {
@@ -102,6 +129,16 @@ namespace SimpleMiner.Properties {
         internal static string EthWorker {
             get {
                 return ResourceManager.GetString("EthWorker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap s_error {
+            get {
+                object obj = ResourceManager.GetObject("s_error", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -145,7 +182,25 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Pool address for Etherium mining.
+        ///   Looks up a localized string similar to Press to close error dialog.
+        /// </summary>
+        internal static string ttErrorClose {
+            get {
+                return ResourceManager.GetString("ttErrorClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Press to show additional details.
+        /// </summary>
+        internal static string ttErrorDetails {
+            get {
+                return ResourceManager.GetString("ttErrorDetails", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pool address for Ethereum mining.
         /// </summary>
         internal static string ttEthPool {
             get {
@@ -154,7 +209,7 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Address of your Etherium wallet.
+        ///   Looks up a localized string similar to Address of your Ethereum wallet.
         /// </summary>
         internal static string ttEthWallet {
             get {

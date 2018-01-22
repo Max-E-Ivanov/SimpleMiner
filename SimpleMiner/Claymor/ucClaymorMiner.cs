@@ -169,5 +169,15 @@ namespace SimpleMiner.Claymor
             }
 
         }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ShowDialog()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

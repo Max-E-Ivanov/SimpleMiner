@@ -88,6 +88,16 @@ namespace SimpleMiner
         {
            
         }
+
+        public void Show()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object ShowDialog()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

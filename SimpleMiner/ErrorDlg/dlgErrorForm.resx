@@ -117,52 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Caption" xml:space="preserve">
-    <value>SimpleMiner</value>
-  </data>
-  <data name="CloseButton" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="DetailsButton" xml:space="preserve">
-    <value>Показать детали</value>
-  </data>
-  <data name="ErrorCaption" xml:space="preserve">
-    <value>Ошибка</value>
-  </data>
-  <data name="EthCreateWalletLink" xml:space="preserve">
-    <value>Создать кошелек</value>
-  </data>
-  <data name="EthPool" xml:space="preserve">
-    <value>Пул</value>
-  </data>
-  <data name="EthWallet" xml:space="preserve">
-    <value>Кошелек</value>
-  </data>
-  <data name="EthWorker" xml:space="preserve">
-    <value>Работник</value>
-  </data>
-  <data name="ttConfigButton" xml:space="preserve">
-    <value>Расширенные параметры</value>
-  </data>
-  <data name="ttErrorClose" xml:space="preserve">
-    <value>Нажмите, что бы закрыть окно</value>
-  </data>
-  <data name="ttErrorDetails" xml:space="preserve">
-    <value>Нажмите, что бы показать дополнительные детали</value>
-  </data>
-  <data name="ttEthPool" xml:space="preserve">
-    <value>Адреса пулов для майнинга эфира</value>
-  </data>
-  <data name="ttEthWallet" xml:space="preserve">
-    <value>Адрес кошелька для Эфира</value>
-  </data>
-  <data name="ttEthWorker" xml:space="preserve">
-    <value>Имя работника (требуется некоторыми пулами)</value>
-  </data>
-  <data name="ttStartButton" xml:space="preserve">
-    <value>Нажмите для начала майнинга</value>
-  </data>
-  <data name="ttStopButton" xml:space="preserve">
-    <value>Нажмите что бы остановить майнинг</value>
-  </data>
+  <metadata name="toolTipManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

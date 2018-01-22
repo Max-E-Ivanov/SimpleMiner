@@ -10,9 +10,16 @@ namespace SimpleMiner
     public class UIHelper
     {
 
+        public static void ShowError(string sMessage)
+        {
+            MessageBox.Show(sMessage, SimpleMiner.Properties.Resources.ErrorCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
         public static void ShowError(Exception ex)
         {
-            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            ErrorPresenter errorPresenter = new ErrorPresenter(new dlgErrorForm(), ex);
+            errorPresenter.ShowDialog();
         }
+
     }
 }

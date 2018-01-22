@@ -9,11 +9,13 @@ namespace SimpleMiner.MVP
 {
     public interface IView : INotifyPropertyChanged
     {
-        
+        void Show();
+        object ShowDialog();
     }
 
     public interface IPresenter
     {
-      
+        void Show();
+        object ShowDialog();
     }
 }

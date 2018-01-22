@@ -120,6 +120,15 @@
   <data name="Caption" xml:space="preserve">
     <value>SimpleMiner</value>
   </data>
+  <data name="CloseButton" xml:space="preserve">
+    <value>Закрити</value>
+  </data>
+  <data name="DetailsButton" xml:space="preserve">
+    <value>Показати деталі</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Помилка</value>
+  </data>
   <data name="EthCreateWalletLink" xml:space="preserve">
     <value>Створити гаманець</value>
   </data>
@@ -134,6 +143,12 @@
   </data>
   <data name="ttConfigButton" xml:space="preserve">
     <value>Розширені параметри</value>
+  </data>
+  <data name="ttErrorClose" xml:space="preserve">
+    <value>Натисніть, щоб закрити вікно</value>
+  </data>
+  <data name="ttErrorDetails" xml:space="preserve">
+    <value>Натисніть, щоб показати додаткові відомості</value>
   </data>
   <data name="ttEthPool" xml:space="preserve">
     <value>Адреси пулів для майнінгу Ефіру</value>

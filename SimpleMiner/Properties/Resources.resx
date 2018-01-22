@@ -120,6 +120,15 @@
   <data name="Caption" xml:space="preserve">
     <value>SimpleMiner</value>
   </data>
+  <data name="CloseButton" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="DetailsButton" xml:space="preserve">
+    <value>ShowDetails</value>
+  </data>
+  <data name="ErrorCaption" xml:space="preserve">
+    <value>Error</value>
+  </data>
   <data name="EthCreateWalletLink" xml:space="preserve">
     <value>Create ethWallet</value>
   </data>
@@ -133,6 +142,9 @@
     <value>Worker</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="s_error" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\s_error.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="s_settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\s_settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,11 +157,17 @@
   <data name="ttConfigButton" xml:space="preserve">
     <value>Extended parameters</value>
   </data>
+  <data name="ttErrorClose" xml:space="preserve">
+    <value>Press to close error dialog</value>
+  </data>
+  <data name="ttErrorDetails" xml:space="preserve">
+    <value>Press to show additional details</value>
+  </data>
   <data name="ttEthPool" xml:space="preserve">
-    <value>Pool address for Etherium mining</value>
+    <value>Pool address for Ethereum mining</value>
   </data>
   <data name="ttEthWallet" xml:space="preserve">
-    <value>Address of your Etherium wallet</value>
+    <value>Address of your Ethereum wallet</value>
   </data>
   <data name="ttEthWorker" xml:space="preserve">
     <value>Worker name</value>

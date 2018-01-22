@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseForm\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaseForm\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="BaseForm\ucBaseUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -97,6 +103,14 @@
     <Compile Include="Claymor\ucClaymorMiner.Designer.cs">
       <DependentUpon>ucClaymorMiner.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorDlg\dlgErrorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorDlg\dlgErrorForm.Designer.cs">
+      <DependentUpon>dlgErrorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorDlg\ErrorPresenter.cs" />
+    <Compile Include="ErrorDlg\IErrorView.cs" />
     <Compile Include="MVP\BaseMVP.cs" />
     <Compile Include="ProcessHelper.cs" />
     <Compile Include="SimpleMinerForm.cs">
@@ -121,11 +135,17 @@
     </Compile>
     <Compile Include="UIHelper.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="BaseForm\BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaseForm\ucBaseUserControl.resx">
       <DependentUpon>ucBaseUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Claymor\ucClaymorMiner.resx">
       <DependentUpon>ucClaymorMiner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorDlg\dlgErrorForm.resx">
+      <DependentUpon>dlgErrorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -173,7 +193,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\s_error.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\s_settings.png" />
   </ItemGroup>
