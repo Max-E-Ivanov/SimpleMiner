@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimpleMinerForm));
             this.tabControlMiners = new System.Windows.Forms.TabControl();
-            this.tabPageOptions = new System.Windows.Forms.TabPage();
-            this.tabControlMiners.SuspendLayout();
+            this.imageListForTabs = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // tabControlMiners
             // 
-            this.tabControlMiners.Controls.Add(this.tabPageOptions);
             this.tabControlMiners.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMiners.Location = new System.Drawing.Point(0, 0);
             this.tabControlMiners.Name = "tabControlMiners";
@@ -43,15 +43,13 @@
             this.tabControlMiners.Size = new System.Drawing.Size(722, 329);
             this.tabControlMiners.TabIndex = 0;
             // 
-            // tabPageOptions
+            // imageListForTabs
             // 
-            this.tabPageOptions.Location = new System.Drawing.Point(4, 22);
-            this.tabPageOptions.Name = "tabPageOptions";
-            this.tabPageOptions.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageOptions.Size = new System.Drawing.Size(714, 303);
-            this.tabPageOptions.TabIndex = 1;
-            this.tabPageOptions.Text = "Options";
-            this.tabPageOptions.UseVisualStyleBackColor = true;
+            this.imageListForTabs.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListForTabs.ImageStream")));
+            this.imageListForTabs.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageListForTabs.Images.SetKeyName(0, "About.jpg");
+            this.imageListForTabs.Images.SetKeyName(1, "ethereum.png");
+            this.imageListForTabs.Images.SetKeyName(2, "s_settings.png");
             // 
             // SimpleMinerForm
             // 
@@ -59,9 +57,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(722, 329);
             this.Controls.Add(this.tabControlMiners);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SimpleMinerForm";
             this.Text = "Form1";
-            this.tabControlMiners.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -69,7 +67,7 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControlMiners;
-        private System.Windows.Forms.TabPage tabPageOptions;
+        private System.Windows.Forms.ImageList imageListForTabs;
     }
 }
 

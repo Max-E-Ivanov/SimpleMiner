@@ -123,9 +123,6 @@
   <data name="CloseButton" xml:space="preserve">
     <value>Закрыть</value>
   </data>
-  <data name="DetailsButton" xml:space="preserve">
-    <value>Показать детали</value>
-  </data>
   <data name="ErrorCaption" xml:space="preserve">
     <value>Ошибка</value>
   </data>
@@ -140,6 +137,21 @@
   </data>
   <data name="EthWorker" xml:space="preserve">
     <value>Работник</value>
+  </data>
+  <data name="HideDetailsButton" xml:space="preserve">
+    <value>Спрятать детали</value>
+  </data>
+  <data name="ShowDetailsButton" xml:space="preserve">
+    <value>Показать детали</value>
+  </data>
+  <data name="tabAbout" xml:space="preserve">
+    <value>О программе</value>
+  </data>
+  <data name="tabEthereum" xml:space="preserve">
+    <value>Эфир</value>
+  </data>
+  <data name="tabOptions" xml:space="preserve">
+    <value>Настройки</value>
   </data>
   <data name="ttConfigButton" xml:space="preserve">
     <value>Расширенные параметры</value>

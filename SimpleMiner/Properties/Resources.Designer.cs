@@ -79,15 +79,6 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to ShowDetails.
-        /// </summary>
-        internal static string DetailsButton {
-            get {
-                return ResourceManager.GetString("DetailsButton", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
         internal static string ErrorCaption {
@@ -133,6 +124,35 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Hide details.
+        /// </summary>
+        internal static string HideDetailsButton {
+            get {
+                return ResourceManager.GetString("HideDetailsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IcoMiningLogo {
+            get {
+                object obj = ResourceManager.GetObject("IcoMiningLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MiningLogo {
+            get {
+                object obj = ResourceManager.GetObject("MiningLogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap s_error {
@@ -169,6 +189,42 @@ namespace SimpleMiner.Properties {
             get {
                 object obj = ResourceManager.GetObject("s_stop", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show details.
+        /// </summary>
+        internal static string ShowDetailsButton {
+            get {
+                return ResourceManager.GetString("ShowDetailsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        internal static string tabAbout {
+            get {
+                return ResourceManager.GetString("tabAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ethereum.
+        /// </summary>
+        internal static string tabEthereum {
+            get {
+                return ResourceManager.GetString("tabEthereum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Setting.
+        /// </summary>
+        internal static string tabOptions {
+            get {
+                return ResourceManager.GetString("tabOptions", resourceCulture);
             }
         }
         

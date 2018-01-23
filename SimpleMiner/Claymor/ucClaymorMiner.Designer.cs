@@ -118,6 +118,7 @@
             this.buttonConfig.Size = new System.Drawing.Size(50, 50);
             this.buttonConfig.TabIndex = 7;
             this.buttonConfig.UseVisualStyleBackColor = true;
+            this.buttonConfig.Click += new System.EventHandler(this.buttonConfig_Click);
             // 
             // buttonStartStop
             // 

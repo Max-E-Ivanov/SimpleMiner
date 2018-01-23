@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SimpleMiner.MVP;
 
-namespace SimpleMiner
+namespace SimpleMiner.Claymor
 {
     public interface IClaymorMinerView : IView
     {
@@ -20,6 +20,7 @@ namespace SimpleMiner
 
         event Action Run;
         event Action Stop;
+        event Action Config;
 
     }
 }

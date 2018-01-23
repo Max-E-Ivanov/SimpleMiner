@@ -47,7 +47,7 @@
             this.textBoxMessage.Location = new System.Drawing.Point(78, 12);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
-            this.textBoxMessage.Size = new System.Drawing.Size(371, 60);
+            this.textBoxMessage.Size = new System.Drawing.Size(326, 60);
             this.textBoxMessage.TabIndex = 0;
             // 
             // panel1
@@ -55,16 +55,16 @@
             this.panel1.Controls.Add(this.buttonDetails);
             this.panel1.Controls.Add(this.buttonClose);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 203);
+            this.panel1.Location = new System.Drawing.Point(0, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(452, 33);
+            this.panel1.Size = new System.Drawing.Size(407, 33);
             this.panel1.TabIndex = 1;
             // 
             // buttonDetails
             // 
             this.buttonDetails.Location = new System.Drawing.Point(3, 3);
             this.buttonDetails.Name = "buttonDetails";
-            this.buttonDetails.Size = new System.Drawing.Size(96, 25);
+            this.buttonDetails.Size = new System.Drawing.Size(130, 25);
             this.buttonDetails.TabIndex = 1;
             this.buttonDetails.Text = "Deatils";
             this.buttonDetails.UseVisualStyleBackColor = true;
@@ -74,7 +74,7 @@
             // 
             this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonClose.Location = new System.Drawing.Point(353, 3);
+            this.buttonClose.Location = new System.Drawing.Point(308, 3);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(96, 25);
             this.buttonClose.TabIndex = 0;
@@ -89,7 +89,7 @@
             this.textBoxDetails.Location = new System.Drawing.Point(0, 78);
             this.textBoxDetails.Multiline = true;
             this.textBoxDetails.Name = "textBoxDetails";
-            this.textBoxDetails.Size = new System.Drawing.Size(452, 122);
+            this.textBoxDetails.Size = new System.Drawing.Size(407, 0);
             this.textBoxDetails.TabIndex = 2;
             // 
             // pictureBox1
@@ -109,7 +109,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.buttonClose;
-            this.ClientSize = new System.Drawing.Size(452, 236);
+            this.ClientSize = new System.Drawing.Size(407, 114);
             this.ControlBox = false;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBoxDetails);

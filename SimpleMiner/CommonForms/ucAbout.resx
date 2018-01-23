@@ -117,64 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Caption" xml:space="preserve">
-    <value>SimpleMiner</value>
-  </data>
-  <data name="CloseButton" xml:space="preserve">
-    <value>Закрити</value>
-  </data>
-  <data name="ErrorCaption" xml:space="preserve">
-    <value>Помилка</value>
-  </data>
-  <data name="EthCreateWalletLink" xml:space="preserve">
-    <value>Створити гаманець</value>
-  </data>
-  <data name="EthPool" xml:space="preserve">
-    <value>Пул</value>
-  </data>
-  <data name="EthWallet" xml:space="preserve">
-    <value>Гаманець</value>
-  </data>
-  <data name="EthWorker" xml:space="preserve">
-    <value>Робітник</value>
-  </data>
-  <data name="HideDetailsButton" xml:space="preserve">
-    <value>Сховати деталі</value>
-  </data>
-  <data name="ShowDetailsButton" xml:space="preserve">
-    <value>Показати деталі</value>
-  </data>
-  <data name="tabAbout" xml:space="preserve">
-    <value>Про програму</value>
-  </data>
-  <data name="tabEthereum" xml:space="preserve">
-    <value>Эфір</value>
-  </data>
-  <data name="tabOptions" xml:space="preserve">
-    <value>Налаштування</value>
-  </data>
-  <data name="ttConfigButton" xml:space="preserve">
-    <value>Розширені параметри</value>
-  </data>
-  <data name="ttErrorClose" xml:space="preserve">
-    <value>Натисніть, щоб закрити вікно</value>
-  </data>
-  <data name="ttErrorDetails" xml:space="preserve">
-    <value>Натисніть, щоб показати додаткові відомості</value>
-  </data>
-  <data name="ttEthPool" xml:space="preserve">
-    <value>Адреси пулів для майнінгу Ефіру</value>
-  </data>
-  <data name="ttEthWallet" xml:space="preserve">
-    <value>Адреса гаманця для Ефіру</value>
-  </data>
-  <data name="ttEthWorker" xml:space="preserve">
-    <value>Ім'я робітника (вимагається для деяких пулів)</value>
-  </data>
-  <data name="ttStartButton" xml:space="preserve">
-    <value>Натисніть для початку манінгу</value>
-  </data>
-  <data name="ttStopButton" xml:space="preserve">
-    <value>Натисніть щоб зупинити манінг</value>
-  </data>
+  <metadata name="toolTipManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

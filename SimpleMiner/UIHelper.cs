@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SimpleMiner.Claymor;
 
 namespace SimpleMiner
 {
@@ -19,6 +20,12 @@ namespace SimpleMiner
         {
             ErrorPresenter errorPresenter = new ErrorPresenter(new dlgErrorForm(), ex);
             errorPresenter.ShowDialog();
+        }
+
+        public static void ShowClaymorConfigDlg(ClaymorParams _parms)
+        {
+            ClaymorConfigPresenter _presenter = new ClaymorConfigPresenter(new dlgClaymorConfig(), _parms);
+            _presenter.ShowDialog();
         }
 
     }

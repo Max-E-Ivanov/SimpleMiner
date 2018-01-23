@@ -129,6 +129,7 @@ namespace SimpleMiner.Claymor
         public event Action Run;
         public event Action Stop;
 
+        public event Action Config;
 
         private void VisitLink()
         {
@@ -178,6 +179,12 @@ namespace SimpleMiner.Claymor
         public object ShowDialog()
         {
             throw new NotImplementedException();
+        }
+
+        private void buttonConfig_Click(object sender, EventArgs e)
+        {
+            if (Config != null)
+                Config();
         }
     }
 }

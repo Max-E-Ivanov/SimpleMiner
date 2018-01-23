@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using SimpleMiner.BaseProcessHelper;
 
-namespace SimpleMiner
+namespace SimpleMiner.Claymor
 {
     public class ClaymorProcessHelper : BaseProcessHelper.BaseProcessHelper
     {

@@ -25,15 +25,19 @@ namespace SimpleMiner
 
             Exception _innerException = ex;
 
+            List<string> lsErrors = new List<string>();
+
             while (_innerException != null)
             {
 
-                sError = sError + "[" + _innerException.GetType().Name + "]: " + _innerException.Message + @"
-----------------------------------";
+                lsErrors.Add("[" + _innerException.GetType().Name + "]: " + _innerException.Message);
+
                 _innerException = _innerException.InnerException;
             }
 
-            return sError;
+            return Utils.BuildSeq( lsErrors, @"
+---------------------------------------
+");
         }
 
         public void Show()

@@ -62,6 +62,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>IcoMiningLogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -96,6 +99,14 @@
     <Compile Include="Claymor\ClaymorMinerModel.cs" />
     <Compile Include="Claymor\ClaymorMinerPresenter.cs" />
     <Compile Include="Claymor\ClaymorProcessHelper.cs" />
+    <Compile Include="Claymor\ConfigDlg\ClaymorConfigPresenter.cs" />
+    <Compile Include="Claymor\ConfigDlg\dlgClaymorConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Claymor\ConfigDlg\dlgClaymorConfig.Designer.cs">
+      <DependentUpon>dlgClaymorConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Claymor\ConfigDlg\IClaymorConfigView.cs" />
     <Compile Include="Claymor\IClaymorMinerView.cs" />
     <Compile Include="Claymor\ucClaymorMiner.cs">
       <SubType>UserControl</SubType>
@@ -103,14 +114,26 @@
     <Compile Include="Claymor\ucClaymorMiner.Designer.cs">
       <DependentUpon>ucClaymorMiner.cs</DependentUpon>
     </Compile>
-    <Compile Include="ErrorDlg\dlgErrorForm.cs">
+    <Compile Include="CommonForms\dlgErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ErrorDlg\dlgErrorForm.Designer.cs">
+    <Compile Include="CommonForms\dlgErrorForm.Designer.cs">
       <DependentUpon>dlgErrorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ErrorDlg\ErrorPresenter.cs" />
-    <Compile Include="ErrorDlg\IErrorView.cs" />
+    <Compile Include="CommonForms\ErrorPresenter.cs" />
+    <Compile Include="CommonForms\IErrorView.cs" />
+    <Compile Include="CommonForms\ucAbout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonForms\ucAbout.Designer.cs">
+      <DependentUpon>ucAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommonForms\ucOptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CommonForms\ucOptions.Designer.cs">
+      <DependentUpon>ucOptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="MVP\BaseMVP.cs" />
     <Compile Include="ProcessHelper.cs" />
     <Compile Include="SimpleMinerForm.cs">
@@ -141,11 +164,17 @@
     <EmbeddedResource Include="BaseForm\ucBaseUserControl.resx">
       <DependentUpon>ucBaseUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Claymor\ConfigDlg\dlgClaymorConfig.resx">
+      <DependentUpon>dlgClaymorConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Claymor\ucClaymorMiner.resx">
       <DependentUpon>ucClaymorMiner.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ErrorDlg\dlgErrorForm.resx">
+    <EmbeddedResource Include="CommonForms\dlgErrorForm.resx">
       <DependentUpon>dlgErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommonForms\ucAbout.resx">
+      <DependentUpon>ucAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -204,6 +233,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\s_stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MiningLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IcoMiningLogo.ico" />
+    <None Include="Resources\IcoMiningLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="AfterCompile">

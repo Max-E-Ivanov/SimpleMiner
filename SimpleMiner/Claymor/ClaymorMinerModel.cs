@@ -7,7 +7,7 @@ using System.IO;
 using SimpleMiner.BaseProcessHelper;
 using SimpleMiner.BaseMining;
 
-namespace SimpleMiner
+namespace SimpleMiner.Claymor
 {
 
     public class ClaymorParams
@@ -22,10 +22,21 @@ namespace SimpleMiner
 
         public string EthLog { get; set; }
 
+        public string CustomParams { get; set; }
+
+
         public bool Validate()
         {
+
+            //if (!File.Exists(CalymoreAppPath))
+             //   return false;
+
+            if (!string.IsNullOrEmpty(CustomParams))
+                return true;
+
+
             return !string.IsNullOrEmpty(CalymoreAppPath) &&
-                !string.IsNullOrEmpty(EthPool) && !string.IsNullOrEmpty(EthWallet) && !string.IsNullOrEmpty(EthWorker);
+                !string.IsNullOrEmpty(EthPool) && !string.IsNullOrEmpty(EthWallet);
         }
 
 
@@ -34,6 +45,11 @@ namespace SimpleMiner
            get
             {
                 string sResult = string.Empty;
+
+                if (!string.IsNullOrEmpty(CustomParams))
+                    return CustomParams + " -logfile " + EthLog;
+
+                // ------------------
 
                 if (!string.IsNullOrEmpty(EthPool))
                     sResult = sResult + " -epool " + EthPool;
@@ -69,10 +85,7 @@ namespace SimpleMiner
                 this.clParams = _clParams;
 
                 ProcessParams _params = new ProcessParams(_clParams.CalymoreAppPath, _clParams.ClaymorParmsString);
-
                 _processHelper = new ClaymorProcessHelper(_params);
-                
-
                 _processHelper.Launch();
                 
                 //NotifyStartProcess();
@@ -105,20 +118,23 @@ namespace SimpleMiner
 
         public  void KillProcess()
         {
+            try
+            {
+                _processHelper.Kill();
 
-            _processHelper.Kill();
+                if (watcher != null)
+                    watcher.EnableRaisingEvents = false;
 
-            if (watcher != null)
-                watcher.EnableRaisingEvents = false;
-
-           // NotifyKillProcess();
+                // NotifyKillProcess();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error during kill process " + _processHelper._params.AppName, ex);
+            }
         }
 
         private  void OnChanged(object source, FileSystemEventArgs e)
         {
-            // Specify what is done when a file is changed, created, or deleted.
-            // Console.WriteLine("File: " + e.FullPath + " " + e.ChangeType);
-
             if (e.Name.ToUpper() == clParams.EthLog.ToUpper())
             {
                 try

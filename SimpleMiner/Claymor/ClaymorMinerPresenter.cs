@@ -5,8 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using SimpleMiner.MVP;
 using SimpleMiner.BaseProcessHelper;
+using System.IO;
 
-namespace SimpleMiner
+namespace SimpleMiner.Claymor
 {
     public class ClaymorMinerPresenter :IPresenter
     {
@@ -14,14 +15,17 @@ namespace SimpleMiner
         protected ClaymorMinerModel _model;
 
         public ClaymorMinerPresenter(IClaymorMinerView _view, ClaymorMinerModel _model) 
-        {
+        {           
             this._view = _view;
             this._model = _model;
 
 
             _params = new ClaymorParams();
 
-            _params.CalymoreAppPath = @"E:\Claymore\EthDcrMiner64.exe";
+            _params.CalymoreAppPath = Utils.GetAppPath() + @"\Claymore\EthDcrMiner64.exe";
+
+          
+
             _params.EthPsw = "x";
 
             _params.EthPool = "eth-eu.dwarfpool.com:8008";
@@ -41,6 +45,7 @@ namespace SimpleMiner
 
             this._view.Run += _view_Run;
             this._view.Stop += _view_Stop;
+            this._view.Config += _view_Config;
             this._view.PropertyChanged += _view_PropertyChanged;
 
             _view_PropertyChanged(null, new System.ComponentModel.PropertyChangedEventArgs("params"));
@@ -70,21 +75,58 @@ namespace SimpleMiner
 
         protected  void _view_Run()
         {
-            _params.EthLog = DateTime.Now.ToString("yyyy_dd_MM_hh_mm_ss") + ".log";
+            try
+            {
+                if (!File.Exists(_params.CalymoreAppPath))
+                    UIHelper.ShowError("Miner file absent");
 
-            _model.StartProcess(_params);
+                _params.EthLog = DateTime.Now.ToString("yyyy_dd_MM_hh_mm_ss") + ".log";
+
+                _model.StartProcess(_params);
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError(ex);
+            }
         }
 
         protected void _view_Stop()
         {
-            _model.KillProcess();
-            //_model.currentState.Run(_model);
+            try
+            { 
+                _model.KillProcess();
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError(ex);
+            }
+
+        }
+
+        protected void _view_Config()
+        {
+            try
+            {
+                UIHelper.ShowClaymorConfigDlg(_params);
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError(ex);
+            }
+
         }
 
         protected  void _model_OnOutputUpdate(object sender, ProcessEventArgs e)
         {
-            _view.OutputTextBox =  e.Message;
-           
+            try
+            { 
+                _view.OutputTextBox =  e.Message;
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError(ex);
+            }
+
         }
 
         public void Show()
