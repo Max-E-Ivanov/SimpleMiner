@@ -31,8 +31,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelProgramName = new System.Windows.Forms.Label();
             this.labelVersion = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelWeb = new System.Windows.Forms.LinkLabel();
+            this.linkLabelMail = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,32 +66,34 @@
             this.labelVersion.TabIndex = 2;
             this.labelVersion.Text = "v. 1.0.0.0  2018";
             // 
-            // linkLabel1
+            // linkLabelWeb
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(227, 93);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(42, 13);
-            this.linkLabel1.TabIndex = 3;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "OurSite";
+            this.linkLabelWeb.AutoSize = true;
+            this.linkLabelWeb.Location = new System.Drawing.Point(227, 93);
+            this.linkLabelWeb.Name = "linkLabelWeb";
+            this.linkLabelWeb.Size = new System.Drawing.Size(30, 13);
+            this.linkLabelWeb.TabIndex = 3;
+            this.linkLabelWeb.TabStop = true;
+            this.linkLabelWeb.Text = "Web";
+            this.linkLabelWeb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelWeb_LinkClicked);
             // 
-            // linkLabel2
+            // linkLabelMail
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(227, 126);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(50, 13);
-            this.linkLabel2.TabIndex = 4;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "mail@me";
+            this.linkLabelMail.AutoSize = true;
+            this.linkLabelMail.Location = new System.Drawing.Point(227, 126);
+            this.linkLabelMail.Name = "linkLabelMail";
+            this.linkLabelMail.Size = new System.Drawing.Size(50, 13);
+            this.linkLabelMail.TabIndex = 4;
+            this.linkLabelMail.TabStop = true;
+            this.linkLabelMail.Text = "mail@me";
+            this.linkLabelMail.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelMail_LinkClicked);
             // 
             // ucAbout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.linkLabelMail);
+            this.Controls.Add(this.linkLabelWeb);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelProgramName);
             this.Controls.Add(this.pictureBox1);
@@ -108,7 +110,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelProgramName;
         private System.Windows.Forms.Label labelVersion;
-        private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.LinkLabel linkLabelWeb;
+        private System.Windows.Forms.LinkLabel linkLabelMail;
     }
 }

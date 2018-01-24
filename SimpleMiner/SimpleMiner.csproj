@@ -114,6 +114,7 @@
     <Compile Include="Claymor\ucClaymorMiner.Designer.cs">
       <DependentUpon>ucClaymorMiner.cs</DependentUpon>
     </Compile>
+    <Compile Include="CommonForms\AboutPresenter.cs" />
     <Compile Include="CommonForms\dlgErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +122,7 @@
       <DependentUpon>dlgErrorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CommonForms\ErrorPresenter.cs" />
+    <Compile Include="CommonForms\IAboutView.cs" />
     <Compile Include="CommonForms\IErrorView.cs" />
     <Compile Include="CommonForms\ucAbout.cs">
       <SubType>UserControl</SubType>

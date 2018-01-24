@@ -31,8 +31,10 @@ namespace SimpleMiner
             {
 
                 tabControlMiners.ImageList = imageListForTabs;
+               
                 // About
                 ucAbout ucAbout = new ucAbout();
+                AboutPresenter _about_presenter = new AboutPresenter(ucAbout);
 
                 TabPage tabAbout = new TabPage(SimpleMiner.Properties.Resources.tabAbout);
                 tabAbout.ImageIndex = 0;

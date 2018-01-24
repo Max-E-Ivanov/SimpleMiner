@@ -143,6 +143,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to simpleminer@gmail.com.
+        /// </summary>
+        internal static string MailTo {
+            get {
+                return ResourceManager.GetString("MailTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap MiningLogo {
@@ -297,6 +306,15 @@ namespace SimpleMiner.Properties {
         internal static string ttStopButton {
             get {
                 return ResourceManager.GetString("ttStopButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to http://www.google.com.
+        /// </summary>
+        internal static string Web {
+            get {
+                return ResourceManager.GetString("Web", resourceCulture);
             }
         }
     }

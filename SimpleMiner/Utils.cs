@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 using System.Reflection;
+using System.Windows.Forms;
 
 namespace SimpleMiner
 {
@@ -19,6 +20,11 @@ namespace SimpleMiner
         {
            string path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
            return path;
+        }
+
+        public static string GetAppVersion()
+        {            
+            return Application.ProductVersion;
         }
 
         public static string BuildSeq(List<string> _list, string sDelim)
