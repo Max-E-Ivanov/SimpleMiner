@@ -46,7 +46,7 @@ namespace SimpleMiner
                 BaseMinerPresenter _presenter = new BaseMinerPresenter(ucBaseMiner1, new BaseMinerModelEx());
 
 
-                TabPage tabMiner1 = new TabPage("Test");
+                TabPage tabMiner1 = new TabPage("Test (redirect output)");
                 tabMiner1.Controls.Add(ucBaseMiner1);
                 ucBaseMiner1.Dock = DockStyle.Fill;
 
