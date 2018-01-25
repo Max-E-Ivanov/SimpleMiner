@@ -17,13 +17,86 @@ namespace SimpleMiner.Claymor
         public dlgClaymorConfig()
         {
             InitializeComponent();
+
+            // Localization
+            this.Text = SimpleMiner.Properties.Resources.MinerCfgCaption;
+            buttonOk.Text = SimpleMiner.Properties.Resources.ApplayButton;
+            buttonCancel.Text = SimpleMiner.Properties.Resources.CancelButton;
+            buttonDefaults.Text = SimpleMiner.Properties.Resources.DefaultsButton;
+
+            toolTipManager.SetToolTip(this.buttonOk, SimpleMiner.Properties.Resources.ttApplayButton);
+            toolTipManager.SetToolTip(this.buttonCancel, SimpleMiner.Properties.Resources.ttCancelButton);
+            toolTipManager.SetToolTip(this.buttonDefaults, SimpleMiner.Properties.Resources.ttDefaultsButton);
+
+
+
+
+            tabPageCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCfgTabCustomCommand;
+
+
+
+            checkBoxCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCFgCustomCommandCb;
+            buttonCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCfgCustomCommandBtn;
+
+
+            toolTipManager.SetToolTip(this.checkBoxCustomCommand, SimpleMiner.Properties.Resources.ttClmCFgCustomCommandCb);
+            toolTipManager.SetToolTip(this.buttonCustomCommand, SimpleMiner.Properties.Resources.ttClmCfgCustomCommandBtn);
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
+        
         object IView.ShowDialog()
         {
             return this.ShowDialog();
+        }
+
+        public string textCustomCommand
+        {
+            get
+            {
+                return textBoxCustomCommand.Text;
+            }
+            set
+            {
+                textBoxCustomCommand.Text = value;
+
+                checkBoxCustomCommand.Checked = !string.IsNullOrEmpty(textCustomCommand);
+
+                checkBoxCustomCommand_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public void SetCheckCustomCommandState()
+        {
+            textBoxCustomCommand.Enabled = buttonCustomCommand.Enabled = checkBoxCustomCommand.Checked;
+        }
+
+        private void checkBoxCustomCommand_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckCustomCommandState();
+
+            if (!checkBoxCustomCommand.Checked)
+                textBoxCustomCommand.Text = string.Empty;
+        }
+
+        private void textBoxCustomCommand_TextChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged("params");
+        }
+
+        public event Action Ok;
+        public event Action Default;
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            if (Ok != null)
+                Ok();
+
+            Close();
+        }
+
+        private void buttonDefaults_Click(object sender, EventArgs e)
+        {
+            if (Default != null)
+                Default();
         }
     }
 }

@@ -202,4 +202,40 @@
   <data name="Web" xml:space="preserve">
     <value>http://www.google.com</value>
   </data>
+  <data name="ClmCfgCustomCommandBtn" xml:space="preserve">
+    <value>Generate</value>
+  </data>
+  <data name="ClmCFgCustomCommandCb" xml:space="preserve">
+    <value>Custom command</value>
+  </data>
+  <data name="ClmCfgTabCustomCommand" xml:space="preserve">
+    <value>Custom command</value>
+  </data>
+  <data name="MinerCfgCaption" xml:space="preserve">
+    <value>Miner parameters</value>
+  </data>
+  <data name="ttClmCfgCustomCommandBtn" xml:space="preserve">
+    <value>Generate command for miner</value>
+  </data>
+  <data name="ttClmCFgCustomCommandCb" xml:space="preserve">
+    <value>Use custom command for miner. In this mode other settings are ignored</value>
+  </data>
+  <data name="ApplayButton" xml:space="preserve">
+    <value>Applay</value>
+  </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="DefaultsButton" xml:space="preserve">
+    <value>Restore defaults</value>
+  </data>
+  <data name="ttApplayButton" xml:space="preserve">
+    <value>Applay changes and close form</value>
+  </data>
+  <data name="ttCancelButton" xml:space="preserve">
+    <value>Cancel changes and close form</value>
+  </data>
+  <data name="ttDefaultsButton" xml:space="preserve">
+    <value>Restore default settings</value>
+  </data>
 </root>

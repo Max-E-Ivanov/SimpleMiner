@@ -128,29 +128,15 @@ namespace SimpleMiner.Claymor
 
         public event Action Run;
         public event Action Stop;
-
         public event Action Config;
+        public event Action CreateWallet;
 
-        private void VisitLink()
-        {
-            // Change the color of the link text by setting LinkVisited   
-            // to true.  
-            linkLabelCreateEthWallet.LinkVisited = true;
-            //Call the Process.Start method to open the default browser   
-            //with a URL:  
-            System.Diagnostics.Process.Start("https://www.myetherwallet.com/");
-        }
+       
 
         private void linkLabelCreateEthWallet_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            try
-            {
-                VisitLink();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to open link that was clicked.");
-            }
+            if (CreateWallet != null)
+                CreateWallet();
         }
 
         private void buttonStartStop_Click(object sender, EventArgs e)
@@ -185,6 +171,11 @@ namespace SimpleMiner.Claymor
         {
             if (Config != null)
                 Config();
+        }
+
+        public void SetCreateWalletVisited()
+        {
+            linkLabelCreateEthWallet.LinkVisited = true;
         }
     }
 }

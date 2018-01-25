@@ -10,7 +10,7 @@ using SimpleMiner.BaseMining;
 namespace SimpleMiner.Claymor
 {
 
-    public class ClaymorParams
+    public class ClaymorParams :ICloneable
     {
         public string CalymoreAppPath { get; set; }
 
@@ -39,6 +39,40 @@ namespace SimpleMiner.Claymor
                 !string.IsNullOrEmpty(EthPool) && !string.IsNullOrEmpty(EthWallet);
         }
 
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
+
+        public ClaymorParams DeepClone()
+        {
+            return (ClaymorParams)Clone();
+        }
+
+        public void CopyFrom(ClaymorParams _params)
+        {
+            this.EthLog = _params.EthLog;
+            this.EthPool = _params.EthPool;
+            this.EthPsw = _params.EthPsw;
+            this.EthWallet = _params.EthWallet;
+            this.EthWorker = _params.EthWorker;
+            this.CustomParams = _params.CustomParams;
+            this.CalymoreAppPath = _params.CalymoreAppPath;
+           
+        }
+
+        public void RestoreDefaults()
+        {
+            ClaymorParams _prm = new ClaymorParams
+            {
+                CalymoreAppPath = Utils.GetAppPath() + @"\Claymore\EthDcrMiner64.exe",
+                EthPsw = "x",
+                EthPool = "eth-eu.dwarfpool.com:8008"
+            };
+
+            CopyFrom(_prm);
+
+        }
 
         public string ClaymorParmsString
         {

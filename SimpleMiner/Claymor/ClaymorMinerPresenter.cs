@@ -46,9 +46,24 @@ namespace SimpleMiner.Claymor
             this._view.Run += _view_Run;
             this._view.Stop += _view_Stop;
             this._view.Config += _view_Config;
+            this._view.CreateWallet += _view_CreateWallet;
             this._view.PropertyChanged += _view_PropertyChanged;
 
             _view_PropertyChanged(null, new System.ComponentModel.PropertyChangedEventArgs("params"));
+        }
+
+        private void _view_CreateWallet()
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://www.myetherwallet.com/");
+
+                _view.SetCreateWalletVisited();
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError(ex.Message);
+            }
         }
 
         void PopulateETHPools()
@@ -128,6 +143,8 @@ namespace SimpleMiner.Claymor
             }
 
         }
+
+     
 
         public void Show()
         {

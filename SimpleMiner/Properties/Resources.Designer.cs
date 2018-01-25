@@ -61,6 +61,24 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Applay.
+        /// </summary>
+        internal static string ApplayButton {
+            get {
+                return ResourceManager.GetString("ApplayButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string CancelButton {
+            get {
+                return ResourceManager.GetString("CancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SimpleMiner.
         /// </summary>
         internal static string Caption {
@@ -70,11 +88,47 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Generate.
+        /// </summary>
+        internal static string ClmCfgCustomCommandBtn {
+            get {
+                return ResourceManager.GetString("ClmCfgCustomCommandBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom command.
+        /// </summary>
+        internal static string ClmCFgCustomCommandCb {
+            get {
+                return ResourceManager.GetString("ClmCFgCustomCommandCb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Custom command.
+        /// </summary>
+        internal static string ClmCfgTabCustomCommand {
+            get {
+                return ResourceManager.GetString("ClmCfgTabCustomCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         internal static string CloseButton {
             get {
                 return ResourceManager.GetString("CloseButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore defaults.
+        /// </summary>
+        internal static string DefaultsButton {
+            get {
+                return ResourceManager.GetString("DefaultsButton", resourceCulture);
             }
         }
         
@@ -148,6 +202,15 @@ namespace SimpleMiner.Properties {
         internal static string MailTo {
             get {
                 return ResourceManager.GetString("MailTo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Miner parameters.
+        /// </summary>
+        internal static string MinerCfgCaption {
+            get {
+                return ResourceManager.GetString("MinerCfgCaption", resourceCulture);
             }
         }
         
@@ -238,11 +301,56 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Applay changes and close form.
+        /// </summary>
+        internal static string ttApplayButton {
+            get {
+                return ResourceManager.GetString("ttApplayButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel changes and close form.
+        /// </summary>
+        internal static string ttCancelButton {
+            get {
+                return ResourceManager.GetString("ttCancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate command for miner.
+        /// </summary>
+        internal static string ttClmCfgCustomCommandBtn {
+            get {
+                return ResourceManager.GetString("ttClmCfgCustomCommandBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use custom command for miner. In this mode other settings are ignored.
+        /// </summary>
+        internal static string ttClmCFgCustomCommandCb {
+            get {
+                return ResourceManager.GetString("ttClmCFgCustomCommandCb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended parameters.
         /// </summary>
         internal static string ttConfigButton {
             get {
                 return ResourceManager.GetString("ttConfigButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restore default settings.
+        /// </summary>
+        internal static string ttDefaultsButton {
+            get {
+                return ResourceManager.GetString("ttDefaultsButton", resourceCulture);
             }
         }
         

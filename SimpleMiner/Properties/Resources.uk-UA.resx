@@ -120,6 +120,15 @@
   <data name="Caption" xml:space="preserve">
     <value>SimpleMiner</value>
   </data>
+  <data name="ClmCfgCustomCommandBtn" xml:space="preserve">
+    <value>Згенерувати з параметрів</value>
+  </data>
+  <data name="ClmCFgCustomCommandCb" xml:space="preserve">
+    <value>Команда задана вручну</value>
+  </data>
+  <data name="ClmCfgTabCustomCommand" xml:space="preserve">
+    <value>Команда вручну</value>
+  </data>
   <data name="CloseButton" xml:space="preserve">
     <value>Закрити</value>
   </data>
@@ -141,6 +150,9 @@
   <data name="HideDetailsButton" xml:space="preserve">
     <value>Сховати деталі</value>
   </data>
+  <data name="MinerCfgCaption" xml:space="preserve">
+    <value>Параметри майнеру</value>
+  </data>
   <data name="ShowDetailsButton" xml:space="preserve">
     <value>Показати деталі</value>
   </data>
@@ -152,6 +164,12 @@
   </data>
   <data name="tabOptions" xml:space="preserve">
     <value>Налаштування</value>
+  </data>
+  <data name="ttClmCfgCustomCommandBtn" xml:space="preserve">
+    <value>Згенерувати команду на онові заданих параметрів</value>
+  </data>
+  <data name="ttClmCFgCustomCommandCb" xml:space="preserve">
+    <value>Використовувати команду задану вручну. В цьому режимі інші параметри будуть проігноровані</value>
   </data>
   <data name="ttConfigButton" xml:space="preserve">
     <value>Розширені параметри</value>
@@ -176,5 +194,23 @@
   </data>
   <data name="ttStopButton" xml:space="preserve">
     <value>Натисніть щоб зупинити манінг</value>
+  </data>
+  <data name="ApplayButton" xml:space="preserve">
+    <value>Прийняти</value>
+  </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
+  <data name="DefaultsButton" xml:space="preserve">
+    <value>За замовчуванням</value>
+  </data>
+  <data name="ttApplayButton" xml:space="preserve">
+    <value>Прийняти зміни та закрити вікно</value>
+  </data>
+  <data name="ttCancelButton" xml:space="preserve">
+    <value>Скасувати зміни та закрити вікно</value>
+  </data>
+  <data name="ttDefaultsButton" xml:space="preserve">
+    <value>Повернутись до значень за замовчуванням</value>
   </data>
 </root>

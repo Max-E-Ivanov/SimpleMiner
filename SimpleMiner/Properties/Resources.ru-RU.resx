@@ -120,6 +120,15 @@
   <data name="Caption" xml:space="preserve">
     <value>SimpleMiner</value>
   </data>
+  <data name="ClmCfgCustomCommandBtn" xml:space="preserve">
+    <value>Сгенерировать из параметров</value>
+  </data>
+  <data name="ClmCFgCustomCommandCb" xml:space="preserve">
+    <value>Команда задана вручную</value>
+  </data>
+  <data name="ClmCfgTabCustomCommand" xml:space="preserve">
+    <value>Команда вручную</value>
+  </data>
   <data name="CloseButton" xml:space="preserve">
     <value>Закрыть</value>
   </data>
@@ -141,6 +150,9 @@
   <data name="HideDetailsButton" xml:space="preserve">
     <value>Спрятать детали</value>
   </data>
+  <data name="MinerCfgCaption" xml:space="preserve">
+    <value>Параметры майнера</value>
+  </data>
   <data name="ShowDetailsButton" xml:space="preserve">
     <value>Показать детали</value>
   </data>
@@ -152,6 +164,12 @@
   </data>
   <data name="tabOptions" xml:space="preserve">
     <value>Настройки</value>
+  </data>
+  <data name="ttClmCfgCustomCommandBtn" xml:space="preserve">
+    <value>Сгенерировать команду на основе заданых параметров</value>
+  </data>
+  <data name="ttClmCFgCustomCommandCb" xml:space="preserve">
+    <value>Использовать команду заданую вручную. В этом режиме остальные параметры будут проигнорированы</value>
   </data>
   <data name="ttConfigButton" xml:space="preserve">
     <value>Расширенные параметры</value>
@@ -176,5 +194,23 @@
   </data>
   <data name="ttStopButton" xml:space="preserve">
     <value>Нажмите что бы остановить майнинг</value>
+  </data>
+  <data name="ApplayButton" xml:space="preserve">
+    <value>Применить</value>
+  </data>
+  <data name="CancelButton" xml:space="preserve">
+    <value>Отменить</value>
+  </data>
+  <data name="DefaultsButton" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="ttApplayButton" xml:space="preserve">
+    <value>Применить изменения и закрыть окно</value>
+  </data>
+  <data name="ttCancelButton" xml:space="preserve">
+    <value>Отменить изменения и закрыть откно</value>
+  </data>
+  <data name="ttDefaultsButton" xml:space="preserve">
+    <value>Восстановить значения по умолчанию</value>
   </data>
 </root>

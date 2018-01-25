@@ -12,6 +12,15 @@ namespace SimpleMiner.BaseForm
 {
     public partial class BaseForm : Form
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+        public virtual void NotifyPropertyChanged(string sPropertyName)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(sPropertyName));
+            }
+        }
+
         public BaseForm()
         {
             InitializeComponent();
