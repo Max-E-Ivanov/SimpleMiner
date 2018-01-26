@@ -28,17 +28,43 @@ namespace SimpleMiner.Claymor
             toolTipManager.SetToolTip(this.buttonCancel, SimpleMiner.Properties.Resources.ttCancelButton);
             toolTipManager.SetToolTip(this.buttonDefaults, SimpleMiner.Properties.Resources.ttDefaultsButton);
 
-
-
-
+            // Tab Names
             tabPageCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCfgTabCustomCommand;
+            tabPageCoins.Text = SimpleMiner.Properties.Resources.ClmCfgTabCoins;
+
+            //Coins tab
+            checkBoxMode.Text = SimpleMiner.Properties.Resources.ClmCfgSecondCoin;
+            toolTipManager.SetToolTip(this.comboBoxEpool, SimpleMiner.Properties.Resources.ttEthPool);
+            toolTipManager.SetToolTip(this.checkBoxSolo, SimpleMiner.Properties.Resources.ttClmCfgSolo);
+            toolTipManager.SetToolTip(this.checkBoxAllPools, SimpleMiner.Properties.Resources.ttClmCfgAllPools);
+            toolTipManager.SetToolTip(this.checkBoxAllCoins, SimpleMiner.Properties.Resources.ttClmCfgAllcoins);
+            toolTipManager.SetToolTip(this.checkBoxEpsw, SimpleMiner.Properties.Resources.ttClmCfgPsw);
+            toolTipManager.SetToolTip(this.checkBoxEthWorker, SimpleMiner.Properties.Resources.ttClmCfgWorker);
+            toolTipManager.SetToolTip(this.checkBoxEsm, SimpleMiner.Properties.Resources.ttClmCfgEsm);
+            toolTipManager.SetToolTip(this.checkBoxEthI, SimpleMiner.Properties.Resources.ttClmCfgEthi);
+            toolTipManager.SetToolTip(this.checkBoxEtha, SimpleMiner.Properties.Resources.ttClmCfgEtha);
+            toolTipManager.SetToolTip(this.checkBoxEstale, SimpleMiner.Properties.Resources.ttClmCfgEstale);
+            toolTipManager.SetToolTip(this.checkBoxErate, SimpleMiner.Properties.Resources.ttClmCfgErate);
+
+            toolTipManager.SetToolTip(this.comboBoxDPool, SimpleMiner.Properties.Resources.ttClmCfgDpool);
+            toolTipManager.SetToolTip(this.textBoxDwal, SimpleMiner.Properties.Resources.ttClmCfgDwal);
+            toolTipManager.SetToolTip(this.checkBoxDpsw, SimpleMiner.Properties.Resources.ttClmCfgDpsw);
+            toolTipManager.SetToolTip(this.checkBoxDcri, SimpleMiner.Properties.Resources.ttClmCfgDcri);
+            toolTipManager.SetToolTip(this.checkBoxDcrt, SimpleMiner.Properties.Resources.ttClmCfgDcrt);
+            toolTipManager.SetToolTip(this.checkBoxDcoin, SimpleMiner.Properties.Resources.ttClmCfgDcoin);
 
 
 
+
+
+
+
+
+
+
+            // Custom Command tab
             checkBoxCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCFgCustomCommandCb;
             buttonCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCfgCustomCommandBtn;
-
-
             toolTipManager.SetToolTip(this.checkBoxCustomCommand, SimpleMiner.Properties.Resources.ttClmCFgCustomCommandCb);
             toolTipManager.SetToolTip(this.buttonCustomCommand, SimpleMiner.Properties.Resources.ttClmCfgCustomCommandBtn);
         }

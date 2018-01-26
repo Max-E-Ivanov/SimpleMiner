@@ -106,6 +106,24 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mine Second coin.
+        /// </summary>
+        internal static string ClmCfgSecondCoin {
+            get {
+                return ResourceManager.GetString("ClmCfgSecondCoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coins.
+        /// </summary>
+        internal static string ClmCfgTabCoins {
+            get {
+                return ResourceManager.GetString("ClmCfgTabCoins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Custom command.
         /// </summary>
         internal static string ClmCfgTabCustomCommand {
@@ -319,6 +337,24 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Check to be able to mine Ethereum forks, in this mode miner will use some default pools for devfee Ethereum mining.
+        /// </summary>
+        internal static string ttClmCfgAllcoins {
+            get {
+                return ResourceManager.GetString("ttClmCfgAllcoins", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Check if miner does not want to mine on specified pool (because it cannot mine devfee on that pool), but you agree to use some default pools for devfee mining.
+        /// </summary>
+        internal static string ttClmCfgAllPools {
+            get {
+                return ResourceManager.GetString("ttClmCfgAllPools", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Generate command for miner.
         /// </summary>
         internal static string ttClmCfgCustomCommandBtn {
@@ -333,6 +369,136 @@ namespace SimpleMiner.Properties {
         internal static string ttClmCFgCustomCommandCb {
             get {
                 return ResourceManager.GetString("ttClmCFgCustomCommandCb", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Select second coin to mine in dual mode.
+        /// </summary>
+        internal static string ttClmCfgDcoin {
+            get {
+                return ResourceManager.GetString("ttClmCfgDcoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decred/Siacoin/Lbry/Pascal intensity, or Ethereum fine-tuning value in ETH-only ASM mode. Default value is 30, you can adjust this value to get the best Decred/Siacoin/Lbry mining speed without reducing Ethereum mining speed. 
+        ///   You can also specify values for every card, for example &quot;30,100,50&quot;.
+        /// </summary>
+        internal static string ttClmCfgDcri {
+            get {
+                return ResourceManager.GetString("ttClmCfgDcri", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time period between Decred/Siacoin HTTP requests for new job, in seconds. Default value is 5 seconds.
+        /// </summary>
+        internal static string ttClmCfgDcrt {
+            get {
+                return ResourceManager.GetString("ttClmCfgDcrt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Decred/Siacoin/Lbry/Pascal pool address. Use &quot;http://&quot; prefix for HTTP pools, &quot;stratum+tcp://&quot; for Stratum pools. If prefix is missed, Stratum is assumed.
+        ///   Decred: both Stratum and HTTP are supported. Siacoin: both Stratum and HTTP are supported, though note that not all Stratum versions are supported currently. Lbry: only Stratum is supported.
+        /// </summary>
+        internal static string ttClmCfgDpool {
+            get {
+                return ResourceManager.GetString("ttClmCfgDpool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password for Decred/Siacoin/Lbry/Pascal pool.
+        /// </summary>
+        internal static string ttClmCfgDpsw {
+            get {
+                return ResourceManager.GetString("ttClmCfgDpsw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Decred/Siacoin/Lbry/Pascal wallet address or worker name, it depends on pool.
+        /// </summary>
+        internal static string ttClmCfgDwal {
+            get {
+                return ResourceManager.GetString("ttClmCfgDwal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send Ethereum hashrate to pool.
+        /// </summary>
+        internal static string ttClmCfgErate {
+            get {
+                return ResourceManager.GetString("ttClmCfgErate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ethereum Stratum mode.
+        /// </summary>
+        internal static string ttClmCfgEsm {
+            get {
+                return ResourceManager.GetString("ttClmCfgEsm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send Ethereum stale shares to pool, it can increase effective hashrate a bit.
+        /// </summary>
+        internal static string ttClmCfgEstale {
+            get {
+                return ResourceManager.GetString("ttClmCfgEstale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ethereum algorithm mode for AMD cards. 0 - optimized for fast cards, 1 - optimized for slow cards, 2 - for gpu-pro Linux drivers. -1 - autodetect (default, automatically selects between 0 and 1). 
+        ///   You can also set this option for every card individually, for example &quot;-etha 0,1,0&quot;.
+        /// </summary>
+        internal static string ttClmCfgEtha {
+            get {
+                return ResourceManager.GetString("ttClmCfgEtha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ethereum intensity. Default value is 8, you can decrease this value if you don&apos;t want Windows to freeze or if you have problems with stability. The most low GPU load is &quot;-ethi 0&quot;.
+        ///   Also &quot;-ethi&quot; now can set intensity for every card individually, for example &quot; 1,8,6&quot;.
+        /// </summary>
+        internal static string ttClmCfgEthi {
+            get {
+                return ResourceManager.GetString("ttClmCfgEthi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password for Ethereum pool, use &quot;x&quot; as password.
+        /// </summary>
+        internal static string ttClmCfgPsw {
+            get {
+                return ResourceManager.GetString("ttClmCfgPsw", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use SOLO mode.
+        /// </summary>
+        internal static string ttClmCfgSolo {
+            get {
+                return ResourceManager.GetString("ttClmCfgSolo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Worker name, it is required for some pools.
+        /// </summary>
+        internal static string ttClmCfgWorker {
+            get {
+                return ResourceManager.GetString("ttClmCfgWorker", resourceCulture);
             }
         }
         

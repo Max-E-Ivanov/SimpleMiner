@@ -145,7 +145,7 @@
     <value>Кошелек</value>
   </data>
   <data name="EthWorker" xml:space="preserve">
-    <value>Работник</value>
+    <value>Воркер</value>
   </data>
   <data name="HideDetailsButton" xml:space="preserve">
     <value>Спрятать детали</value>
@@ -184,7 +184,7 @@
     <value>Адреса пулов для майнинга эфира</value>
   </data>
   <data name="ttEthWallet" xml:space="preserve">
-    <value>Адрес кошелька для Эфира</value>
+    <value>Адрес вашего кошелька для Эфира. Также имя воркера и другие опции, если пул их поддерживает</value>
   </data>
   <data name="ttEthWorker" xml:space="preserve">
     <value>Имя работника (требуется некоторыми пулами)</value>
@@ -212,5 +212,81 @@
   </data>
   <data name="ttDefaultsButton" xml:space="preserve">
     <value>Восстановить значения по умолчанию</value>
+  </data>
+  <data name="ClmCfgSecondCoin" xml:space="preserve">
+    <value>Майнить вторую монету</value>
+  </data>
+  <data name="ClmCfgTabCoins" xml:space="preserve">
+    <value>Монеты</value>
+  </data>
+  <data name="ttClmCfgAllcoins" xml:space="preserve">
+    <value>Отметьте чтобы иметь возможность добывать форки Эфира</value>
+  </data>
+  <data name="ttClmCfgAllPools" xml:space="preserve">
+    <value>Отметьте если майнер не хочет работать на указанном пуле</value>
+  </data>
+  <data name="ttClmCfgDcoin" xml:space="preserve">
+    <value>Выбор второй монеты для добычи в dual-режиме. По умолчанию — «dcr»</value>
+  </data>
+  <data name="ttClmCfgDcri" xml:space="preserve">
+    <value>Интенсивность добычи второй монеты (Decred, Siacoin, Lbry, Pascal) или значение точной настройки Ethereum в режиме ASM в режиме «только ETH», по умолчанию 30.
+
+Можно регулировать это значение для большей скорости добычи второй монеты без снижения скорости добычи Эфира.
+
+Можно устанавливать значение индивидуально для каждой карты, например: «30,100,50»</value>
+  </data>
+  <data name="ttClmCfgDcrt" xml:space="preserve">
+    <value>Период времени между Decred/Siacoin http-запросами новой работу, в секундах (по умолчанию 5 секунд)</value>
+  </data>
+  <data name="ttClmCfgDpool" xml:space="preserve">
+    <value>Адрес пула для второй монеты (Decred, Siacoin, Lbry,Pascal).
+
+Используйте: «http://» для HTTP пулов,
+
+«stratum+tcp://» для Stratum пулов. Если префикс пропущен, предполагается Stratum.
+
+Decred: оба протокола Stratum и HTTP поддерживаются.
+
+Siacoin: оба протокола Stratum и HTTP поддерживаются, но не все версии Stratum поддерживаются на данный момент.
+
+Lbry: только Stratum поддерживается</value>
+  </data>
+  <data name="ttClmCfgDpsw" xml:space="preserve">
+    <value>Пароль для пула второй монеты (Decred, Siacoin, Lbry,Pascal), используйте «x», если не требуется пароль</value>
+  </data>
+  <data name="ttClmCfgDwal" xml:space="preserve">
+    <value>Адрес кошелька для второй монеты (Decred, Siacoin, Lbry) или имя воркера — в зависимости от пула</value>
+  </data>
+  <data name="ttClmCfgErate" xml:space="preserve">
+    <value>Отправлять на пул хешрейт Эфира</value>
+  </data>
+  <data name="ttClmCfgEsm" xml:space="preserve">
+    <value>Режим протокола Стратум для Эфира</value>
+  </data>
+  <data name="ttClmCfgEstale" xml:space="preserve">
+    <value>Отправлять на пул просроченные (stale) шары Эфира, это может чуть улучшить эффективный хешрейт — некоторые пулы принимают такие шары и оплачивают за них, так как они иногда принимают участие в создании uncle-блоков</value>
+  </data>
+  <data name="ttClmCfgEtha" xml:space="preserve">
+    <value>Алгоритм добычи Эфира для карт AMD:
+0 — оптимизирован для быстрых карт;
+1 — оптимизирован для медленных карт;
+2 – для драйверов Linux gpu-pro;
+-1 (минус один, по умолчанию) — автоматический выбор режима, по умолчанию автоматически выбирается от 0 до 1.
+
+Можно устанавливать эти значения индивидуально для каждой карты, например: « 0,1,0»</value>
+  </data>
+  <data name="ttClmCfgEthi" xml:space="preserve">
+    <value>Интенсивность добычи Эфира (по умолчанию «8»).
+
+Можно уменьшить, во избежание подтормаживаний Windows или при нестабильной работе. Наименьшая нагрузка на видеокарту при 0.Можно устанавливать значение индивидуально для каждой карты, например: «1,8,6»</value>
+  </data>
+  <data name="ttClmCfgPsw" xml:space="preserve">
+    <value>Пароль для пула Эфира, укажите «x», как пароль</value>
+  </data>
+  <data name="ttClmCfgSolo" xml:space="preserve">
+    <value>Использовать СОЛО режим</value>
+  </data>
+  <data name="ttClmCfgWorker" xml:space="preserve">
+    <value>Имя Воркера, требуется на некоторых пулах</value>
   </data>
 </root>
