@@ -250,13 +250,17 @@ namespace SimpleMiner.Claymor
                 return (string)comboBoxEthProtocol.SelectedValue;
             }
             set
-            {               
+            {
+
+                if (esm == value)
+                    return;
+
                 if (string.IsNullOrEmpty(value))
                     comboBoxEthProtocol.SelectedIndex = -1;
                 else
                     comboBoxEthProtocol.SelectedValue = value;
 
-
+                checkBoxEsm.Checked = !string.IsNullOrEmpty(esm);
 
                 checkBoxEsm_CheckedChanged(this, new EventArgs());
             }

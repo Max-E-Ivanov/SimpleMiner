@@ -482,6 +482,7 @@
             this.comboBoxEthProtocol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.comboBoxEthProtocol.DisplayMember = "value";
+            this.comboBoxEthProtocol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxEthProtocol.FormattingEnabled = true;
             this.comboBoxEthProtocol.Location = new System.Drawing.Point(101, 81);
             this.comboBoxEthProtocol.Name = "comboBoxEthProtocol";

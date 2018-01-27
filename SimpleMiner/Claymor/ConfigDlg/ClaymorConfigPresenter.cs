@@ -29,8 +29,9 @@ namespace SimpleMiner.Claymor
 
 
 
-            //_view.SetEsmList(ClaymorParams.ListEsm());
+            
             bLoad = true;
+            _view.SetEsmList(ClaymorParams.ListEsm());
             DisplayParams();
             bLoad = false;
         }
@@ -58,7 +59,7 @@ namespace SimpleMiner.Claymor
                 _params_clone.Allcoins = _view.allcoins;
                 _params_clone.Allpools = _view.allpools;
                 _params_clone.Erate = _view.erate;
-                //_params_clone.Esm = _view.esm;
+                _params_clone.Esm = _view.esm;
                 _params_clone.Estale = _view.estale;
                 _params_clone.Etha = _view.etha;
                 _params_clone.Ethi = _view.ethi;
@@ -84,7 +85,9 @@ namespace SimpleMiner.Claymor
             _view.allcoins = _params_clone.Allcoins;
             _view.allpools = _params_clone.Allpools;
             _view.erate = _params_clone.Erate;
-            //_view.esm = _params_clone.Esm;
+
+            _view.esm = _params_clone.Esm;            
+
             _view.estale = _params_clone.Estale;
             _view.etha = _params_clone.Etha;
             _view.ethi = _params_clone.Ethi;
