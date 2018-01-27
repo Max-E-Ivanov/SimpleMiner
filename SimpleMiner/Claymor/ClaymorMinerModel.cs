@@ -10,7 +10,7 @@ using SimpleMiner.BaseMining;
 namespace SimpleMiner.Claymor
 {
 
-    public class ClaymorParams :ICloneable
+    public class ClaymorParams
     {
         public string CalymoreAppPath { get; set; }
 
@@ -23,6 +23,18 @@ namespace SimpleMiner.Claymor
         public string EthLog { get; set; }
 
         public string CustomParams { get; set; }
+
+        public bool Solo { get; set; }
+        public string Etht { get; set; }
+        public bool Allpools { get; set; }
+        public string Allcoins { get; set; }
+        public bool Estale { get; set; }
+        public bool Erate { get; set; }
+
+        public string Etha { get; set; }
+        public string Ethi { get; set; }
+
+        public string Esm { get; set; }
 
 
         public bool Validate()
@@ -39,14 +51,32 @@ namespace SimpleMiner.Claymor
                 !string.IsNullOrEmpty(EthPool) && !string.IsNullOrEmpty(EthWallet);
         }
 
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
+       
 
         public ClaymorParams DeepClone()
         {
-            return (ClaymorParams)Clone();
+            /*ClaymorParams _params = new ClaymorParams();
+            _params.EthLog = this.EthLog;
+            _params.EthPool = this.EthPool;
+            _params.EthPsw = this.EthPsw;
+            _params.EthWallet = this.EthWallet;
+            _params.EthWorker = this.EthWorker;
+            _params.CustomParams = this.CustomParams;
+            _params.CalymoreAppPath = this.CalymoreAppPath;
+
+            _params.Allcoins = this.Allcoins;
+            _params.Allpools = this.Allpools;
+            _params.Erate = this.Erate;
+            _params.Esm = this.Esm;
+            _params.Estale = this.Estale;
+            _params.Etha = this.Etha;
+            _params.Ethi = this.Ethi;
+            _params.Etht = this.Etht;
+            _params.Solo = this.Solo;
+
+            return _params;*/
+
+            return (ClaymorParams)this.MemberwiseClone();
         }
 
         public void CopyFrom(ClaymorParams _params)
@@ -58,8 +88,20 @@ namespace SimpleMiner.Claymor
             this.EthWorker = _params.EthWorker;
             this.CustomParams = _params.CustomParams;
             this.CalymoreAppPath = _params.CalymoreAppPath;
+
+            this.Allcoins = _params.Allcoins;
+            this.Allpools = _params.Allpools;
+            this.Erate = _params.Erate;
+            this.Esm = _params.Esm;
+            this.Estale = _params.Estale;
+            this.Etha = _params.Etha;
+            this.Ethi = _params.Ethi;
+            this.Etht = _params.Etht;
+            this.Solo = _params.Solo;
            
         }
+
+      
 
         public void RestoreDefaults()
         {
@@ -103,6 +145,16 @@ namespace SimpleMiner.Claymor
 
                 return sResult;
             }
+        }
+
+        public static  List<KeyValuePair<string, string>> ListEsm()
+        {
+            return new List<KeyValuePair<string, string>> {
+                new KeyValuePair<string, string>("0", "eth-proxy"),
+                new KeyValuePair<string, string>("1", "qtminer "),
+                new KeyValuePair<string, string>("2", "miner-proxy"),
+                new KeyValuePair<string, string>("3", "nicehash")
+            };
         }
     }
 

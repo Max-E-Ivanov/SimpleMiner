@@ -36,6 +36,7 @@
             this.checkBoxCustomCommand = new System.Windows.Forms.CheckBox();
             this.buttonCustomCommand = new System.Windows.Forms.Button();
             this.tabPageCoins = new System.Windows.Forms.TabPage();
+            this.checkBoxEpsw = new System.Windows.Forms.CheckBox();
             this.checkBoxAllCoins = new System.Windows.Forms.CheckBox();
             this.textBoxAllCoins = new System.Windows.Forms.TextBox();
             this.textBoxDcrt = new System.Windows.Forms.TextBox();
@@ -68,7 +69,6 @@
             this.comboBoxEpool = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.checkBoxEpsw = new System.Windows.Forms.CheckBox();
             this.tabPageCustomCommand.SuspendLayout();
             this.tabPageCoins.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -193,6 +193,17 @@
             this.tabPageCoins.Text = "Coins";
             this.tabPageCoins.UseVisualStyleBackColor = true;
             // 
+            // checkBoxEpsw
+            // 
+            this.checkBoxEpsw.AutoSize = true;
+            this.checkBoxEpsw.Location = new System.Drawing.Point(11, 58);
+            this.checkBoxEpsw.Name = "checkBoxEpsw";
+            this.checkBoxEpsw.Size = new System.Drawing.Size(51, 17);
+            this.checkBoxEpsw.TabIndex = 39;
+            this.checkBoxEpsw.Text = "epsw";
+            this.checkBoxEpsw.UseVisualStyleBackColor = true;
+            this.checkBoxEpsw.CheckedChanged += new System.EventHandler(this.checkBoxEpsw_CheckedChanged);
+            // 
             // checkBoxAllCoins
             // 
             this.checkBoxAllCoins.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -203,6 +214,7 @@
             this.checkBoxAllCoins.TabIndex = 38;
             this.checkBoxAllCoins.Text = "allcoins";
             this.checkBoxAllCoins.UseVisualStyleBackColor = true;
+            this.checkBoxAllCoins.CheckedChanged += new System.EventHandler(this.checkBoxAllCoins_CheckedChanged);
             // 
             // textBoxAllCoins
             // 
@@ -211,6 +223,7 @@
             this.textBoxAllCoins.Name = "textBoxAllCoins";
             this.textBoxAllCoins.Size = new System.Drawing.Size(92, 20);
             this.textBoxAllCoins.TabIndex = 37;
+            this.textBoxAllCoins.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxDcrt
             // 
@@ -253,6 +266,7 @@
             this.textBoxEtht.Name = "textBoxEtht";
             this.textBoxEtht.Size = new System.Drawing.Size(64, 20);
             this.textBoxEtht.TabIndex = 22;
+            this.textBoxEtht.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxETHA
             // 
@@ -262,6 +276,7 @@
             this.textBoxETHA.Name = "textBoxETHA";
             this.textBoxETHA.Size = new System.Drawing.Size(163, 20);
             this.textBoxETHA.TabIndex = 19;
+            this.textBoxETHA.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxEthi
             // 
@@ -270,6 +285,7 @@
             this.textBoxEthi.Name = "textBoxEthi";
             this.textBoxEthi.Size = new System.Drawing.Size(92, 20);
             this.textBoxEthi.TabIndex = 15;
+            this.textBoxEthi.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxEthWorker
             // 
@@ -278,6 +294,7 @@
             this.textBoxEthWorker.Name = "textBoxEthWorker";
             this.textBoxEthWorker.Size = new System.Drawing.Size(92, 20);
             this.textBoxEthWorker.TabIndex = 6;
+            this.textBoxEthWorker.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxEpsw
             // 
@@ -287,6 +304,7 @@
             this.textBoxEpsw.Name = "textBoxEpsw";
             this.textBoxEpsw.Size = new System.Drawing.Size(163, 20);
             this.textBoxEpsw.TabIndex = 4;
+            this.textBoxEpsw.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // checkBoxAllPools
             // 
@@ -297,6 +315,7 @@
             this.checkBoxAllPools.TabIndex = 36;
             this.checkBoxAllPools.Text = "allpools";
             this.checkBoxAllPools.UseVisualStyleBackColor = true;
+            this.checkBoxAllPools.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // comboBoxDcoin
             // 
@@ -398,6 +417,7 @@
             this.checkBoxErate.TabIndex = 21;
             this.checkBoxErate.Text = "erate";
             this.checkBoxErate.UseVisualStyleBackColor = true;
+            this.checkBoxErate.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // checkBoxEstale
             // 
@@ -409,6 +429,7 @@
             this.checkBoxEstale.TabIndex = 20;
             this.checkBoxEstale.Text = "estale";
             this.checkBoxEstale.UseVisualStyleBackColor = true;
+            this.checkBoxEstale.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // checkBoxEtha
             // 
@@ -419,6 +440,7 @@
             this.checkBoxEtha.TabIndex = 18;
             this.checkBoxEtha.Text = "etha";
             this.checkBoxEtha.UseVisualStyleBackColor = true;
+            this.checkBoxEtha.CheckedChanged += new System.EventHandler(this.checkBoxEtha_CheckedChanged);
             // 
             // checkBoxEthI
             // 
@@ -430,6 +452,7 @@
             this.checkBoxEthI.TabIndex = 16;
             this.checkBoxEthI.Text = "ethi";
             this.checkBoxEthI.UseVisualStyleBackColor = true;
+            this.checkBoxEthI.CheckedChanged += new System.EventHandler(this.checkBoxEthI_CheckedChanged);
             // 
             // checkBoxEsm
             // 
@@ -440,6 +463,7 @@
             this.checkBoxEsm.TabIndex = 10;
             this.checkBoxEsm.Text = "esm";
             this.checkBoxEsm.UseVisualStyleBackColor = true;
+            this.checkBoxEsm.CheckedChanged += new System.EventHandler(this.checkBoxEsm_CheckedChanged);
             // 
             // checkBoxEthWorker
             // 
@@ -451,16 +475,21 @@
             this.checkBoxEthWorker.TabIndex = 9;
             this.checkBoxEthWorker.Text = "Worker";
             this.checkBoxEthWorker.UseVisualStyleBackColor = true;
+            this.checkBoxEthWorker.CheckedChanged += new System.EventHandler(this.checkBoxEthWorker_CheckedChanged);
             // 
             // comboBoxEthProtocol
             // 
             this.comboBoxEthProtocol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.comboBoxEthProtocol.DisplayMember = "value";
             this.comboBoxEthProtocol.FormattingEnabled = true;
             this.comboBoxEthProtocol.Location = new System.Drawing.Point(101, 81);
             this.comboBoxEthProtocol.Name = "comboBoxEthProtocol";
             this.comboBoxEthProtocol.Size = new System.Drawing.Size(163, 21);
             this.comboBoxEthProtocol.TabIndex = 8;
+            this.comboBoxEthProtocol.ValueMember = "key";
+            this.comboBoxEthProtocol.SelectedIndexChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
+            this.comboBoxEthProtocol.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // checkBoxSolo
             // 
@@ -471,6 +500,7 @@
             this.checkBoxSolo.TabIndex = 2;
             this.checkBoxSolo.Text = "SOLO";
             this.checkBoxSolo.UseVisualStyleBackColor = true;
+            this.checkBoxSolo.CheckedChanged += new System.EventHandler(this.checkBoxSolo_CheckedChanged);
             // 
             // comboBoxEpool
             // 
@@ -481,6 +511,7 @@
             this.comboBoxEpool.Name = "comboBoxEpool";
             this.comboBoxEpool.Size = new System.Drawing.Size(347, 21);
             this.comboBoxEpool.TabIndex = 1;
+            this.comboBoxEpool.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // label1
             // 
@@ -503,16 +534,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(466, 372);
             this.tabControl1.TabIndex = 3;
-            // 
-            // checkBoxEpsw
-            // 
-            this.checkBoxEpsw.AutoSize = true;
-            this.checkBoxEpsw.Location = new System.Drawing.Point(11, 58);
-            this.checkBoxEpsw.Name = "checkBoxEpsw";
-            this.checkBoxEpsw.Size = new System.Drawing.Size(51, 17);
-            this.checkBoxEpsw.TabIndex = 39;
-            this.checkBoxEpsw.Text = "epsw";
-            this.checkBoxEpsw.UseVisualStyleBackColor = true;
             // 
             // dlgClaymorConfig
             // 

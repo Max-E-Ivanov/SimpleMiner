@@ -14,6 +14,8 @@ namespace SimpleMiner.Claymor
         ClaymorParams _params;
         ClaymorParams _params_clone;
 
+        bool bLoad;
+
         public ClaymorConfigPresenter(IClaymorConfigView _view, ClaymorParams _params) : base()
         {
             this._view = _view;
@@ -26,14 +28,21 @@ namespace SimpleMiner.Claymor
             this._view.Default += _view_Default;
 
 
+
+            //_view.SetEsmList(ClaymorParams.ListEsm());
+            bLoad = true;
             DisplayParams();
+            bLoad = false;
         }
+
+       
 
         private void _view_Default()
         {
             _params_clone.RestoreDefaults();
-
+            bLoad = true;
             DisplayParams();
+            bLoad = false;
         }
 
         private void _view_Ok()
@@ -43,8 +52,23 @@ namespace SimpleMiner.Claymor
 
         private void _view_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            if (e.PropertyName == "params")
+            if (!bLoad && (e.PropertyName == "params"))
             {
+
+                _params_clone.Allcoins = _view.allcoins;
+                _params_clone.Allpools = _view.allpools;
+                _params_clone.Erate = _view.erate;
+                //_params_clone.Esm = _view.esm;
+                _params_clone.Estale = _view.estale;
+                _params_clone.Etha = _view.etha;
+                _params_clone.Ethi = _view.ethi;
+                _params_clone.EthPool = _view.epool;
+                _params_clone.EthPsw = _view.epsw;
+                _params_clone.Etht = _view.etht;
+                _params_clone.EthWorker = _view.eworker;
+                _params_clone.Solo = _view.solo;
+                
+
                 _params_clone.CustomParams = _view.textCustomCommand;
 
 
@@ -56,6 +80,20 @@ namespace SimpleMiner.Claymor
 
         void DisplayParams()
         {
+
+            _view.allcoins = _params_clone.Allcoins;
+            _view.allpools = _params_clone.Allpools;
+            _view.erate = _params_clone.Erate;
+            //_view.esm = _params_clone.Esm;
+            _view.estale = _params_clone.Estale;
+            _view.etha = _params_clone.Etha;
+            _view.ethi = _params_clone.Ethi;
+            _view.epool = _params_clone.EthPool;
+            _view.epsw = _params_clone.EthPsw;
+            _view.etht = _params_clone.Etht;
+            _view.eworker = _params_clone.EthWorker;
+            _view.solo = _params_clone.Solo;
+
             _view.textCustomCommand = _params_clone.CustomParams;
 
 

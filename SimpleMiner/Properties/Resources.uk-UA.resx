@@ -289,4 +289,7 @@ Lbry: только Stratum поддерживается</value>
   <data name="ttClmCfgWorker" xml:space="preserve">
     <value>Имя Воркера, требуется на некоторых пулах</value>
   </data>
+  <data name="ttClmCfgEtht" xml:space="preserve">
+    <value>Период времени между http-запросами на новую работу в СОЛО, в миллисекундах (по умолчанию 200мс)</value>
+  </data>
 </root>

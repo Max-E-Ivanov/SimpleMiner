@@ -296,4 +296,7 @@
   <data name="ttClmCfgWorker" xml:space="preserve">
     <value>Worker name, it is required for some pools</value>
   </data>
+  <data name="ttClmCfgEtht" xml:space="preserve">
+    <value>Time period between Ethereum HTTP requests for new job in solo mode, in milliseconds. Default value is 200ms</value>
+  </data>
 </root>

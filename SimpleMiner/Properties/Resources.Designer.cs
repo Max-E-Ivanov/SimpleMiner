@@ -476,6 +476,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Time period between Ethereum HTTP requests for new job in solo mode, in milliseconds. Default value is 200ms.
+        /// </summary>
+        internal static string ttClmCfgEtht {
+            get {
+                return ResourceManager.GetString("ttClmCfgEtht", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password for Ethereum pool, use &quot;x&quot; as password.
         /// </summary>
         internal static string ttClmCfgPsw {

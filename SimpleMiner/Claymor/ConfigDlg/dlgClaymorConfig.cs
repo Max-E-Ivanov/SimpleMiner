@@ -36,6 +36,7 @@ namespace SimpleMiner.Claymor
             checkBoxMode.Text = SimpleMiner.Properties.Resources.ClmCfgSecondCoin;
             toolTipManager.SetToolTip(this.comboBoxEpool, SimpleMiner.Properties.Resources.ttEthPool);
             toolTipManager.SetToolTip(this.checkBoxSolo, SimpleMiner.Properties.Resources.ttClmCfgSolo);
+            toolTipManager.SetToolTip(this.textBoxEtht, SimpleMiner.Properties.Resources.ttClmCfgEtht);
             toolTipManager.SetToolTip(this.checkBoxAllPools, SimpleMiner.Properties.Resources.ttClmCfgAllPools);
             toolTipManager.SetToolTip(this.checkBoxAllCoins, SimpleMiner.Properties.Resources.ttClmCfgAllcoins);
             toolTipManager.SetToolTip(this.checkBoxEpsw, SimpleMiner.Properties.Resources.ttClmCfgPsw);
@@ -52,6 +53,7 @@ namespace SimpleMiner.Claymor
             toolTipManager.SetToolTip(this.checkBoxDcri, SimpleMiner.Properties.Resources.ttClmCfgDcri);
             toolTipManager.SetToolTip(this.checkBoxDcrt, SimpleMiner.Properties.Resources.ttClmCfgDcrt);
             toolTipManager.SetToolTip(this.checkBoxDcoin, SimpleMiner.Properties.Resources.ttClmCfgDcoin);
+            
 
 
 
@@ -74,6 +76,192 @@ namespace SimpleMiner.Claymor
             return this.ShowDialog();
         }
 
+        public void SetEsmList(List<KeyValuePair<string, string>> ListEsm)
+        {
+            comboBoxEthProtocol.DataSource = ListEsm;
+        }
+
+        public string epool
+        {
+            get
+            {
+                return comboBoxEpool.Text;
+            }
+            set
+            {
+                comboBoxEpool.Text = value;
+            }
+        }
+
+        public bool  solo
+        {
+            get
+            {
+                return checkBoxSolo.Checked;
+            }
+            set
+            {
+                checkBoxSolo.Checked = value;
+
+                checkBoxSolo_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string etht
+        {
+            get
+            {
+                return textBoxEtht.Text;
+            }
+            set
+            {
+                textBoxEtht.Text = value;
+
+                checkBoxSolo.Checked = !string.IsNullOrEmpty(etht);
+
+                checkBoxSolo_CheckedChanged(this, new EventArgs());
+            }
+        }
+        
+        public bool allpools
+        {
+            get
+            {
+                return checkBoxAllPools.Checked;
+            }
+            set
+            {
+                checkBoxAllPools.Checked = value;
+            }
+        }
+
+        public string allcoins
+        {
+            get
+            {
+                return textBoxAllCoins.Text;
+            }
+            set
+            {
+                textBoxAllCoins.Text = value;
+
+                checkBoxAllCoins.Checked = !string.IsNullOrEmpty(allcoins);
+
+                checkBoxAllCoins_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string epsw
+        {
+            get
+            {
+                return textBoxEpsw.Text;
+            }
+            set
+            {
+                textBoxEpsw.Text = value;
+
+                checkBoxEpsw.Checked = !string.IsNullOrEmpty(epsw);
+
+                checkBoxEpsw_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string eworker
+        {
+            get
+            {
+                return textBoxEthWorker.Text;
+            }
+            set
+            {
+                textBoxEthWorker.Text = value;
+
+                checkBoxEthWorker.Checked = !string.IsNullOrEmpty(eworker);
+
+                checkBoxEthWorker_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string ethi
+        {
+            get
+            {
+                return textBoxEthi.Text;
+            }
+            set
+            {
+                textBoxEthi.Text = value;
+
+                checkBoxEthI.Checked = !string.IsNullOrEmpty(ethi);
+
+                checkBoxEthI_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string etha
+        {
+            get
+            {
+                return textBoxETHA.Text;
+            }
+            set
+            {
+                textBoxETHA.Text = value;
+
+                checkBoxEtha.Checked = !string.IsNullOrEmpty(etha);
+
+                checkBoxEtha_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public bool estale
+        {
+            get
+            {
+                return checkBoxEstale.Checked;
+            }
+            set
+            {
+                checkBoxEstale.Checked = value;
+            }
+        }
+
+        public bool erate
+        {
+            get
+            {
+                return checkBoxErate.Checked;
+            }
+            set
+            {
+                checkBoxErate.Checked = value;
+            }
+        }
+
+        public string esm
+        {
+            get
+            {
+
+                if (comboBoxEthProtocol.SelectedIndex == -1)
+                    return string.Empty;
+
+                return (string)comboBoxEthProtocol.SelectedValue;
+            }
+            set
+            {               
+                if (string.IsNullOrEmpty(value))
+                    comboBoxEthProtocol.SelectedIndex = -1;
+                else
+                    comboBoxEthProtocol.SelectedValue = value;
+
+
+
+                checkBoxEsm_CheckedChanged(this, new EventArgs());
+            }
+        }
+
         public string textCustomCommand
         {
             get
@@ -90,6 +278,8 @@ namespace SimpleMiner.Claymor
             }
         }
 
+
+
         public void SetCheckCustomCommandState()
         {
             textBoxCustomCommand.Enabled = buttonCustomCommand.Enabled = checkBoxCustomCommand.Checked;
@@ -101,6 +291,92 @@ namespace SimpleMiner.Claymor
 
             if (!checkBoxCustomCommand.Checked)
                 textBoxCustomCommand.Text = string.Empty;
+        }
+
+        public void SetCheckSoloState()
+        {
+            textBoxEtht.Enabled = checkBoxSolo.Checked;
+        }
+
+        private void checkBoxSolo_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckSoloState();
+            if (!checkBoxSolo.Checked)
+                textBoxEtht.Text = string.Empty;
+        }
+
+        public void SetCheckAllCoinsState()
+        {
+            textBoxAllCoins.Enabled = checkBoxAllCoins.Checked;
+        }
+
+        private void checkBoxAllCoins_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckAllCoinsState();
+            if (!checkBoxAllCoins.Checked)
+                textBoxAllCoins.Text = string.Empty;
+        }
+
+        public void SetCheckPswState()
+        {
+            textBoxEpsw.Enabled = checkBoxEpsw.Checked;
+        }
+
+        private void checkBoxEpsw_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckPswState();
+            if (!checkBoxEpsw.Checked)
+                textBoxEpsw.Text = string.Empty;
+        }
+
+        public void SetCheckEworker()
+        {
+            textBoxEthWorker.Enabled = checkBoxEthWorker.Checked;
+        }
+
+        private void checkBoxEthWorker_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckEworker();
+            if (!checkBoxEthWorker.Checked)
+                textBoxEthWorker.Text = string.Empty;
+        }
+
+        public void SetCheckEthi()
+        {
+            textBoxEthi.Enabled = checkBoxEthI.Checked;
+        }
+
+        private void checkBoxEthI_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckEthi();
+            if (!checkBoxEthI.Checked)
+                textBoxEthi.Text = string.Empty;
+        }
+
+        public void SetCheckEtha()
+        {
+            textBoxETHA.Enabled = checkBoxEtha.Checked;
+        }
+
+       
+
+        private void checkBoxEtha_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckEtha();
+            if (!checkBoxEtha.Checked)
+                textBoxETHA.Text = string.Empty;
+        }
+
+        public void SetCheckEsm()
+        {
+            comboBoxEthProtocol.Enabled = checkBoxEsm.Checked;
+        }
+
+        private void checkBoxEsm_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckEsm();
+            if (!checkBoxEsm.Checked)
+                comboBoxEthProtocol.SelectedIndex = -1;
         }
 
         private void textBoxCustomCommand_TextChanged(object sender, EventArgs e)
@@ -124,5 +400,7 @@ namespace SimpleMiner.Claymor
             if (Default != null)
                 Default();
         }
+
+      
     }
 }
