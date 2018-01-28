@@ -299,4 +299,7 @@
   <data name="ttClmCfgEtht" xml:space="preserve">
     <value>Time period between Ethereum HTTP requests for new job in solo mode, in milliseconds. Default value is 200ms</value>
   </data>
+  <data name="ttClmCustomCommand" xml:space="preserve">
+    <value>To change custom command click Extended parameters button</value>
+  </data>
 </root>

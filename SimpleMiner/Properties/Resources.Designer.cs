@@ -512,6 +512,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To change custom command click Extended parameters button.
+        /// </summary>
+        internal static string ttClmCustomCommand {
+            get {
+                return ResourceManager.GetString("ttClmCustomCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Extended parameters.
         /// </summary>
         internal static string ttConfigButton {

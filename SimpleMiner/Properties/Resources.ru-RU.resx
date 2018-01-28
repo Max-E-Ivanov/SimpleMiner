@@ -292,4 +292,7 @@ Lbry: только Stratum поддерживается</value>
   <data name="ttClmCfgEtht" xml:space="preserve">
     <value>Период времени между http-запросами на новую работу в СОЛО, в миллисекундах (по умолчанию 200мс)</value>
   </data>
+  <data name="ttClmCustomCommand" xml:space="preserve">
+    <value>Команда для майнера. Что бы изменить ее нажмите кнопку &lt;Расширенные параметры&gt;</value>
+  </data>
 </root>

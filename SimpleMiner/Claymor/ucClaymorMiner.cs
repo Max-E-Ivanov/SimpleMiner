@@ -24,6 +24,7 @@ namespace SimpleMiner.Claymor
             toolTipManager.SetToolTip(this.textBoxEthWorker, SimpleMiner.Properties.Resources.ttEthWorker);
             toolTipManager.SetToolTip(this.buttonConfig, SimpleMiner.Properties.Resources.ttConfigButton);
             toolTipManager.SetToolTip(this.buttonStartStop, SimpleMiner.Properties.Resources.ttStartButton);
+            toolTipManager.SetToolTip(this.textBoxCustomCommand, SimpleMiner.Properties.Resources.ttClmCustomCommand);
 
             labelEthWallet.Text = SimpleMiner.Properties.Resources.EthWallet;
             linkLabelCreateEthWallet.Text = SimpleMiner.Properties.Resources.EthCreateWalletLink;
@@ -36,6 +37,16 @@ namespace SimpleMiner.Claymor
 
             buttonConfig.Image = SimpleMiner.Properties.Resources.s_settings;
             buttonStartStop.Image = SimpleMiner.Properties.Resources.s_start;
+
+            // Hide tabs headers
+            tabControl1.Appearance = TabAppearance.FlatButtons;
+            tabControl1.ItemSize = new Size(0, 1);
+            tabControl1.SizeMode = TabSizeMode.Fixed;
+
+            foreach (TabPage tab in tabControl1.TabPages)
+            {
+                tab.Text = "";
+            }
         }
 
         bool bSettingParams;
@@ -54,6 +65,12 @@ namespace SimpleMiner.Claymor
                 textBoxEthWallet.Text = clParams.EthWallet;
                 comboBoxEthPools.Text = clParams.EthPool;
                 textBoxEthWorker.Text = clParams.EthWorker;
+
+                textBoxCustomCommand.Text = clParams.CustomParams;
+
+                tabControl1.SelectedIndex = (string.IsNullOrEmpty(clParams.CustomParams) ? 0 : 1);
+
+
                 bSettingParams = false;
             }
         }

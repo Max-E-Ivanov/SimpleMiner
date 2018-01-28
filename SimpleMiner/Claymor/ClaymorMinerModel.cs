@@ -51,14 +51,37 @@ namespace SimpleMiner.Claymor
         {
 
             //if (!File.Exists(CalymoreAppPath))
-             //   return false;
+            //   return false;
 
+            if (string.IsNullOrEmpty(CalymoreAppPath))
+                return false;
+
+            // Custom command always valid
             if (!string.IsNullOrEmpty(CustomParams))
                 return true;
 
 
-            return !string.IsNullOrEmpty(CalymoreAppPath) &&
-                !string.IsNullOrEmpty(EthPool) && !string.IsNullOrEmpty(EthWallet);
+            // -- First coin
+            if (string.IsNullOrEmpty(EthPool))
+                return false;
+
+            if (string.IsNullOrEmpty(EthWallet))
+                return false;
+
+            // -- Second coin
+
+            if (Mode)
+            {
+                if (string.IsNullOrEmpty(Dpool))
+                    return false;
+
+                if (string.IsNullOrEmpty(Dwal))
+                    return false;
+
+
+            }
+
+            return true;
         }
 
        

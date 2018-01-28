@@ -22,13 +22,6 @@ namespace SimpleMiner.Claymor
 
             _params = new ClaymorParams();
 
-            /*
-            _params.CalymoreAppPath = Utils.GetAppPath() + @"\Claymore\EthDcrMiner64.exe";
-            _params.EthPsw = "x";
-            _params.EthPool = "eth-eu.dwarfpool.com:8008";
-            _params.EthWallet = "0xD69af2A796A737A103F12d2f0BCC563a13900E6F";
-            */
-
             // Here wi should load saved settings
             _params.RestoreDefaults();
 
@@ -120,6 +113,10 @@ namespace SimpleMiner.Claymor
             try
             {
                 UIHelper.ShowClaymorConfigDlg(_params);
+
+                //ReloadParams
+                _view.clParams = _params;
+                _view.buttonStartEnabled = _params.Validate();
             }
             catch (Exception ex)
             {
