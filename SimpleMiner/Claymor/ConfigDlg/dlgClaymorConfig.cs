@@ -76,11 +76,34 @@ namespace SimpleMiner.Claymor
             return this.ShowDialog();
         }
 
-        public void SetEsmList(List<KeyValuePair<string, string>> ListEsm)
+        public void PopulateEsmList(List<KeyValuePair<string, string>> ListEsm)
         {
             comboBoxEthProtocol.DataSource = ListEsm;
         }
 
+        public void PopulateDCoins(List<string> lsDCoins)
+        {
+            comboBoxDcoin.DataSource = lsDCoins;
+        }
+
+        public void PopulateEPools(List<string> lsPools)
+        {
+            comboBoxEpool.Items.Clear();
+
+            foreach (var sPool in lsPools)
+                comboBoxEpool.Items.Add(sPool);
+        }
+
+        public void PopulateDPools(List<string> lsPools)
+        {
+            comboBoxDPool.Items.Clear();
+
+            foreach (var sPool in lsPools)
+                comboBoxDPool.Items.Add(sPool);
+        }
+
+
+        // -------------- First Coin
         public string epool
         {
             get
@@ -266,6 +289,126 @@ namespace SimpleMiner.Claymor
             }
         }
 
+        // ----------- Second Coin
+
+        public bool mode
+        {
+            get
+            {
+                return checkBoxMode.Checked;
+            }
+            set
+            {
+
+                if (mode != value)
+                    checkBoxMode.Checked = value;
+
+
+
+                SetSecondCoinEnabled();
+            }
+        }
+
+        public string dpool
+        {
+            get
+            {
+                return comboBoxDPool.Text;
+            }
+            set
+            {
+                comboBoxDPool.Text = value;
+            }
+        }
+
+        public string dwal
+        {
+            get
+            {
+                return textBoxDwal.Text;
+            }
+            set
+            {
+                textBoxDwal.Text = value;
+            }
+        }
+
+        public string dpsw
+        {
+            get
+            {
+                return textBoxDPsw.Text;
+            }
+            set
+            {
+                textBoxDPsw.Text = value;
+
+                checkBoxDpsw.Checked = !string.IsNullOrEmpty(dpsw);
+
+                checkBoxDpsw_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string dcri
+        {
+            get
+            {
+                return textBoxDcri.Text;
+            }
+            set
+            {
+                textBoxDcri.Text = value;
+
+                checkBoxDcri.Checked = !string.IsNullOrEmpty(dcri);
+
+                checkBoxDcri_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string dcrt
+        {
+            get
+            {
+                return textBoxDcrt.Text;
+            }
+            set
+            {
+                textBoxDcrt.Text = value;
+
+                checkBoxDcrt.Checked = !string.IsNullOrEmpty(dcrt);
+
+                checkBoxDcrt_CheckedChanged(this, new EventArgs());
+            }
+        }
+
+        public string dcoin
+        {
+            get
+            {
+
+                if (comboBoxDcoin.SelectedIndex == -1)
+                    return string.Empty;
+
+                return comboBoxDcoin.Text;
+            }
+            set
+            {
+
+                //if (dcoin == value)
+               //     return;
+
+                if (string.IsNullOrEmpty(value))
+                    comboBoxDcoin.SelectedIndex = -1;
+                else
+                    comboBoxDcoin.Text = value;
+
+                checkBoxDcoin.Checked = !string.IsNullOrEmpty(dcoin);
+
+                checkBoxDcoin_CheckedChanged(this, new EventArgs());
+            }
+        }
+        // ---------------- Custom Command
+
         public string textCustomCommand
         {
             get
@@ -321,14 +464,14 @@ namespace SimpleMiner.Claymor
                 textBoxAllCoins.Text = string.Empty;
         }
 
-        public void SetCheckPswState()
+        public void SetCheckEPswState()
         {
             textBoxEpsw.Enabled = checkBoxEpsw.Checked;
         }
 
         private void checkBoxEpsw_CheckedChanged(object sender, EventArgs e)
         {
-            SetCheckPswState();
+            SetCheckEPswState();
             if (!checkBoxEpsw.Checked)
                 textBoxEpsw.Text = string.Empty;
         }
@@ -405,6 +548,81 @@ namespace SimpleMiner.Claymor
                 Default();
         }
 
-      
+
+        void SetSecondCoinEnabled()
+        {
+            //Clear second coin params and disable it
+            comboBoxDPool.Enabled = textBoxDwal.Enabled = checkBoxDpsw.Enabled = textBoxDPsw.Enabled =
+                checkBoxDcri.Enabled = textBoxDcri.Enabled = checkBoxDcrt.Enabled = textBoxDcrt.Enabled =
+                checkBoxDcoin.Enabled = comboBoxDcoin.Enabled = checkBoxMode.Checked;
+
+        }
+
+        private void checkBoxMode_CheckedChanged(object sender, EventArgs e)
+        {
+            SetSecondCoinEnabled();
+
+            if (!checkBoxMode.Checked)
+            {
+                //Clear values
+                comboBoxDPool.Text = string.Empty;
+                textBoxDwal.Text = string.Empty;
+                textBoxDPsw.Text = string.Empty;
+                textBoxDcri.Text = string.Empty;
+                textBoxDcrt.Text = string.Empty;
+                comboBoxDcoin.Text = string.Empty;
+            }
+
+            NotifyPropertyChanged("params");
+        }
+
+        public void SetCheckDPswState()
+        {
+            textBoxDPsw.Enabled = checkBoxDpsw.Checked;
+        }
+
+        private void checkBoxDpsw_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckDPswState();
+            if (!checkBoxDpsw.Checked)
+                textBoxDPsw.Text = string.Empty;
+        }
+
+        public void SetCheckDcriState()
+        {
+            textBoxDcri.Enabled = checkBoxDcri.Checked;
+        }
+
+        private void checkBoxDcri_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckDcriState();
+            if (!checkBoxDcri.Checked)
+                textBoxDcri.Text = string.Empty;
+        }
+
+        public void SetCheckDcrtState()
+        {
+            textBoxDcrt.Enabled = checkBoxDcrt.Checked;
+        }
+
+        private void checkBoxDcrt_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckDcrtState();
+            if (!checkBoxDcrt.Checked)
+                textBoxDcrt.Text = string.Empty;
+        }
+
+
+        public void SetCheckDcoin()
+        {
+            comboBoxDcoin.Enabled = checkBoxDcoin.Checked;
+        }
+
+        private void checkBoxDcoin_CheckedChanged(object sender, EventArgs e)
+        {
+            SetCheckDcoin();
+            if (!checkBoxDcoin.Checked)
+                comboBoxDcoin.SelectedIndex = -1;
+        }
     }
 }

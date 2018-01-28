@@ -31,7 +31,12 @@ namespace SimpleMiner.Claymor
 
             
             bLoad = true;
-            _view.SetEsmList(ClaymorParams.ListEsm());
+
+            _view.PopulateEsmList(ClaymorParams.ListEsm());
+            _view.PopulateEPools(ClaymorParams.ListEPools());
+            _view.PopulateDPools(ClaymorParams.ListDPools());
+            _view.PopulateDCoins(ClaymorParams.ListDcoins());
+
             DisplayParams();
             bLoad = false;
         }
@@ -68,8 +73,16 @@ namespace SimpleMiner.Claymor
                 _params_clone.Etht = _view.etht;
                 _params_clone.EthWorker = _view.eworker;
                 _params_clone.Solo = _view.solo;
-                
 
+                // -----------------
+                _params_clone.Mode = _view.mode;
+                _params_clone.Dpool = _view.dpool;
+                _params_clone.Dwal = _view.dwal;
+                _params_clone.Dpsw = _view.dpsw;
+                _params_clone.Dcri = _view.dcri;
+                _params_clone.Dcoin = _view.dcoin;
+
+                // -----------------
                 _params_clone.CustomParams = _view.textCustomCommand;
 
 
@@ -97,6 +110,16 @@ namespace SimpleMiner.Claymor
             _view.eworker = _params_clone.EthWorker;
             _view.solo = _params_clone.Solo;
 
+            // -------------------------
+            _view.mode = _params_clone.Mode;
+            _view.dpool = _params_clone.Dpool;
+            _view.dwal = _params_clone.Dwal;
+            _view.dpsw = _params_clone.Dpsw;
+            _view.dcri = _params_clone.Dcri;
+            _view.dcrt = _params_clone.Dcrt;
+            _view.dcoin = _params_clone.Dcoin;
+
+            // ---------------------------------
             _view.textCustomCommand = _params_clone.CustomParams;
 
 

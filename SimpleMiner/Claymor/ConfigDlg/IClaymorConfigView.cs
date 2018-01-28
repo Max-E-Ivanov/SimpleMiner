@@ -12,6 +12,10 @@ namespace SimpleMiner.Claymor
         event Action Ok;
         event Action Default;
 
+        void PopulateEPools(List<string> lsPools);
+        void PopulateDPools(List<string> lsPools);
+        void PopulateDCoins(List<string> lsDCoins);
+
         string epool { get; set; }
         bool solo { get; set; }
         string etht { get; set; }
@@ -24,7 +28,7 @@ namespace SimpleMiner.Claymor
         void SetCheckAllCoinsState();
 
         string epsw { get; set; }
-        void SetCheckPswState();
+        //void SetCheckPswState();
 
         string eworker { get; set; }
         void SetCheckEworker();
@@ -40,8 +44,19 @@ namespace SimpleMiner.Claymor
         bool erate { get; set; }
 
         string esm { get; set; }
-        void SetEsmList(List<KeyValuePair<string, string>> ListEsm);
+        void PopulateEsmList(List<KeyValuePair<string, string>> ListEsm);
         void SetCheckEsm();
+
+
+        // ------------------
+
+        bool mode { get; set; }
+        string dpool { get; set; }
+        string dwal { get; set; }
+        string dpsw { get; set; }
+        string dcri { get; set; }
+        string dcrt { get; set; }
+        string dcoin { get; set; }
 
         string textCustomCommand { get; set; }
         void SetCheckCustomCommandState();

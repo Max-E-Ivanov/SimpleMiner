@@ -22,21 +22,21 @@ namespace SimpleMiner.Claymor
 
             _params = new ClaymorParams();
 
+            /*
             _params.CalymoreAppPath = Utils.GetAppPath() + @"\Claymore\EthDcrMiner64.exe";
-
-          
-
             _params.EthPsw = "x";
-
             _params.EthPool = "eth-eu.dwarfpool.com:8008";
             _params.EthWallet = "0xD69af2A796A737A103F12d2f0BCC563a13900E6F";
+            */
 
+            // Here wi should load saved settings
+            _params.RestoreDefaults();
 
 
 
             _view.clParams = _params;
 
-            PopulateETHPools();
+            PopulatePools();
 
            // this._model.OnStartProcess += _model_OnStartProcess;
            // this._model.OnKillProcess += _model_OnKillProcess;
@@ -66,12 +66,9 @@ namespace SimpleMiner.Claymor
             }
         }
 
-        void PopulateETHPools()
+        void PopulatePools()
         {
-            List<string> lsPopls = new List<string> { "us1.ethpool.org:3333", "us1.ethermine.org:4444", "eth-eu.dwarfpool.com:8008", "eu1.nanopool.org:9999",
-            "stratum+tcp://daggerhashimoto.eu.nicehash.com:3353", "us-east1.ethereum.miningpoolhub.com:20536", "us-east1.ethereum.miningpoolhub.com:20536"};
-
-            _view.PopulateEthPools(lsPopls);
+            _view.PopulateEthPools(ClaymorParams.ListEPools());
         }
 
 

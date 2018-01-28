@@ -37,6 +37,16 @@ namespace SimpleMiner.Claymor
         public string Esm { get; set; }
 
 
+        //Second coin
+        public bool Mode { get; set; }
+
+        public string Dpool { get; set; }
+        public string Dwal { get; set; }
+        public string Dpsw { get; set; }
+        public string Dcri { get; set; }
+        public string Dcrt { get; set; }
+        public string Dcoin { get; set; }
+
         public bool Validate()
         {
 
@@ -98,6 +108,14 @@ namespace SimpleMiner.Claymor
             this.Ethi = _params.Ethi;
             this.Etht = _params.Etht;
             this.Solo = _params.Solo;
+
+            this.Mode = _params.Mode;
+            this.Dcoin = _params.Dcoin;
+            this.Dcri = _params.Dcri;
+            this.Dcrt = _params.Dcrt;
+            this.Dpool = _params.Dpool;
+            this.Dpsw = _params.Dpsw;
+            this.Dwal = _params.Dwal;
            
         }
 
@@ -109,7 +127,9 @@ namespace SimpleMiner.Claymor
             {
                 CalymoreAppPath = Utils.GetAppPath() + @"\Claymore\EthDcrMiner64.exe",
                 EthPsw = "x",
-                EthPool = "eth-eu.dwarfpool.com:8008"
+                EthPool = "eu1.ethermine.org:4444",
+                EthWallet = "0x1770Ed0d79eDf091a7521C5Ee82212EFf308C933",
+                Allcoins = "1"
             };
 
             CopyFrom(_prm);
@@ -134,11 +154,14 @@ namespace SimpleMiner.Claymor
                     sResult = sResult + " -ewal " + EthWallet;
 
                 if (!string.IsNullOrEmpty(EthWorker))
-                    sResult = sResult + "/" + EthWorker;
+                    sResult = sResult + " -eworker " + EthWorker;
 
                 if (!string.IsNullOrEmpty(EthPsw))
                     sResult = sResult + " -epsw " + EthPsw;
 
+
+
+                // ----------------
                 if (!string.IsNullOrEmpty(EthLog))
                     sResult = sResult + " -logfile " + EthLog;
 
@@ -155,6 +178,46 @@ namespace SimpleMiner.Claymor
                 new KeyValuePair<string, string>("2", "miner-proxy"),
                 new KeyValuePair<string, string>("3", "nicehash")
             };
+        }
+
+        public static List<string> ListEPools()
+        {
+            return new List<string> {
+                "eu1.ethermine.org:4444",
+                "us1.ethpool.org:3333",
+                "us1.ethermine.org:4444",
+                "eth-eu.dwarfpool.com:8008",
+                "eu1.nanopool.org:9999",               
+                "us-east1.ethereum.miningpoolhub.com:20536" };
+
+        }
+
+        public static List<string> ListDPools()
+        {
+            return new List<string> {
+                @"stratum+tcp://yiimp.ccminer.org:4252",
+                @"stratum+tcp://dcr.suprnova.cc:3252",
+                @"stratum+tcp://lbry.suprnova.cc:6256",
+                @"stratum+tcp://sia-eu1.nanopool.org:7777",
+                @"stratum+tcp://decred.eu.nicehash.com:3354",
+                @"stratum+tcp://hub.miningpoolhub.com:20550",
+                @"sia.suprnova.cc:7777",
+                @"http://dcr.suprnova.cc:9111",
+                @"stratum+tcp://dcr.coinmine.pl:2222",
+                @"stratum+tcp://pasc.suprnova.cc:5279",
+            @"http://sia-eu1.nanopool.org:9980/miner/header?address",
+            @"http://siamining.com:9980/miner/header?address="};
+
+        }
+
+        public static List<string> ListDcoins()
+        {
+            return new List<string> {
+                @"dcr",
+                @"sc",
+                @"lbc",
+                @"pasc"};
+
         }
     }
 

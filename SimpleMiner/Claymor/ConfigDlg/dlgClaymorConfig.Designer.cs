@@ -69,9 +69,16 @@
             this.comboBoxEpool = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPageGPUSettings = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tabPageOther = new System.Windows.Forms.TabPage();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.tabPageCustomCommand.SuspendLayout();
             this.tabPageCoins.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tabPageGPUSettings.SuspendLayout();
+            this.tabPageOther.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonDefaults
@@ -233,6 +240,7 @@
             this.textBoxDcrt.Name = "textBoxDcrt";
             this.textBoxDcrt.Size = new System.Drawing.Size(92, 20);
             this.textBoxDcrt.TabIndex = 32;
+            this.textBoxDcrt.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxDcri
             // 
@@ -241,6 +249,7 @@
             this.textBoxDcri.Name = "textBoxDcri";
             this.textBoxDcri.Size = new System.Drawing.Size(92, 20);
             this.textBoxDcri.TabIndex = 30;
+            this.textBoxDcri.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxDPsw
             // 
@@ -250,6 +259,7 @@
             this.textBoxDPsw.Name = "textBoxDPsw";
             this.textBoxDPsw.Size = new System.Drawing.Size(163, 20);
             this.textBoxDPsw.TabIndex = 29;
+            this.textBoxDPsw.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxDwal
             // 
@@ -259,6 +269,7 @@
             this.textBoxDwal.Name = "textBoxDwal";
             this.textBoxDwal.Size = new System.Drawing.Size(347, 20);
             this.textBoxDwal.TabIndex = 27;
+            this.textBoxDwal.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // textBoxEtht
             // 
@@ -325,6 +336,7 @@
             this.comboBoxDcoin.Name = "comboBoxDcoin";
             this.comboBoxDcoin.Size = new System.Drawing.Size(92, 21);
             this.comboBoxDcoin.TabIndex = 35;
+            this.comboBoxDcoin.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // checkBoxDcoin
             // 
@@ -336,6 +348,7 @@
             this.checkBoxDcoin.TabIndex = 34;
             this.checkBoxDcoin.Text = "dcoin";
             this.checkBoxDcoin.UseVisualStyleBackColor = true;
+            this.checkBoxDcoin.CheckedChanged += new System.EventHandler(this.checkBoxDcoin_CheckedChanged);
             // 
             // checkBoxDcrt
             // 
@@ -346,6 +359,7 @@
             this.checkBoxDcrt.TabIndex = 33;
             this.checkBoxDcrt.Text = "dcrt";
             this.checkBoxDcrt.UseVisualStyleBackColor = true;
+            this.checkBoxDcrt.CheckedChanged += new System.EventHandler(this.checkBoxDcrt_CheckedChanged);
             // 
             // checkBoxDcri
             // 
@@ -357,6 +371,7 @@
             this.checkBoxDcri.TabIndex = 31;
             this.checkBoxDcri.Text = "dcri";
             this.checkBoxDcri.UseVisualStyleBackColor = true;
+            this.checkBoxDcri.CheckedChanged += new System.EventHandler(this.checkBoxDcri_CheckedChanged);
             // 
             // checkBoxDpsw
             // 
@@ -367,6 +382,7 @@
             this.checkBoxDpsw.TabIndex = 28;
             this.checkBoxDpsw.Text = "dpsw";
             this.checkBoxDpsw.UseVisualStyleBackColor = true;
+            this.checkBoxDpsw.CheckedChanged += new System.EventHandler(this.checkBoxDpsw_CheckedChanged);
             // 
             // labelDWal
             // 
@@ -386,6 +402,7 @@
             this.comboBoxDPool.Name = "comboBoxDPool";
             this.comboBoxDPool.Size = new System.Drawing.Size(347, 21);
             this.comboBoxDPool.TabIndex = 25;
+            this.comboBoxDPool.TextChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // labelDpool
             // 
@@ -406,6 +423,7 @@
             this.checkBoxMode.TabIndex = 23;
             this.checkBoxMode.Text = "Second coin";
             this.checkBoxMode.UseVisualStyleBackColor = true;
+            this.checkBoxMode.CheckedChanged += new System.EventHandler(this.checkBoxMode_CheckedChanged);
             // 
             // checkBoxErate
             // 
@@ -530,11 +548,64 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPageCoins);
             this.tabControl1.Controls.Add(this.tabPageCustomCommand);
+            this.tabControl1.Controls.Add(this.tabPageGPUSettings);
+            this.tabControl1.Controls.Add(this.tabPageOther);
             this.tabControl1.Location = new System.Drawing.Point(1, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(466, 372);
             this.tabControl1.TabIndex = 3;
+            // 
+            // tabPageGPUSettings
+            // 
+            this.tabPageGPUSettings.Controls.Add(this.checkBox1);
+            this.tabPageGPUSettings.Location = new System.Drawing.Point(4, 22);
+            this.tabPageGPUSettings.Name = "tabPageGPUSettings";
+            this.tabPageGPUSettings.Size = new System.Drawing.Size(458, 346);
+            this.tabPageGPUSettings.TabIndex = 3;
+            this.tabPageGPUSettings.Text = "GPUSettings";
+            this.tabPageGPUSettings.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 14);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(74, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Set GPU_";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // tabPageOther
+            // 
+            this.tabPageOther.Controls.Add(this.checkBox3);
+            this.tabPageOther.Controls.Add(this.checkBox2);
+            this.tabPageOther.Location = new System.Drawing.Point(4, 22);
+            this.tabPageOther.Name = "tabPageOther";
+            this.tabPageOther.Size = new System.Drawing.Size(458, 346);
+            this.tabPageOther.TabIndex = 4;
+            this.tabPageOther.Text = "Other settings";
+            this.tabPageOther.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(7, 36);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(96, 17);
+            this.checkBox3.TabIndex = 1;
+            this.checkBox3.Text = "Restart if close";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(7, 13);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(120, 17);
+            this.checkBox2.TabIndex = 0;
+            this.checkBox2.Text = "Show miner window";
+            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // dlgClaymorConfig
             // 
@@ -555,6 +626,10 @@
             this.tabPageCoins.ResumeLayout(false);
             this.tabPageCoins.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tabPageGPUSettings.ResumeLayout(false);
+            this.tabPageGPUSettings.PerformLayout();
+            this.tabPageOther.ResumeLayout(false);
+            this.tabPageOther.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -602,5 +677,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.CheckBox checkBoxEpsw;
+        private System.Windows.Forms.TabPage tabPageGPUSettings;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TabPage tabPageOther;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox2;
     }
 }
