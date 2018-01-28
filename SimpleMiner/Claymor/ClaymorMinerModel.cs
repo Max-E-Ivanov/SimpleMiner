@@ -20,6 +20,7 @@ namespace SimpleMiner.Claymor
         public string CalymoreAppPath { get; set; }
 
         public bool ShowWindow { get; set; }
+        public bool Restart { get; set; }
 
         public string EthWallet { get; set; }
         public string EthPool { get; set; }
@@ -159,6 +160,7 @@ namespace SimpleMiner.Claymor
             this.CustomParams = _params.CustomParams;
             this.CalymoreAppPath = _params.CalymoreAppPath;
             this.ShowWindow = _params.ShowWindow;
+            this.Restart = _params.Restart;
 
             this.Allcoins = _params.Allcoins;
             this.Allpools = _params.Allpools;

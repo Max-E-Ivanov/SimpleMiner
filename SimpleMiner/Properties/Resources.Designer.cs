@@ -106,6 +106,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart if close.
+        /// </summary>
+        internal static string ClmCfgRestart {
+            get {
+                return ResourceManager.GetString("ClmCfgRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Mine Second coin.
         /// </summary>
         internal static string ClmCfgSecondCoin {
@@ -238,6 +247,15 @@ namespace SimpleMiner.Properties {
             get {
                 object obj = ResourceManager.GetObject("IcoMiningLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
             }
         }
         
@@ -521,6 +539,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Restart when miner is crashed.
+        /// </summary>
+        internal static string ttClmCfgRestart {
+            get {
+                return ResourceManager.GetString("ttClmCfgRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use SOLO mode.
         /// </summary>
         internal static string ttClmCfgSolo {
@@ -611,6 +638,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language of inteface.
+        /// </summary>
+        internal static string ttLanguage {
+            get {
+                return ResourceManager.GetString("ttLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Press for start mining.
         /// </summary>
         internal static string ttStartButton {
@@ -634,6 +670,15 @@ namespace SimpleMiner.Properties {
         internal static string Web {
             get {
                 return ResourceManager.GetString("Web", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to WriteLog.
+        /// </summary>
+        internal static string WriteLog {
+            get {
+                return ResourceManager.GetString("WriteLog", resourceCulture);
             }
         }
     }

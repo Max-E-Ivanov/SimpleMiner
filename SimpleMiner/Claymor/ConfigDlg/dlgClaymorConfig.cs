@@ -66,6 +66,8 @@ namespace SimpleMiner.Claymor
 
             //Other settings tab
             checkBoxShowWindow.Text = SimpleMiner.Properties.Resources.ClmCfgShowWindow;
+            checkBoxRestart.Text = SimpleMiner.Properties.Resources.ClmCfgRestart;
+            toolTipManager.SetToolTip(this.checkBoxRestart, SimpleMiner.Properties.Resources.ttClmCfgRestart);
         }
         
         object IView.ShowDialog()
@@ -502,6 +504,18 @@ namespace SimpleMiner.Claymor
             set
             {
                 checkBoxShowWindow.Checked = value;
+            }
+        }
+
+        public bool restart
+        {
+            get
+            {
+                return checkBoxRestart.Checked;
+            }
+            set
+            {
+                checkBoxRestart.Checked = value;
             }
         }
 

@@ -101,6 +101,7 @@ namespace SimpleMiner.Claymor
 
                 // ---------------
                 _params_clone.ShowWindow = _view.showwindow;
+                _params_clone.Restart = _view.restart;
 
                 DisplayParams();
             }
@@ -145,6 +146,7 @@ namespace SimpleMiner.Claymor
 
             // ---------------
             _view.showwindow = _params_clone.ShowWindow;
+            _view.restart = _params_clone.Restart;
 
 
             _view.buttonOkEnabled = _params_clone.Validate();            

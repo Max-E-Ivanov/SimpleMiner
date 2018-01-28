@@ -71,7 +71,9 @@ namespace SimpleMiner.Claymor
         bool GPU_MAX_ALLOC_PERCENT { get; set; }
         bool GPU_SINGLE_ALLOC_PERCENT { get; set; }
 
+        // ------------------
         bool showwindow { get; set; }
+        bool restart { get; set; }
 
     }
 }

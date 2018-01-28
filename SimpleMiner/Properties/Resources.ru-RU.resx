@@ -304,4 +304,19 @@ Lbry: только Stratum поддерживается</value>
   <data name="ClmCfgTabOtherSettings" xml:space="preserve">
     <value>Остальные настройки</value>
   </data>
+  <data name="ClmCfgRestart" xml:space="preserve">
+    <value>Перезпускать майнер</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="ttClmCfgRestart" xml:space="preserve">
+    <value>Перезапускать если майнер прекратил работу</value>
+  </data>
+  <data name="ttLanguage" xml:space="preserve">
+    <value>Язык интерфейса</value>
+  </data>
+  <data name="WriteLog" xml:space="preserve">
+    <value>Вести лог</value>
+  </data>
 </root>

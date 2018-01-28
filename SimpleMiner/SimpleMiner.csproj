@@ -138,6 +138,7 @@
     </Compile>
     <Compile Include="MVP\BaseMVP.cs" />
     <Compile Include="ProcessHelper.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="SimpleMinerForm.cs">
       <SubType>Form</SubType>
     </Compile>

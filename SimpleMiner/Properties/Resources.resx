@@ -311,4 +311,19 @@
   <data name="ClmCfgTabOtherSettings" xml:space="preserve">
     <value>Other settings</value>
   </data>
+  <data name="ClmCfgRestart" xml:space="preserve">
+    <value>Restart if close</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="ttClmCfgRestart" xml:space="preserve">
+    <value>Restart when miner is crashed</value>
+  </data>
+  <data name="ttLanguage" xml:space="preserve">
+    <value>Language of inteface</value>
+  </data>
+  <data name="WriteLog" xml:space="preserve">
+    <value>WriteLog</value>
+  </data>
 </root>

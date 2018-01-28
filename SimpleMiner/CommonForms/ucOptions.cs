@@ -16,6 +16,12 @@ namespace SimpleMiner
         public ucOptions()
         {
             InitializeComponent();
+
+            // Localization
+            labelLanguage.Text = SimpleMiner.Properties.Resources.Language;
+            checkBoxLog.Text = SimpleMiner.Properties.Resources.WriteLog;
+
+            toolTipManager.SetToolTip(this.comboBoxLanguage, SimpleMiner.Properties.Resources.ttLanguage);
         }
 
         public object ShowDialog()

@@ -29,31 +29,43 @@
         private void InitializeComponent()
         {
             this.labelLanguage = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxLanguage = new System.Windows.Forms.ComboBox();
+            this.checkBoxLog = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelLanguage
             // 
             this.labelLanguage.AutoSize = true;
-            this.labelLanguage.Location = new System.Drawing.Point(3, 11);
+            this.labelLanguage.Location = new System.Drawing.Point(3, 6);
             this.labelLanguage.Name = "labelLanguage";
             this.labelLanguage.Size = new System.Drawing.Size(77, 13);
             this.labelLanguage.TabIndex = 0;
             this.labelLanguage.Text = "labelLanguage";
             // 
-            // comboBox1
+            // comboBoxLanguage
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(86, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(159, 21);
-            this.comboBox1.TabIndex = 1;
+            this.comboBoxLanguage.FormattingEnabled = true;
+            this.comboBoxLanguage.Location = new System.Drawing.Point(86, 3);
+            this.comboBoxLanguage.Name = "comboBoxLanguage";
+            this.comboBoxLanguage.Size = new System.Drawing.Size(159, 21);
+            this.comboBoxLanguage.TabIndex = 1;
+            // 
+            // checkBoxLog
+            // 
+            this.checkBoxLog.AutoSize = true;
+            this.checkBoxLog.Location = new System.Drawing.Point(0, 30);
+            this.checkBoxLog.Name = "checkBoxLog";
+            this.checkBoxLog.Size = new System.Drawing.Size(92, 17);
+            this.checkBoxLog.TabIndex = 2;
+            this.checkBoxLog.Text = "checkBoxLog";
+            this.checkBoxLog.UseVisualStyleBackColor = true;
             // 
             // ucOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.checkBoxLog);
+            this.Controls.Add(this.comboBoxLanguage);
             this.Controls.Add(this.labelLanguage);
             this.Name = "ucOptions";
             this.Size = new System.Drawing.Size(431, 256);
@@ -65,6 +77,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelLanguage;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxLanguage;
+        private System.Windows.Forms.CheckBox checkBoxLog;
     }
 }

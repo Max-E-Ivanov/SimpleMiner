@@ -70,14 +70,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageGPUSettings = new System.Windows.Forms.TabPage();
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100 = new System.Windows.Forms.CheckBox();
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100 = new System.Windows.Forms.CheckBox();
+            this.checkBoxGPU_USE_SYNC_OBJECTS1 = new System.Windows.Forms.CheckBox();
+            this.checkBoxGPU_MAX_HEAP_SIZE100 = new System.Windows.Forms.CheckBox();
             this.checkBoxGPU_FORCE_64BIT_PTR0 = new System.Windows.Forms.CheckBox();
             this.tabPageOther = new System.Windows.Forms.TabPage();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxRestart = new System.Windows.Forms.CheckBox();
             this.checkBoxShowWindow = new System.Windows.Forms.CheckBox();
-            this.checkBoxGPU_MAX_HEAP_SIZE100 = new System.Windows.Forms.CheckBox();
-            this.checkBoxGPU_USE_SYNC_OBJECTS1 = new System.Windows.Forms.CheckBox();
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100 = new System.Windows.Forms.CheckBox();
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100 = new System.Windows.Forms.CheckBox();
             this.tabPageCustomCommand.SuspendLayout();
             this.tabPageCoins.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -575,6 +575,50 @@
             this.tabPageGPUSettings.Text = "GPUSettings";
             this.tabPageGPUSettings.UseVisualStyleBackColor = true;
             // 
+            // checkBoxGPU_SINGLE_ALLOC_PERCENT100
+            // 
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.AutoSize = true;
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Location = new System.Drawing.Point(12, 106);
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Name = "checkBoxGPU_SINGLE_ALLOC_PERCENT100";
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Size = new System.Drawing.Size(212, 17);
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.TabIndex = 4;
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Text = "GPU_SINGLE_ALLOC_PERCENT 100";
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.UseVisualStyleBackColor = true;
+            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
+            // 
+            // checkBoxGPU_MAX_ALLOC_PERCENT100
+            // 
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.AutoSize = true;
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Location = new System.Drawing.Point(12, 83);
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Name = "checkBoxGPU_MAX_ALLOC_PERCENT100";
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Size = new System.Drawing.Size(196, 17);
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.TabIndex = 3;
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Text = "GPU_MAX_ALLOC_PERCENT 100";
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.UseVisualStyleBackColor = true;
+            this.checkBoxGPU_MAX_ALLOC_PERCENT100.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
+            // 
+            // checkBoxGPU_USE_SYNC_OBJECTS1
+            // 
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.AutoSize = true;
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.Location = new System.Drawing.Point(12, 60);
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.Name = "checkBoxGPU_USE_SYNC_OBJECTS1";
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.Size = new System.Drawing.Size(175, 17);
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.TabIndex = 2;
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.Text = "GPU_USE_SYNC_OBJECTS 1";
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.UseVisualStyleBackColor = true;
+            this.checkBoxGPU_USE_SYNC_OBJECTS1.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
+            // 
+            // checkBoxGPU_MAX_HEAP_SIZE100
+            // 
+            this.checkBoxGPU_MAX_HEAP_SIZE100.AutoSize = true;
+            this.checkBoxGPU_MAX_HEAP_SIZE100.Location = new System.Drawing.Point(12, 37);
+            this.checkBoxGPU_MAX_HEAP_SIZE100.Name = "checkBoxGPU_MAX_HEAP_SIZE100";
+            this.checkBoxGPU_MAX_HEAP_SIZE100.Size = new System.Drawing.Size(164, 17);
+            this.checkBoxGPU_MAX_HEAP_SIZE100.TabIndex = 1;
+            this.checkBoxGPU_MAX_HEAP_SIZE100.Text = "GPU_MAX_HEAP_SIZE 100";
+            this.checkBoxGPU_MAX_HEAP_SIZE100.UseVisualStyleBackColor = true;
+            this.checkBoxGPU_MAX_HEAP_SIZE100.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
+            // 
             // checkBoxGPU_FORCE_64BIT_PTR0
             // 
             this.checkBoxGPU_FORCE_64BIT_PTR0.AutoSize = true;
@@ -588,7 +632,7 @@
             // 
             // tabPageOther
             // 
-            this.tabPageOther.Controls.Add(this.checkBox3);
+            this.tabPageOther.Controls.Add(this.checkBoxRestart);
             this.tabPageOther.Controls.Add(this.checkBoxShowWindow);
             this.tabPageOther.Location = new System.Drawing.Point(4, 22);
             this.tabPageOther.Name = "tabPageOther";
@@ -597,15 +641,16 @@
             this.tabPageOther.Text = "Other settings";
             this.tabPageOther.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxRestart
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(7, 36);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(96, 17);
-            this.checkBox3.TabIndex = 1;
-            this.checkBox3.Text = "Restart if close";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxRestart.AutoSize = true;
+            this.checkBoxRestart.Location = new System.Drawing.Point(7, 36);
+            this.checkBoxRestart.Name = "checkBoxRestart";
+            this.checkBoxRestart.Size = new System.Drawing.Size(96, 17);
+            this.checkBoxRestart.TabIndex = 1;
+            this.checkBoxRestart.Text = "Restart if close";
+            this.checkBoxRestart.UseVisualStyleBackColor = true;
+            this.checkBoxRestart.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // checkBoxShowWindow
             // 
@@ -617,50 +662,6 @@
             this.checkBoxShowWindow.Text = "Show miner window";
             this.checkBoxShowWindow.UseVisualStyleBackColor = true;
             this.checkBoxShowWindow.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
-            // 
-            // checkBoxGPU_MAX_HEAP_SIZE100
-            // 
-            this.checkBoxGPU_MAX_HEAP_SIZE100.AutoSize = true;
-            this.checkBoxGPU_MAX_HEAP_SIZE100.Location = new System.Drawing.Point(12, 37);
-            this.checkBoxGPU_MAX_HEAP_SIZE100.Name = "checkBoxGPU_MAX_HEAP_SIZE100";
-            this.checkBoxGPU_MAX_HEAP_SIZE100.Size = new System.Drawing.Size(164, 17);
-            this.checkBoxGPU_MAX_HEAP_SIZE100.TabIndex = 1;
-            this.checkBoxGPU_MAX_HEAP_SIZE100.Text = "GPU_MAX_HEAP_SIZE 100";
-            this.checkBoxGPU_MAX_HEAP_SIZE100.UseVisualStyleBackColor = true;
-            this.checkBoxGPU_MAX_HEAP_SIZE100.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
-            // 
-            // checkBoxGPU_USE_SYNC_OBJECTS1
-            // 
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.AutoSize = true;
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.Location = new System.Drawing.Point(12, 60);
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.Name = "checkBoxGPU_USE_SYNC_OBJECTS1";
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.Size = new System.Drawing.Size(175, 17);
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.TabIndex = 2;
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.Text = "GPU_USE_SYNC_OBJECTS 1";
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.UseVisualStyleBackColor = true;
-            this.checkBoxGPU_USE_SYNC_OBJECTS1.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
-            // 
-            // checkBoxGPU_MAX_ALLOC_PERCENT100
-            // 
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.AutoSize = true;
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Location = new System.Drawing.Point(12, 83);
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Name = "checkBoxGPU_MAX_ALLOC_PERCENT100";
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Size = new System.Drawing.Size(196, 17);
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.TabIndex = 3;
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.Text = "GPU_MAX_ALLOC_PERCENT 100";
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.UseVisualStyleBackColor = true;
-            this.checkBoxGPU_MAX_ALLOC_PERCENT100.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
-            // 
-            // checkBoxGPU_SINGLE_ALLOC_PERCENT100
-            // 
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.AutoSize = true;
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Location = new System.Drawing.Point(12, 106);
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Name = "checkBoxGPU_SINGLE_ALLOC_PERCENT100";
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Size = new System.Drawing.Size(212, 17);
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.TabIndex = 4;
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.Text = "GPU_SINGLE_ALLOC_PERCENT 100";
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.UseVisualStyleBackColor = true;
-            this.checkBoxGPU_SINGLE_ALLOC_PERCENT100.CheckedChanged += new System.EventHandler(this.textBoxCustomCommand_TextChanged);
             // 
             // dlgClaymorConfig
             // 
@@ -735,7 +736,7 @@
         private System.Windows.Forms.TabPage tabPageGPUSettings;
         private System.Windows.Forms.CheckBox checkBoxGPU_FORCE_64BIT_PTR0;
         private System.Windows.Forms.TabPage tabPageOther;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBoxRestart;
         private System.Windows.Forms.CheckBox checkBoxShowWindow;
         private System.Windows.Forms.CheckBox checkBoxGPU_SINGLE_ALLOC_PERCENT100;
         private System.Windows.Forms.CheckBox checkBoxGPU_MAX_ALLOC_PERCENT100;
