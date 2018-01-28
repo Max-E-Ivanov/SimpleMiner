@@ -9,9 +9,14 @@ using SimpleMiner.BaseMining;
 
 namespace SimpleMiner.Claymor
 {
-
+    [Serializable]
     public class ClaymorParams
     {
+
+        public ClaymorParams()
+        {
+        }
+
         public string CalymoreAppPath { get; set; }
 
         public string EthWallet { get; set; }

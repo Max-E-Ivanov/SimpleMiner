@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 using SimpleMiner.MVP;
 using SimpleMiner.BaseProcessHelper;
 using System.IO;
+using System.Xml.Serialization;
 
 namespace SimpleMiner.Claymor
 {
     public class ClaymorMinerPresenter :IPresenter
     {
+
+        protected readonly string sSettingsFileName = "claymore.xml";
         protected IClaymorMinerView _view;
         protected ClaymorMinerModel _model;
 
@@ -24,7 +27,7 @@ namespace SimpleMiner.Claymor
 
             // Here wi should load saved settings
             _params.RestoreDefaults();
-
+            LoadSavedParams();
 
 
             _view.clParams = _params;
@@ -82,6 +85,8 @@ namespace SimpleMiner.Claymor
         {
             try
             {
+                SaveParams();
+
                 if (!File.Exists(_params.CalymoreAppPath))
                     UIHelper.ShowError("Miner file absent");
 
@@ -138,7 +143,46 @@ namespace SimpleMiner.Claymor
 
         }
 
-     
+
+
+        void LoadSavedParams()
+        {
+            try
+            {
+
+                if (!File.Exists(sSettingsFileName))
+                    return;
+
+                using (var stream = System.IO.File.OpenRead(sSettingsFileName))
+                {
+                    var serializer = new XmlSerializer(typeof(ClaymorParams));
+                    _params = serializer.Deserialize(stream) as ClaymorParams;
+                }
+               
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError( new Exception("Error while loading miner settings from file", ex));
+            }
+        }
+
+        void SaveParams()
+        {
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(ClaymorParams));
+
+                using (var writer = new System.IO.StreamWriter(sSettingsFileName))
+                {
+                    serializer.Serialize(writer, _params);
+                    writer.Flush();
+                }
+            }
+            catch (Exception ex)
+            {
+                UIHelper.ShowError( new Exception( "Error while saving miner settings to file", ex));
+            }
+        }
 
         public void Show()
         {
