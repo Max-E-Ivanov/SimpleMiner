@@ -136,19 +136,19 @@ namespace SimpleMiner.Claymor
 
         }
 
-        public string ClaymorParmsString
+        public string ClaymorParmsString (bool bGenerate)
         {
-           get
+           
             {
                 string sResult = string.Empty;
 
-                if (!string.IsNullOrEmpty(CustomParams))
+                if (!bGenerate && (!string.IsNullOrEmpty(CustomParams)))
                     return CustomParams + " -logfile " + EthLog;
 
                 // ------------------
 
                 if (!string.IsNullOrEmpty(EthPool))
-                    sResult = sResult + " -epool " + EthPool;
+                    sResult = sResult + " -epool " + (Solo? @"": "http://") + EthPool;
 
                 if (!string.IsNullOrEmpty(EthWallet))
                     sResult = sResult + " -ewal " + EthWallet;
@@ -158,6 +158,53 @@ namespace SimpleMiner.Claymor
 
                 if (!string.IsNullOrEmpty(EthPsw))
                     sResult = sResult + " -epsw " + EthPsw;
+
+                if (!string.IsNullOrEmpty(Etha))
+                    sResult = sResult + " -etha " + Etha;
+
+                if (!string.IsNullOrEmpty(Ethi))
+                    sResult = sResult + " -ethi " + Ethi;
+
+                if (!string.IsNullOrEmpty(Etht))
+                    sResult = sResult + " -etht " + Etht;
+
+                if (Allpools)
+                    sResult = sResult + " -allpools " + "1";
+
+                if (!string.IsNullOrEmpty(Allcoins))
+                    sResult = sResult + " -allcoins " + Allcoins;
+
+                if (Estale)
+                    sResult = sResult + " -estale " + "1";
+
+                if (Erate)
+                    sResult = sResult + " -erate " + "1";
+
+                if (!string.IsNullOrEmpty(Esm))
+                    sResult = sResult + " -esm " + Esm;
+
+                // --- Second coin ---
+                
+                 sResult = sResult + " -mode " + (Mode? "0" :"1");
+
+                if (!string.IsNullOrEmpty(Dpool))
+                    sResult = sResult + " -dpool " + Dpool;
+
+                if (!string.IsNullOrEmpty(Dwal))
+                    sResult = sResult + " -dwal " + Dwal;
+
+                if (!string.IsNullOrEmpty(Dpsw))
+                    sResult = sResult + " -dpsw " + Dpsw;
+
+                if (!string.IsNullOrEmpty(Dcri))
+                    sResult = sResult + " -dcri " + Dcri;
+
+                if (!string.IsNullOrEmpty(Dcrt))
+                    sResult = sResult + " -dcrt " + Dcrt;
+
+                if (!string.IsNullOrEmpty(Dcoin))
+                    sResult = sResult + " -dcoin " + Dcoin;
+
 
 
 
@@ -233,7 +280,7 @@ namespace SimpleMiner.Claymor
             {
                 this.clParams = _clParams;
 
-                ProcessParams _params = new ProcessParams(_clParams.CalymoreAppPath, _clParams.ClaymorParmsString);
+                ProcessParams _params = new ProcessParams(_clParams.CalymoreAppPath, _clParams.ClaymorParmsString(false));
                 _processHelper = new ClaymorProcessHelper(_params);
                 _processHelper.Launch();
                 

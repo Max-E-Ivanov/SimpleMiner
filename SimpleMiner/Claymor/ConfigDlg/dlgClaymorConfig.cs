@@ -14,6 +14,8 @@ namespace SimpleMiner.Claymor
 {
     public partial class dlgClaymorConfig : SimpleMiner.BaseForm.BaseForm, IClaymorConfigView
     {
+
+
         public dlgClaymorConfig()
         {
             InitializeComponent();
@@ -407,6 +409,7 @@ namespace SimpleMiner.Claymor
                 checkBoxDcoin_CheckedChanged(this, new EventArgs());
             }
         }
+
         // ---------------- Custom Command
 
         public string textCustomCommand
@@ -533,6 +536,7 @@ namespace SimpleMiner.Claymor
 
         public event Action Ok;
         public event Action Default;
+        public event Action GenerateCommand;
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
@@ -623,6 +627,12 @@ namespace SimpleMiner.Claymor
             SetCheckDcoin();
             if (!checkBoxDcoin.Checked)
                 comboBoxDcoin.SelectedIndex = -1;
+        }
+
+        private void buttonCustomCommand_Click(object sender, EventArgs e)
+        {
+            if (GenerateCommand != null)
+                GenerateCommand();
         }
     }
 }

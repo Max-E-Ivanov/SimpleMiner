@@ -26,6 +26,7 @@ namespace SimpleMiner.Claymor
             this._view.PropertyChanged += _view_PropertyChanged;
             this._view.Ok += _view_Ok;
             this._view.Default += _view_Default;
+            this._view.GenerateCommand += _view_GenerateCommand;
 
 
 
@@ -41,7 +42,12 @@ namespace SimpleMiner.Claymor
             bLoad = false;
         }
 
-       
+        private void _view_GenerateCommand()
+        {
+            string sCommand = _params_clone.ClaymorParmsString(true);
+
+            _view.textCustomCommand = sCommand;
+        }
 
         private void _view_Default()
         {
@@ -80,6 +86,7 @@ namespace SimpleMiner.Claymor
                 _params_clone.Dwal = _view.dwal;
                 _params_clone.Dpsw = _view.dpsw;
                 _params_clone.Dcri = _view.dcri;
+                _params_clone.Dcrt = _view.dcrt;
                 _params_clone.Dcoin = _view.dcoin;
 
                 // -----------------

@@ -157,6 +157,7 @@
             this.buttonCustomCommand.TabIndex = 2;
             this.buttonCustomCommand.Text = "Generate";
             this.buttonCustomCommand.UseVisualStyleBackColor = true;
+            this.buttonCustomCommand.Click += new System.EventHandler(this.buttonCustomCommand_Click);
             // 
             // tabPageCoins
             // 
