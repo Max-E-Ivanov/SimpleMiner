@@ -13,6 +13,8 @@ namespace SimpleMiner.Claymor
         event Action Default;
         event Action GenerateCommand;
 
+        bool buttonOkEnabled { get; set; }
+
         void PopulateEPools(List<string> lsPools);
         void PopulateDPools(List<string> lsPools);
         void PopulateDCoins(List<string> lsDCoins);

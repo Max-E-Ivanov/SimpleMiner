@@ -91,8 +91,7 @@ namespace SimpleMiner.Claymor
 
                 // -----------------
                 _params_clone.CustomParams = _view.textCustomCommand;
-
-
+                
 
 
                 DisplayParams();
@@ -129,7 +128,7 @@ namespace SimpleMiner.Claymor
             // ---------------------------------
             _view.textCustomCommand = _params_clone.CustomParams;
 
-
+            _view.buttonOkEnabled = _params_clone.Validate();
             //_view.SetCheckCustomCommandState();
         }
 

@@ -104,6 +104,16 @@ namespace SimpleMiner.Claymor
                 comboBoxDPool.Items.Add(sPool);
         }
 
+        public bool buttonOkEnabled {
+            get
+            {
+                return buttonOk.Enabled;
+            }
+            set
+            {
+                buttonOk.Enabled = value;
+            }
+        }
 
         // -------------- First Coin
         public string epool
