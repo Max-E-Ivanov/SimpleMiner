@@ -91,8 +91,16 @@ namespace SimpleMiner.Claymor
 
                 // -----------------
                 _params_clone.CustomParams = _view.textCustomCommand;
-                
 
+                // -------------
+                _params_clone.GPU_FORCE_64BIT_PTR0 = _view.GPU_FORCE_64BIT_PTR0;
+                _params_clone.GPU_MAX_ALLOC_PERCENT = _view.GPU_MAX_ALLOC_PERCENT;
+                _params_clone.GPU_MAX_HEAP_SIZE100 = _view.GPU_MAX_HEAP_SIZE100;
+                _params_clone.GPU_SINGLE_ALLOC_PERCENT = _view.GPU_SINGLE_ALLOC_PERCENT;
+                _params_clone.GPU_USE_SYNC_OBJECTS = _view.GPU_USE_SYNC_OBJECTS;
+
+                // ---------------
+                _params_clone.ShowWindow = _view.showwindow;
 
                 DisplayParams();
             }
@@ -128,8 +136,18 @@ namespace SimpleMiner.Claymor
             // ---------------------------------
             _view.textCustomCommand = _params_clone.CustomParams;
 
-            _view.buttonOkEnabled = _params_clone.Validate();
-            //_view.SetCheckCustomCommandState();
+            // -------------
+            _view.GPU_FORCE_64BIT_PTR0 = _params_clone.GPU_FORCE_64BIT_PTR0;
+            _view.GPU_MAX_ALLOC_PERCENT = _params_clone.GPU_MAX_ALLOC_PERCENT;
+            _view.GPU_MAX_HEAP_SIZE100 = _params_clone.GPU_MAX_HEAP_SIZE100;
+            _view.GPU_SINGLE_ALLOC_PERCENT = _params_clone.GPU_SINGLE_ALLOC_PERCENT;
+            _view.GPU_USE_SYNC_OBJECTS = _params_clone.GPU_USE_SYNC_OBJECTS;
+
+            // ---------------
+            _view.showwindow = _params_clone.ShowWindow;
+
+
+            _view.buttonOkEnabled = _params_clone.Validate();            
         }
 
 

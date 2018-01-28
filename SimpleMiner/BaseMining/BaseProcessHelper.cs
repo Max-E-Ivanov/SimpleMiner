@@ -18,6 +18,8 @@ namespace SimpleMiner.BaseProcessHelper
         {
             this.FilePath = FilePath;
             this.Params = Params;
+
+            listEnv = new List<KeyValuePair<string, string>>();
         }
 
         public string FilePath
@@ -51,6 +53,10 @@ namespace SimpleMiner.BaseProcessHelper
         {
             get; set;
         }
+
+        public bool ShowWindow { get; set; }
+
+        public List<KeyValuePair<string, string>> listEnv { get; private set; }
        
 
     }

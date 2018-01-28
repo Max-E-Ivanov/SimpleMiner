@@ -144,7 +144,7 @@ namespace SimpleMiner.Claymor
         }
 
 
-
+        #region Save/load params
         void LoadSavedParams()
         {
             try
@@ -183,6 +183,7 @@ namespace SimpleMiner.Claymor
                 UIHelper.ShowError( new Exception( "Error while saving miner settings to file", ex));
             }
         }
+        #endregion
 
         public void Show()
         {

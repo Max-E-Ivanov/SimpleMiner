@@ -295,4 +295,13 @@ Lbry: только Stratum поддерживается</value>
   <data name="ttClmCustomCommand" xml:space="preserve">
     <value>Команда для майнера. Щоб змінити її натисніть кнопку &lt;Розширені параметри&gt;</value>
   </data>
+  <data name="ClmCfgShowWindow" xml:space="preserve">
+    <value>Показувати вікно майнеру</value>
+  </data>
+  <data name="ClmCfgTabGPUSettings" xml:space="preserve">
+    <value>Налаштування відеокарти</value>
+  </data>
+  <data name="ClmCfgTabOtherSettings" xml:space="preserve">
+    <value>Інші налаштування</value>
+  </data>
 </root>

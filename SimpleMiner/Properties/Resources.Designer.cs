@@ -115,6 +115,15 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show miner window.
+        /// </summary>
+        internal static string ClmCfgShowWindow {
+            get {
+                return ResourceManager.GetString("ClmCfgShowWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Coins.
         /// </summary>
         internal static string ClmCfgTabCoins {
@@ -129,6 +138,24 @@ namespace SimpleMiner.Properties {
         internal static string ClmCfgTabCustomCommand {
             get {
                 return ResourceManager.GetString("ClmCfgTabCustomCommand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to GPU settings.
+        /// </summary>
+        internal static string ClmCfgTabGPUSettings {
+            get {
+                return ResourceManager.GetString("ClmCfgTabGPUSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other settings.
+        /// </summary>
+        internal static string ClmCfgTabOtherSettings {
+            get {
+                return ResourceManager.GetString("ClmCfgTabOtherSettings", resourceCulture);
             }
         }
         

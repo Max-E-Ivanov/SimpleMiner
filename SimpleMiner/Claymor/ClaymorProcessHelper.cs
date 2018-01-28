@@ -29,7 +29,10 @@ namespace SimpleMiner.Claymor
                 process.StartInfo.Arguments = _params.Params;
                 process.StartInfo.WorkingDirectory = _params.DirectoryName;
                 process.StartInfo.UseShellExecute = false;
-                process.StartInfo.CreateNoWindow = false;
+                process.StartInfo.CreateNoWindow = !_params.ShowWindow;
+
+                foreach (var Rec in _params.listEnv)
+                    process.StartInfo.EnvironmentVariables[Rec.Key] = Rec.Value;
 
                 process.Start();
             }

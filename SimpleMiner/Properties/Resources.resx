@@ -302,4 +302,13 @@
   <data name="ttClmCustomCommand" xml:space="preserve">
     <value>To change custom command click Extended parameters button</value>
   </data>
+  <data name="ClmCfgShowWindow" xml:space="preserve">
+    <value>Show miner window</value>
+  </data>
+  <data name="ClmCfgTabGPUSettings" xml:space="preserve">
+    <value>GPU settings</value>
+  </data>
+  <data name="ClmCfgTabOtherSettings" xml:space="preserve">
+    <value>Other settings</value>
+  </data>
 </root>

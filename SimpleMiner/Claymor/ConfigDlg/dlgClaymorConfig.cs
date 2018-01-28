@@ -33,6 +33,8 @@ namespace SimpleMiner.Claymor
             // Tab Names
             tabPageCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCfgTabCustomCommand;
             tabPageCoins.Text = SimpleMiner.Properties.Resources.ClmCfgTabCoins;
+            tabPageGPUSettings.Text = SimpleMiner.Properties.Resources.ClmCfgTabGPUSettings;
+            tabPageOther.Text = SimpleMiner.Properties.Resources.ClmCfgTabOtherSettings;
 
             //Coins tab
             checkBoxMode.Text = SimpleMiner.Properties.Resources.ClmCfgSecondCoin;
@@ -56,21 +58,14 @@ namespace SimpleMiner.Claymor
             toolTipManager.SetToolTip(this.checkBoxDcrt, SimpleMiner.Properties.Resources.ttClmCfgDcrt);
             toolTipManager.SetToolTip(this.checkBoxDcoin, SimpleMiner.Properties.Resources.ttClmCfgDcoin);
             
-
-
-
-
-
-
-
-
-
-
             // Custom Command tab
             checkBoxCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCFgCustomCommandCb;
             buttonCustomCommand.Text = SimpleMiner.Properties.Resources.ClmCfgCustomCommandBtn;
             toolTipManager.SetToolTip(this.checkBoxCustomCommand, SimpleMiner.Properties.Resources.ttClmCFgCustomCommandCb);
             toolTipManager.SetToolTip(this.buttonCustomCommand, SimpleMiner.Properties.Resources.ttClmCfgCustomCommandBtn);
+
+            //Other settings tab
+            checkBoxShowWindow.Text = SimpleMiner.Properties.Resources.ClmCfgShowWindow;
         }
         
         object IView.ShowDialog()
@@ -438,6 +433,77 @@ namespace SimpleMiner.Claymor
             }
         }
 
+
+        // ---------------- GPU settings
+        public bool GPU_FORCE_64BIT_PTR0
+        {
+            get
+            {
+                return checkBoxGPU_FORCE_64BIT_PTR0.Checked;
+            }
+            set
+            {
+                checkBoxGPU_FORCE_64BIT_PTR0.Checked = value;
+            }
+        }
+        public bool GPU_MAX_HEAP_SIZE100
+        {
+            get
+            {
+                return checkBoxGPU_MAX_HEAP_SIZE100.Checked;
+            }
+            set
+            {
+                checkBoxGPU_MAX_HEAP_SIZE100.Checked = value;
+            }
+        }
+        public bool GPU_USE_SYNC_OBJECTS
+        {
+            get
+            {
+                return checkBoxGPU_USE_SYNC_OBJECTS1.Checked;
+            }
+            set
+            {
+                checkBoxGPU_USE_SYNC_OBJECTS1.Checked = value;
+            }
+        }
+        public bool GPU_MAX_ALLOC_PERCENT
+        {
+            get
+            {
+                return checkBoxGPU_MAX_ALLOC_PERCENT100.Checked;
+            }
+            set
+            {
+                checkBoxGPU_MAX_ALLOC_PERCENT100.Checked = value;
+            }
+        }
+        public bool GPU_SINGLE_ALLOC_PERCENT
+        {
+            get
+            {
+                return checkBoxGPU_SINGLE_ALLOC_PERCENT100.Checked;
+            }
+            set
+            {
+                checkBoxGPU_SINGLE_ALLOC_PERCENT100.Checked = value;
+            }
+        }
+
+
+        // --------------- Other settings
+        public bool showwindow
+        {
+            get
+            {
+                return checkBoxShowWindow.Checked;
+            }
+            set
+            {
+                checkBoxShowWindow.Checked = value;
+            }
+        }
 
 
         public void SetCheckCustomCommandState()

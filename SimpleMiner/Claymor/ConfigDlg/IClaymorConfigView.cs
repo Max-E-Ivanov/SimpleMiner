@@ -23,24 +23,24 @@ namespace SimpleMiner.Claymor
         bool solo { get; set; }
         string etht { get; set; }
 
-        void SetCheckSoloState();
+        //void SetCheckSoloState();
         
         bool allpools { get; set; }
         
         string allcoins { get; set; }
-        void SetCheckAllCoinsState();
+        //void SetCheckAllCoinsState();
 
         string epsw { get; set; }
         //void SetCheckPswState();
 
         string eworker { get; set; }
-        void SetCheckEworker();
+        //void SetCheckEworker();
 
         string ethi { get; set; }
-        void SetCheckEthi();
+        //void SetCheckEthi();
 
         string etha { get; set; }
-        void SetCheckEtha();
+        //void SetCheckEtha();
 
         bool estale { get; set; }
 
@@ -48,7 +48,7 @@ namespace SimpleMiner.Claymor
 
         string esm { get; set; }
         void PopulateEsmList(List<KeyValuePair<string, string>> ListEsm);
-        void SetCheckEsm();
+        //void SetCheckEsm();
 
 
         // ------------------
@@ -62,6 +62,16 @@ namespace SimpleMiner.Claymor
         string dcoin { get; set; }
 
         string textCustomCommand { get; set; }
-        void SetCheckCustomCommandState();
+        //void SetCheckCustomCommandState();
+
+        // ------------------
+        bool GPU_FORCE_64BIT_PTR0 { get; set; }
+        bool GPU_MAX_HEAP_SIZE100 { get; set; }
+        bool GPU_USE_SYNC_OBJECTS { get; set; }
+        bool GPU_MAX_ALLOC_PERCENT { get; set; }
+        bool GPU_SINGLE_ALLOC_PERCENT { get; set; }
+
+        bool showwindow { get; set; }
+
     }
 }

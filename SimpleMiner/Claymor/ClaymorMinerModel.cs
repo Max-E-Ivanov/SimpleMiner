@@ -19,6 +19,8 @@ namespace SimpleMiner.Claymor
 
         public string CalymoreAppPath { get; set; }
 
+        public bool ShowWindow { get; set; }
+
         public string EthWallet { get; set; }
         public string EthPool { get; set; }
         public string EthWorker { get; set; }
@@ -51,6 +53,36 @@ namespace SimpleMiner.Claymor
         public string Dcri { get; set; }
         public string Dcrt { get; set; }
         public string Dcoin { get; set; }
+
+
+        //GPUSettings
+        public bool GPU_FORCE_64BIT_PTR0 { get; set; }
+        public bool GPU_MAX_HEAP_SIZE100 { get; set; }
+        public bool GPU_USE_SYNC_OBJECTS { get; set; }
+        public bool GPU_MAX_ALLOC_PERCENT { get; set; }
+        public bool GPU_SINGLE_ALLOC_PERCENT { get; set; }
+
+        public List<KeyValuePair<string, string>> ListEnv()
+        {
+            List<KeyValuePair<string, string>> _list = new List<KeyValuePair<string, string>>();
+
+            if (GPU_FORCE_64BIT_PTR0)
+                _list.Add(new KeyValuePair<string, string>("GPU_FORCE_64BIT_PTR", "0"));
+
+            if (GPU_MAX_HEAP_SIZE100)
+                _list.Add(new KeyValuePair<string, string>("GPU_MAX_HEAP_SIZE", "100"));
+
+            if (GPU_USE_SYNC_OBJECTS)
+                _list.Add(new KeyValuePair<string, string>("GPU_USE_SYNC_OBJECTS", "1"));
+
+            if (GPU_MAX_ALLOC_PERCENT)
+                _list.Add(new KeyValuePair<string, string>("GPU_MAX_ALLOC_PERCENT", "100"));
+
+            if (GPU_SINGLE_ALLOC_PERCENT)
+                _list.Add(new KeyValuePair<string, string>("GPU_SINGLE_ALLOC_PERCENT", "100"));
+
+            return _list;
+        }
 
         public bool Validate()
         {
@@ -126,6 +158,7 @@ namespace SimpleMiner.Claymor
             this.EthWorker = _params.EthWorker;
             this.CustomParams = _params.CustomParams;
             this.CalymoreAppPath = _params.CalymoreAppPath;
+            this.ShowWindow = _params.ShowWindow;
 
             this.Allcoins = _params.Allcoins;
             this.Allpools = _params.Allpools;
@@ -144,7 +177,13 @@ namespace SimpleMiner.Claymor
             this.Dpool = _params.Dpool;
             this.Dpsw = _params.Dpsw;
             this.Dwal = _params.Dwal;
-           
+
+            this.GPU_FORCE_64BIT_PTR0 = _params.GPU_FORCE_64BIT_PTR0;
+            this.GPU_MAX_ALLOC_PERCENT = _params.GPU_MAX_ALLOC_PERCENT;
+            this.GPU_MAX_HEAP_SIZE100 = _params.GPU_MAX_HEAP_SIZE100;
+            this.GPU_SINGLE_ALLOC_PERCENT = _params.GPU_SINGLE_ALLOC_PERCENT;
+            this.GPU_USE_SYNC_OBJECTS = _params.GPU_USE_SYNC_OBJECTS;
+
         }
 
       
@@ -309,6 +348,9 @@ namespace SimpleMiner.Claymor
                 this.clParams = _clParams;
 
                 ProcessParams _params = new ProcessParams(_clParams.CalymoreAppPath, _clParams.ClaymorParmsString(false));
+                _params.ShowWindow = _clParams.ShowWindow;
+                _params.listEnv.AddRange(_clParams.ListEnv());
+                
                 _processHelper = new ClaymorProcessHelper(_params);
                 _processHelper.Launch();
                 
