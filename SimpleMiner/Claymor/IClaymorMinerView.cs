@@ -18,6 +18,8 @@ namespace SimpleMiner.Claymor
         bool buttonStartEnabled { get; set; }
         bool buttonConfigEnabled { get; set; }
 
+        void SetStartStopState(bool bStart);
+
         void SetCreateWalletVisited();
 
         event Action Run;

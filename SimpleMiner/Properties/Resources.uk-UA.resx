@@ -214,7 +214,7 @@
     <value>Повернутись до значень за замовчуванням</value>
   </data>
   <data name="ClmCfgSecondCoin" xml:space="preserve">
-    <value>Майнить вторую монету</value>
+    <value>Майнити другу монету</value>
   </data>
   <data name="ClmCfgTabCoins" xml:space="preserve">
     <value>Монети</value>

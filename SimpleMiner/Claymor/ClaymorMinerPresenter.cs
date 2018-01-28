@@ -85,18 +85,30 @@ namespace SimpleMiner.Claymor
         {
             try
             {
+                _view.buttonStartEnabled = false;
                 SaveParams();
 
                 if (!File.Exists(_params.CalymoreAppPath))
+                {
                     UIHelper.ShowError("Miner file absent");
+                    return;
+                }
+
+                //throw new Exception("!!");
 
                 _params.EthLog = DateTime.Now.ToString("yyyy_dd_MM_hh_mm_ss") + ".log";
 
                 _model.StartProcess(_params);
+
+                _view.SetStartStopState(true);
             }
             catch (Exception ex)
             {
                 UIHelper.ShowError(ex);
+            }
+            finally
+            {
+                _view.buttonStartEnabled = true;
             }
         }
 
@@ -105,6 +117,7 @@ namespace SimpleMiner.Claymor
             try
             { 
                 _model.KillProcess();
+                _view.SetStartStopState(false);
             }
             catch (Exception ex)
             {

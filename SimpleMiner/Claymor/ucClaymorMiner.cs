@@ -155,11 +155,22 @@ namespace SimpleMiner.Claymor
             if (CreateWallet != null)
                 CreateWallet();
         }
+      
+
+        public void SetStartStopState(bool bStart)
+        {
+            this.bStart = bStart;
+            buttonStartStop.Image = bStart ? SimpleMiner.Properties.Resources.s_stop : SimpleMiner.Properties.Resources.s_start;
+
+            buttonStartStop.Enabled = true;
+
+            buttonConfig.Enabled = !bStart;
+        }
 
         private void buttonStartStop_Click(object sender, EventArgs e)
         {
             bStart = !bStart;
-            buttonStartStop.Image = bStart ? SimpleMiner.Properties.Resources.s_stop :  SimpleMiner.Properties.Resources.s_start;
+            
 
             if (bStart)
             {
