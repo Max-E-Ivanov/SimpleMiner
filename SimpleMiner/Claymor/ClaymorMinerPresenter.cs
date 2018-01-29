@@ -101,6 +101,10 @@ namespace SimpleMiner.Claymor
                 _model.StartProcess(_params);
 
                 _view.SetStartStopState(true);
+
+                if (SettingsManager.instance.currentSettings.WriteLog)
+                    Utils.WriteLog("Info", "Mining started");
+
             }
             catch (Exception ex)
             {
@@ -118,6 +122,10 @@ namespace SimpleMiner.Claymor
             { 
                 _model.KillProcess();
                 _view.SetStartStopState(false);
+
+                if (SettingsManager.instance.currentSettings.WriteLog)
+                    Utils.WriteLog("Info", "Mining stopped");
+
             }
             catch (Exception ex)
             {

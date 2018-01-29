@@ -23,6 +23,7 @@ namespace SimpleMiner
 
         public static void ShowError(Exception ex)
         {
+         
             ErrorPresenter errorPresenter = new ErrorPresenter(new dlgErrorForm(), ex);
             errorPresenter.ShowDialog();
         }

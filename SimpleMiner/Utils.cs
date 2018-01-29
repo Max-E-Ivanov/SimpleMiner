@@ -11,6 +11,8 @@ namespace SimpleMiner
 {
     public static class Utils
     {
+        readonly static string sLogFileName = "log.txt";
+
         public static string GetMD5()
         {
             return string.Empty;
@@ -39,6 +41,21 @@ namespace SimpleMiner
                 sResult = sResult.Substring(0, sResult.Length - sDelim.Length);
 
             return sResult;
+        }
+
+        public static void WriteLog(string sCaption, string sMessage)
+        {
+            try
+            {
+                using (StreamWriter w = File.AppendText(sLogFileName))
+                {
+                    w.WriteLine(DateTime.Now.ToString("dd.MM.yyyy hh:mm:ss")+": <"+sCaption +"> " +
+                        ""+ sMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

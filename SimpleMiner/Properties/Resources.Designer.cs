@@ -196,7 +196,7 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Create ethWallet.
+        ///   Looks up a localized string similar to Create Wallet.
         /// </summary>
         internal static string EthCreateWalletLink {
             get {

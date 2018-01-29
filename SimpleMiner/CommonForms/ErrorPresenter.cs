@@ -15,6 +15,10 @@ namespace SimpleMiner
         {
             this._view = _view;
 
+            if (SettingsManager.instance.currentSettings.WriteLog)
+                Utils.WriteLog("Error", GetErrorDetails(ex));
+
+
             _view.SetErrorMessage( ex.Message);
             _view.SetErrorDetails(GetErrorDetails(ex));
         }

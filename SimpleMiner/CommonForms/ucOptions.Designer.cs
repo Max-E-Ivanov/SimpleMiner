@@ -57,7 +57,7 @@
             // checkBoxLog
             // 
             this.checkBoxLog.AutoSize = true;
-            this.checkBoxLog.Location = new System.Drawing.Point(0, 30);
+            this.checkBoxLog.Location = new System.Drawing.Point(3, 30);
             this.checkBoxLog.Name = "checkBoxLog";
             this.checkBoxLog.Size = new System.Drawing.Size(92, 17);
             this.checkBoxLog.TabIndex = 2;
