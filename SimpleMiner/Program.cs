@@ -16,7 +16,19 @@ namespace SimpleMiner
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.ThreadException += Application_ThreadException;   
+            Application.ThreadException += Application_ThreadException;
+
+            // Language of interface
+            try
+            {
+                System.Threading.Thread.CurrentThread.CurrentUICulture =
+               new System.Globalization.CultureInfo(SettingsManager.instance.currentSettings.Language);
+            }
+            catch (Exception ex)
+            {
+            }
+
+
             Application.Run(new SimpleMinerForm());
         }
 

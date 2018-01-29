@@ -16,6 +16,11 @@ namespace SimpleMiner
             MessageBox.Show(sMessage, SimpleMiner.Properties.Resources.ErrorCaption, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
+        public static void ShowInfo(string sMessage)
+        {
+            MessageBox.Show(sMessage, SimpleMiner.Properties.Resources.InfoCaption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
         public static void ShowError(Exception ex)
         {
             ErrorPresenter errorPresenter = new ErrorPresenter(new dlgErrorForm(), ex);

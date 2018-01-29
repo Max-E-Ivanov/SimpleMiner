@@ -44,11 +44,15 @@
             // 
             // comboBoxLanguage
             // 
+            this.comboBoxLanguage.DisplayMember = "Key";
+            this.comboBoxLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxLanguage.FormattingEnabled = true;
             this.comboBoxLanguage.Location = new System.Drawing.Point(86, 3);
             this.comboBoxLanguage.Name = "comboBoxLanguage";
             this.comboBoxLanguage.Size = new System.Drawing.Size(159, 21);
             this.comboBoxLanguage.TabIndex = 1;
+            this.comboBoxLanguage.ValueMember = "Value";
+            this.comboBoxLanguage.SelectedValueChanged += new System.EventHandler(this.comboBoxLanguage_SelectedValueChanged);
             // 
             // checkBoxLog
             // 
@@ -59,6 +63,7 @@
             this.checkBoxLog.TabIndex = 2;
             this.checkBoxLog.Text = "checkBoxLog";
             this.checkBoxLog.UseVisualStyleBackColor = true;
+            this.checkBoxLog.CheckedChanged += new System.EventHandler(this.checkBoxLog_CheckedChanged);
             // 
             // ucOptions
             // 

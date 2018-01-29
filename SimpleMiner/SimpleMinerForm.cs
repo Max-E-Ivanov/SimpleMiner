@@ -43,7 +43,7 @@ namespace SimpleMiner
                 tabControlMiners.Controls.Add(tabAbout);
 
                 // Test
-                ucMiner1 ucMiner1 = new ucMiner1();
+               /* ucMiner1 ucMiner1 = new ucMiner1();
                 ucBaseMiner ucBaseMiner1 = new ucBaseMiner();
                 BaseMinerPresenter _presenter = new BaseMinerPresenter(ucBaseMiner1, new BaseMinerModelEx());
 
@@ -52,7 +52,7 @@ namespace SimpleMiner
                 tabMiner1.Controls.Add(ucBaseMiner1);
                 ucBaseMiner1.Dock = DockStyle.Fill;
 
-                tabControlMiners.Controls.Add(tabMiner1);
+                tabControlMiners.Controls.Add(tabMiner1);*/
 
                 // Claymore
                 SimpleMiner.Claymor.ucClaymorMiner ucClaymore = new SimpleMiner.Claymor.ucClaymorMiner();
@@ -66,6 +66,7 @@ namespace SimpleMiner
 
                 // Options
                 ucOptions ucOptions = new ucOptions();
+                OptionsPresenter _options_presenter = new OptionsPresenter(ucOptions, SettingsManager.instance.currentSettings);
 
                 TabPage tabOptions = new TabPage(SimpleMiner.Properties.Resources.tabOptions);
                 tabOptions.ImageIndex = 2;

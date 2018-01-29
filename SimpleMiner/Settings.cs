@@ -9,11 +9,12 @@ using System.Xml.Serialization;
 namespace SimpleMiner
 {
     [Serializable]
-    public class _settings
+    public class Settings
     {
 
-        public _settings()
+        public Settings()
         {
+            Language = System.Threading.Thread.CurrentThread.CurrentUICulture.Name;
         }
 
         public string Language { get; set; }
@@ -37,8 +38,8 @@ namespace SimpleMiner
     {
         readonly string sSettingsFileName = "settings.xml";
 
-        _settings _curSett;
-        public _settings currentSettings
+        Settings _curSett;
+        public Settings currentSettings
         {
             get
             {
@@ -47,7 +48,7 @@ namespace SimpleMiner
                     // load
                     _curSett = LoadSavedParams();
                     if (_curSett == null)
-                        _curSett = new _settings();
+                        _curSett = new Settings();
                 }
 
                 return _curSett;
@@ -58,9 +59,9 @@ namespace SimpleMiner
         {
         }
 
-        SettingsManager _settingsMan;
+        static SettingsManager _settingsMan;
 
-        public SettingsManager settings
+        public static SettingsManager instance
         {
             get
             {
@@ -74,7 +75,7 @@ namespace SimpleMiner
         }
 
         #region Save/load params
-        _settings LoadSavedParams()
+        Settings LoadSavedParams()
         {
             try
             {
@@ -84,8 +85,8 @@ namespace SimpleMiner
 
                 using (var stream = System.IO.File.OpenRead(sSettingsFileName))
                 {
-                    var serializer = new XmlSerializer(typeof(_settings));
-                    return serializer.Deserialize(stream) as _settings;
+                    var serializer = new XmlSerializer(typeof(Settings));
+                    return serializer.Deserialize(stream) as Settings;
                 }
 
             }
@@ -97,11 +98,11 @@ namespace SimpleMiner
             return null;
         }
 
-        void SaveParams()
+        public void SaveParams()
         {
             try
             {
-                XmlSerializer serializer = new XmlSerializer(typeof(_settings));
+                XmlSerializer serializer = new XmlSerializer(typeof(Settings));
 
                 using (var writer = new System.IO.StreamWriter(sSettingsFileName))
                 {

@@ -11,7 +11,7 @@ using SimpleMiner.MVP;
 
 namespace SimpleMiner
 {
-    public partial class ucOptions : SimpleMiner.BaseForm.ucBaseUserControl, IView
+    public partial class ucOptions : SimpleMiner.BaseForm.ucBaseUserControl, IOptionsView
     {
         public ucOptions()
         {
@@ -24,9 +24,58 @@ namespace SimpleMiner
             toolTipManager.SetToolTip(this.comboBoxLanguage, SimpleMiner.Properties.Resources.ttLanguage);
         }
 
+        public string currentLanguage
+        {
+            get
+            {
+                
+
+                return (string)comboBoxLanguage.SelectedValue;
+            }
+
+            set
+            {
+                if (string.IsNullOrEmpty(value))
+                {
+                    comboBoxLanguage.SelectedIndex = 0;
+                    
+                }
+                else
+                    comboBoxLanguage.SelectedValue = value;
+            }
+        }
+
+        public bool writeLog
+        {
+            get
+            {
+                return checkBoxLog.Checked;
+            }
+
+            set
+            {
+                checkBoxLog.Checked = value;
+            }
+        }
+
+        public void PopulateLanguages(List<KeyValuePair<string, string>> list)
+        {
+            comboBoxLanguage.DataSource = list;
+        }
+
         public object ShowDialog()
         {
             throw new NotImplementedException();
+        }
+
+        private void comboBoxLanguage_SelectedValueChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged("language");
+        }
+
+        private void checkBoxLog_CheckedChanged(object sender, EventArgs e)
+        {
+            NotifyPropertyChanged("writelog");
         }
     }
 }

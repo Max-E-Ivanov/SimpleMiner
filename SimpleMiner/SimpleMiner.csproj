@@ -124,6 +124,8 @@
     <Compile Include="CommonForms\ErrorPresenter.cs" />
     <Compile Include="CommonForms\IAboutView.cs" />
     <Compile Include="CommonForms\IErrorView.cs" />
+    <Compile Include="CommonForms\IOptionsView.cs" />
+    <Compile Include="CommonForms\OptionsPresenter.cs" />
     <Compile Include="CommonForms\ucAbout.cs">
       <SubType>UserControl</SubType>
     </Compile>

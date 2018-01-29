@@ -130,10 +130,10 @@
     <value>Create ethWallet</value>
   </data>
   <data name="EthPool" xml:space="preserve">
-    <value>EthPool</value>
+    <value>Pool</value>
   </data>
   <data name="EthWallet" xml:space="preserve">
-    <value>EthWallet</value>
+    <value>Wallet</value>
   </data>
   <data name="EthWorker" xml:space="preserve">
     <value>Worker</value>
@@ -325,5 +325,11 @@
   </data>
   <data name="WriteLog" xml:space="preserve">
     <value>WriteLog</value>
+  </data>
+  <data name="InfoCaption" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="OptChangeLanguageMessage" xml:space="preserve">
+    <value>Restart program for applay selected language </value>
   </data>
 </root>

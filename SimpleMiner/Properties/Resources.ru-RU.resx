@@ -319,4 +319,10 @@ Lbry: только Stratum поддерживается</value>
   <data name="WriteLog" xml:space="preserve">
     <value>Вести лог</value>
   </data>
+  <data name="InfoCaption" xml:space="preserve">
+    <value>Уведомление</value>
+  </data>
+  <data name="OptChangeLanguageMessage" xml:space="preserve">
+    <value>Перезапустите программу что бы изменения языка интерфейса вступили в силу</value>
+  </data>
 </root>

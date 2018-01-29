@@ -205,7 +205,7 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EthPool.
+        ///   Looks up a localized string similar to Pool.
         /// </summary>
         internal static string EthPool {
             get {
@@ -214,7 +214,7 @@ namespace SimpleMiner.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to EthWallet.
+        ///   Looks up a localized string similar to Wallet.
         /// </summary>
         internal static string EthWallet {
             get {
@@ -247,6 +247,15 @@ namespace SimpleMiner.Properties {
             get {
                 object obj = ResourceManager.GetObject("IcoMiningLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Info.
+        /// </summary>
+        internal static string InfoCaption {
+            get {
+                return ResourceManager.GetString("InfoCaption", resourceCulture);
             }
         }
         
@@ -284,6 +293,15 @@ namespace SimpleMiner.Properties {
             get {
                 object obj = ResourceManager.GetObject("MiningLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart program for applay selected language .
+        /// </summary>
+        internal static string OptChangeLanguageMessage {
+            get {
+                return ResourceManager.GetString("OptChangeLanguageMessage", resourceCulture);
             }
         }
         
