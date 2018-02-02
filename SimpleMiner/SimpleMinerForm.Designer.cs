@@ -50,6 +50,7 @@
             this.imageListForTabs.Images.SetKeyName(0, "About.jpg");
             this.imageListForTabs.Images.SetKeyName(1, "ethereum.png");
             this.imageListForTabs.Images.SetKeyName(2, "s_settings.png");
+            this.imageListForTabs.Images.SetKeyName(3, "zcash.png");
             // 
             // SimpleMinerForm
             // 

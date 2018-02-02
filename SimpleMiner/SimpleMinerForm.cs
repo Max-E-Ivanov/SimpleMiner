@@ -64,6 +64,16 @@ namespace SimpleMiner
                 ucClaymore.Dock = DockStyle.Fill;
                 tabControlMiners.Controls.Add(tabClaymoreMiner);
 
+                // ZClaymore
+                SimpleMiner.Claymor.ucClaymorZMiner ucZClaymore = new SimpleMiner.Claymor.ucClaymorZMiner();
+                ClaymorZMinerPresenter _claymore_z_presenter = new ClaymorZMinerPresenter(ucZClaymore, new ClaymorMinerModel());
+
+                TabPage tabClaymoreZMiner = new TabPage("ZCash (Radeon)");
+                tabClaymoreZMiner.ImageIndex = 3;
+                tabClaymoreZMiner.Controls.Add(ucZClaymore);
+                ucZClaymore.Dock = DockStyle.Fill;
+                tabControlMiners.Controls.Add(tabClaymoreZMiner);
+
                 // Options
                 ucOptions ucOptions = new ucOptions();
                 OptionsPresenter _options_presenter = new OptionsPresenter(ucOptions, SettingsManager.instance.currentSettings);
